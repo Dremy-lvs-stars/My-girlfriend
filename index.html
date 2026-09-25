@@ -84,6 +84,7 @@
 <body>
 
     <div class="contenedor">
+
         <h1>¿Te gusto? :3</h1>
 
         <div class="botones">
@@ -96,17 +97,23 @@
         </div>
 
         <button id="siguiente">Next !!</button>
+
     </div>
 
     <script>
+
         const botonNo = document.getElementById("no");
         const botonSi = document.getElementById("si");
         const mensaje = document.getElementById("mensaje");
         const botonSiguiente = document.getElementById("siguiente");
 
+
+        // El botón NO escapa cuando intentas tocarlo
+
         botonNo.addEventListener("mouseover", escapar);
 
         function escapar() {
+
             const ancho = window.innerWidth - botonNo.offsetWidth;
             const alto = window.innerHeight - botonNo.offsetHeight;
 
@@ -118,16 +125,30 @@
             botonNo.style.top = nuevaY + "px";
         }
 
+
+        // Cuando presionas SI
+
         botonSi.addEventListener("click", function() {
+
             mensaje.style.display = "block";
+
             botonNo.style.display = "none";
+
             botonSi.style.display = "none";
+
             botonSiguiente.style.display = "inline-block";
+
         });
 
+
+        // Cuando presionas NEXT !!
+
         botonSiguiente.addEventListener("click", function() {
-            alert("Aquí puedes poner lo que quieras que pase después :3");
+
+            window.location.href = "menu.html";
+
         });
+
     </script>
 
 </body>
