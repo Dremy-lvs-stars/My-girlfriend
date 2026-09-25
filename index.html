@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Kass ,my love <3</title>
+    <title>For Kass, my love <3</title>
 
     <style>
         * {
@@ -67,28 +67,42 @@
             font-size: 28px;
             color: #e75480;
         }
+
+        #siguiente {
+            display: none;
+            margin-top: 20px;
+            background: #e75480;
+            color: white;
+        }
+
+        #siguiente:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 
 <body>
 
     <div class="contenedor">
-        <h1> ¿Te gusto? :3 </h1>
+        <h1>¿Te gusto? :3</h1>
 
         <div class="botones">
             <button id="si">Skibidi Si</button>
-            <button id="no">Nuh :(( </button>
+            <button id="no">Nuh :((</button>
         </div>
 
         <div class="mensaje" id="mensaje">
             :33
         </div>
+
+        <button id="siguiente">Next !!</button>
     </div>
 
     <script>
         const botonNo = document.getElementById("no");
         const botonSi = document.getElementById("si");
         const mensaje = document.getElementById("mensaje");
+        const botonSiguiente = document.getElementById("siguiente");
 
         botonNo.addEventListener("mouseover", escapar);
 
@@ -108,6 +122,11 @@
             mensaje.style.display = "block";
             botonNo.style.display = "none";
             botonSi.style.display = "none";
+            botonSiguiente.style.display = "inline-block";
+        });
+
+        botonSiguiente.addEventListener("click", function() {
+            alert("Aquí puedes poner lo que quieras que pase después :3");
         });
     </script>
 
