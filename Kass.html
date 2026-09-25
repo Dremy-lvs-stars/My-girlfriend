@@ -1,1 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para ti 💗</title>
 
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: #ffe6f0;
+            overflow: hidden;
+        }
+
+        .contenedor {
+            text-align: center;
+        }
+
+        h1 {
+            color: #e75480;
+            font-size: 42px;
+            margin-bottom: 30px;
+        }
+
+        .botones {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        button {
+            border: none;
+            border-radius: 12px;
+            padding: 14px 30px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        #si {
+            background: #ff6b9a;
+            color: white;
+        }
+
+        #si:hover {
+            transform: scale(1.1);
+        }
+
+        #no {
+            background: #ffffff;
+            color: #555;
+            position: relative;
+        }
+
+        .mensaje {
+            display: none;
+            margin-top: 25px;
+            font-size: 28px;
+            color: #e75480;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="contenedor">
+        <h1>¿Te gusto? 💗</h1>
+
+        <div class="botones">
+            <button id="si">Sí 💕</button>
+            <button id="no">No</button>
+        </div>
+
+        <div class="mensaje" id="mensaje">
+            ¡Sabía que dirías que sí! 💗🥰
+        </div>
+    </div>
+
+    <script>
+        const botonNo = document.getElementById("no");
+        const botonSi = document.getElementById("si");
+        const mensaje = document.getElementById("mensaje");
+
+        botonNo.addEventListener("mouseover", escapar);
+
+        function escapar() {
+            const ancho = window.innerWidth - botonNo.offsetWidth;
+            const alto = window.innerHeight - botonNo.offsetHeight;
+
+            const nuevaX = Math.random() * ancho;
+            const nuevaY = Math.random() * alto;
+
+            botonNo.style.position = "fixed";
+            botonNo.style.left = nuevaX + "px";
+            botonNo.style.top = nuevaY + "px";
+        }
+
+        botonSi.addEventListener("click", function() {
+            mensaje.style.display = "block";
+            botonNo.style.display = "none";
+            botonSi.style.display = "none";
+        });
+    </script>
+
+</body>
+</html>
