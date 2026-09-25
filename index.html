@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Kass, my love <3</title>
+    <title>¿Te gusto? :3</title>
 
     <style>
-
         * {
             box-sizing: border-box;
         }
@@ -14,394 +13,223 @@
         body {
             margin: 0;
             height: 100vh;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+
+            background:
+                radial-gradient(circle at 50% 40%, #172554 0%, #0f172a 45%, #020617 100%);
 
             display: flex;
             justify-content: center;
             align-items: center;
 
-            font-family: Arial, sans-serif;
-
-            /* CIELO NOCTURNO */
-            background:
-                radial-gradient(circle at 50% 40%, #24234f 0%, #12132f 45%, #050817 100%);
-
-            overflow: hidden;
-
-            position: relative;
+            color: white;
         }
-
 
         /* =========================
-           FONDO DE ESTRELLAS
-           ========================= */
-
-        .estrellas {
-            position: fixed;
-
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            height: 100%;
-
-            pointer-events: none;
-
-            z-index: 0;
-        }
-
+           ESTRELLAS DEL FONDO
+        ========================= */
 
         .estrella {
             position: absolute;
-
-            color: white;
-
-            font-size: 10px;
-
-            opacity: 0.8;
-
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 8px white;
             pointer-events: none;
 
-            animation: parpadear 3s infinite alternate;
+            animation: parpadear 2s infinite alternate;
         }
-
-
-        /* Posiciones de las estrellas */
-
-        .estrella:nth-child(1) {
-            top: 8%;
-            left: 10%;
-        }
-
-        .estrella:nth-child(2) {
-            top: 15%;
-            left: 25%;
-            font-size: 7px;
-        }
-
-        .estrella:nth-child(3) {
-            top: 7%;
-            left: 45%;
-            font-size: 13px;
-        }
-
-        .estrella:nth-child(4) {
-            top: 20%;
-            left: 65%;
-        }
-
-        .estrella:nth-child(5) {
-            top: 10%;
-            left: 85%;
-            font-size: 8px;
-        }
-
-        .estrella:nth-child(6) {
-            top: 35%;
-            left: 8%;
-            font-size: 13px;
-        }
-
-        .estrella:nth-child(7) {
-            top: 30%;
-            left: 35%;
-        }
-
-        .estrella:nth-child(8) {
-            top: 40%;
-            left: 75%;
-            font-size: 8px;
-        }
-
-        .estrella:nth-child(9) {
-            top: 55%;
-            left: 15%;
-            font-size: 12px;
-        }
-
-        .estrella:nth-child(10) {
-            top: 60%;
-            left: 40%;
-        }
-
-        .estrella:nth-child(11) {
-            top: 50%;
-            left: 90%;
-            font-size: 12px;
-        }
-
-        .estrella:nth-child(12) {
-            top: 75%;
-            left: 8%;
-            font-size: 8px;
-        }
-
-        .estrella:nth-child(13) {
-            top: 80%;
-            left: 30%;
-            font-size: 13px;
-        }
-
-        .estrella:nth-child(14) {
-            top: 70%;
-            left: 60%;
-        }
-
-        .estrella:nth-child(15) {
-            top: 85%;
-            left: 80%;
-            font-size: 8px;
-        }
-
-        .estrella:nth-child(16) {
-            top: 90%;
-            left: 50%;
-            font-size: 12px;
-        }
-
-        .estrella:nth-child(17) {
-            top: 45%;
-            left: 55%;
-            font-size: 7px;
-        }
-
-        .estrella:nth-child(18) {
-            top: 25%;
-            left: 90%;
-            font-size: 13px;
-        }
-
-        .estrella:nth-child(19) {
-            top: 65%;
-            left: 85%;
-        }
-
-        .estrella:nth-child(20) {
-            top: 5%;
-            left: 70%;
-            font-size: 7px;
-        }
-
-
-        /* Animación suave */
 
         @keyframes parpadear {
-
-            0% {
+            from {
                 opacity: 0.3;
             }
 
-            50% {
-                opacity: 0.8;
-            }
-
-            100% {
+            to {
                 opacity: 1;
             }
-
         }
+
+        /* Posiciones de las estrellas */
+
+        .e1  { top: 10%; left: 15%; animation-delay: 0.2s; }
+        .e2  { top: 20%; left: 30%; animation-delay: 0.8s; }
+        .e3  { top: 15%; left: 70%; animation-delay: 1.2s; }
+        .e4  { top: 30%; left: 85%; animation-delay: 0.5s; }
+        .e5  { top: 65%; left: 10%; animation-delay: 1s; }
+        .e6  { top: 80%; left: 25%; animation-delay: 0.3s; }
+        .e7  { top: 75%; left: 75%; animation-delay: 1.5s; }
+        .e8  { top: 60%; left: 90%; animation-delay: 0.7s; }
+        .e9  { top: 40%; left: 20%; animation-delay: 1.8s; }
+        .e10 { top: 45%; left: 80%; animation-delay: 0.4s; }
+        .e11 { top: 8%; left: 50%; animation-delay: 1.1s; }
+        .e12 { top: 90%; left: 55%; animation-delay: 0.6s; }
+        .e13 { top: 35%; left: 5%; animation-delay: 1.4s; }
+        .e14 { top: 55%; left: 35%; animation-delay: 0.9s; }
+        .e15 { top: 25%; left: 60%; animation-delay: 1.7s; }
+        .e16 { top: 85%; left: 90%; animation-delay: 0.2s; }
+        .e17 { top: 12%; left: 90%; animation-delay: 1.3s; }
+        .e18 { top: 70%; left: 50%; animation-delay: 0.5s; }
+        .e19 { top: 50%; left: 65%; animation-delay: 1.6s; }
+        .e20 { top: 92%; left: 10%; animation-delay: 0.8s; }
 
 
         /* =========================
            CONTENIDO
-           ========================= */
+        ========================= */
 
         .contenedor {
+            position: relative;
+            z-index: 10;
 
             text-align: center;
 
-            position: relative;
-
-            z-index: 2;
-        }
-
-
-        h1 {
-
-            color: #ffffff;
-
-            font-size: 42px;
-
-            margin-bottom: 30px;
-
-            text-shadow:
-                0 0 10px rgba(255,255,255,0.5),
-                0 0 25px rgba(170,180,255,0.4);
-        }
-
-
-        .botones {
-
             display: flex;
-
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
 
             gap: 20px;
         }
 
-
-        button {
-
-            border: none;
-
-            border-radius: 12px;
-
-            padding: 14px 30px;
-
-            font-size: 20px;
-
-            cursor: pointer;
-
-            transition: 0.2s;
-        }
-
-
-        /* BOTÓN SI */
-
-        #si {
-
-            background: #ff6b9a;
+        h1 {
+            font-size: 45px;
+            margin: 0;
 
             color: white;
 
-            box-shadow:
-                0 0 15px rgba(255,107,154,0.5);
+            text-shadow:
+                0 0 10px white,
+                0 0 20px #93c5fd,
+                0 0 35px #3b82f6;
+        }
+
+        .carita {
+            font-size: 30px;
+            margin-bottom: 10px;
         }
 
 
-        #si:hover {
+        /* =========================
+           BOTONES
+        ========================= */
 
-            transform: scale(1.1);
+        button {
+            font-size: 20px;
+            padding: 12px 28px;
 
-            box-shadow:
-                0 0 25px rgba(255,107,154,0.8);
+            border: none;
+            border-radius: 12px;
+
+            cursor: pointer;
+
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
+        button:hover {
+            transform: scale(1.08);
+        }
 
-        /* BOTÓN NO */
+        #si {
+            background: #ff69b4;
+            color: white;
+
+            box-shadow:
+                0 0 10px #ff69b4,
+                0 0 25px #ff69b4;
+        }
 
         #no {
-
-            background: #ffffff;
-
-            color: #555;
+            background: white;
+            color: #222;
 
             position: relative;
         }
 
-
-        /* MENSAJE */
-
-        .mensaje {
-
+        #next {
             display: none;
 
-            margin-top: 25px;
-
-            font-size: 28px;
-
-            color: #ffffff;
-
-            text-shadow:
-                0 0 10px #ff9fc0;
-        }
-
-
-        /* BOTÓN NEXT */
-
-        #siguiente {
-
-            display: none;
-
-            margin-top: 20px;
-
-            background: #e75480;
-
+            background: #60a5fa;
             color: white;
 
             box-shadow:
-                0 0 15px rgba(231,84,128,0.5);
+                0 0 10px #60a5fa,
+                0 0 25px #60a5fa;
         }
 
+        #respuesta {
+            font-size: 35px;
+            display: none;
 
-        #siguiente:hover {
-
-            transform: scale(1.1);
-
-            box-shadow:
-                0 0 25px rgba(231,84,128,0.8);
+            text-shadow:
+                0 0 10px white,
+                0 0 20px #f9a8d4;
         }
-
     </style>
-
 </head>
-
 
 <body>
 
+    <!-- =========================
+         ESTRELLAS
+    ========================== -->
+
+    <span class="estrella e1"></span>
+    <span class="estrella e2"></span>
+    <span class="estrella e3"></span>
+    <span class="estrella e4"></span>
+    <span class="estrella e5"></span>
+    <span class="estrella e6"></span>
+    <span class="estrella e7"></span>
+    <span class="estrella e8"></span>
+    <span class="estrella e9"></span>
+    <span class="estrella e10"></span>
+    <span class="estrella e11"></span>
+    <span class="estrella e12"></span>
+    <span class="estrella e13"></span>
+    <span class="estrella e14"></span>
+    <span class="estrella e15"></span>
+    <span class="estrella e16"></span>
+    <span class="estrella e17"></span>
+    <span class="estrella e18"></span>
+    <span class="estrella e19"></span>
+    <span class="estrella e20"></span>
+
 
     <!-- =========================
-         ESTRELLAS DEL CIELO
-         ========================= -->
+         MÚSICA
+    ========================== -->
 
-    <div class="estrellas">
-
-        <span class="estrella">✦</span>
-        <span class="estrella">✧</span>
-        <span class="estrella">✦</span>
-        <span class="estrella">·</span>
-        <span class="estrella">✧</span>
-        <span class="estrella">✦</span>
-        <span class="estrella">·</span>
-        <span class="estrella">✧</span>
-        <span class="estrella">✦</span>
-        <span class="estrella">·</span>
-        <span class="estrella">✧</span>
-        <span class="estrella">✦</span>
-        <span class="estrella">·</span>
-        <span class="estrella">✧</span>
-        <span class="estrella">✦</span>
-        <span class="estrella">·</span>
-        <span class="estrella">✧</span>
-        <span class="estrella">✦</span>
-        <span class="estrella">·</span>
-        <span class="estrella">✧</span>
-
-    </div>
+    <audio id="musica" autoplay loop>
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
 
 
     <!-- =========================
          CONTENIDO
-         ========================= -->
+    ========================== -->
 
     <div class="contenedor">
 
         <h1>¿Te gusto? :3</h1>
 
+        <div class="carita">♡</div>
 
-        <div class="botones">
+        <button id="si">
+            Skibidi Si
+        </button>
 
-            <button id="si">
-                Skibidi Si
-            </button>
+        <button id="no">
+            Nuh :(
+        </button>
 
-            <button id="no">
-                Nuh :((
-            </button>
-
-        </div>
-
-
-        <div class="mensaje" id="mensaje">
-
+        <div id="respuesta">
             :33
-
         </div>
 
-
-        <button id="siguiente">
-
+        <button id="next">
             Next !!
-
         </button>
 
     </div>
@@ -409,70 +237,82 @@
 
     <script>
 
-        const botonNo = document.getElementById("no");
-
-        const botonSi = document.getElementById("si");
-
-        const mensaje = document.getElementById("mensaje");
-
-        const botonSiguiente = document.getElementById("siguiente");
-
-
         /* =========================
-           BOTÓN NO
-           ========================= */
+           MÚSICA
+        ========================== */
 
-        botonNo.addEventListener("mouseover", escapar);
+        const musica = document.getElementById("musica");
 
-
-        function escapar() {
-
-            const ancho =
-                window.innerWidth - botonNo.offsetWidth;
-
-            const alto =
-                window.innerHeight - botonNo.offsetHeight;
-
-
-            const nuevaX =
-                Math.random() * ancho;
-
-            const nuevaY =
-                Math.random() * alto;
-
-
-            botonNo.style.position = "fixed";
-
-            botonNo.style.left =
-                nuevaX + "px";
-
-            botonNo.style.top =
-                nuevaY + "px";
+        function iniciarMusica() {
+            musica.play().catch(() => {
+                // El navegador puede bloquear el autoplay.
+            });
         }
 
+        // Intentar reproducir automáticamente
+        window.addEventListener("load", iniciarMusica);
 
-        /* =========================
-           BOTÓN SI
-           ========================= */
-
-        botonSi.addEventListener("click", function() {
-
-            mensaje.style.display = "block";
-
-            botonNo.style.display = "none";
-
-            botonSi.style.display = "none";
-
-            botonSiguiente.style.display = "inline-block";
-
+        // Si el navegador bloqueó el autoplay,
+        // comienza cuando la persona haga su primer clic.
+        document.addEventListener("click", iniciarMusica, {
+            once: true
         });
 
 
         /* =========================
-           BOTÓN NEXT
-           ========================= */
+           BOTONES
+        ========================== */
 
-        botonSiguiente.addEventListener("click", function() {
+        const botonSi = document.getElementById("si");
+        const botonNo = document.getElementById("no");
+        const respuesta = document.getElementById("respuesta");
+        const botonNext = document.getElementById("next");
+
+
+        /* =========================
+           BOTÓN "SI"
+        ========================== */
+
+        botonSi.addEventListener("click", function() {
+
+            // Asegurar que la música empiece
+            iniciarMusica();
+
+            // Mostrar respuesta
+            respuesta.style.display = "block";
+
+            // Ocultar botones
+            botonSi.style.display = "none";
+            botonNo.style.display = "none";
+
+            // Mostrar siguiente
+            botonNext.style.display = "block";
+        });
+
+
+        /* =========================
+           BOTÓN "NO"
+        ========================== */
+
+        botonNo.addEventListener("mouseover", function() {
+
+            const ancho = window.innerWidth - botonNo.offsetWidth;
+            const alto = window.innerHeight - botonNo.offsetHeight;
+
+            const nuevaX = Math.random() * ancho;
+            const nuevaY = Math.random() * alto;
+
+            botonNo.style.position = "fixed";
+            botonNo.style.left = nuevaX + "px";
+            botonNo.style.top = nuevaY + "px";
+        });
+
+
+        /* =========================
+           NEXT
+        ========================== */
+
+        botonNext.addEventListener("click", function() {
 
             window.location.href = "menu.html";
 
