@@ -6,6 +6,7 @@
     <title>For Kass, my love <3</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -13,120 +14,446 @@
         body {
             margin: 0;
             height: 100vh;
+
             display: flex;
             justify-content: center;
             align-items: center;
+
             font-family: Arial, sans-serif;
-            background: #ffe6f0;
+
+            /* CIELO NOCTURNO */
+            background:
+                radial-gradient(circle at 50% 40%, #24234f 0%, #12132f 45%, #050817 100%);
+
             overflow: hidden;
-        }
 
-        .contenedor {
-            text-align: center;
-        }
-
-        h1 {
-            color: #e75480;
-            font-size: 42px;
-            margin-bottom: 30px;
-        }
-
-        .botones {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        button {
-            border: none;
-            border-radius: 12px;
-            padding: 14px 30px;
-            font-size: 20px;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        #si {
-            background: #ff6b9a;
-            color: white;
-        }
-
-        #si:hover {
-            transform: scale(1.1);
-        }
-
-        #no {
-            background: #ffffff;
-            color: #555;
             position: relative;
         }
 
-        .mensaje {
-            display: none;
-            margin-top: 25px;
-            font-size: 28px;
-            color: #e75480;
+
+        /* =========================
+           FONDO DE ESTRELLAS
+           ========================= */
+
+        .estrellas {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            pointer-events: none;
+
+            z-index: 0;
         }
+
+
+        .estrella {
+            position: absolute;
+
+            color: white;
+
+            font-size: 10px;
+
+            opacity: 0.8;
+
+            pointer-events: none;
+
+            animation: parpadear 3s infinite alternate;
+        }
+
+
+        /* Posiciones de las estrellas */
+
+        .estrella:nth-child(1) {
+            top: 8%;
+            left: 10%;
+        }
+
+        .estrella:nth-child(2) {
+            top: 15%;
+            left: 25%;
+            font-size: 7px;
+        }
+
+        .estrella:nth-child(3) {
+            top: 7%;
+            left: 45%;
+            font-size: 13px;
+        }
+
+        .estrella:nth-child(4) {
+            top: 20%;
+            left: 65%;
+        }
+
+        .estrella:nth-child(5) {
+            top: 10%;
+            left: 85%;
+            font-size: 8px;
+        }
+
+        .estrella:nth-child(6) {
+            top: 35%;
+            left: 8%;
+            font-size: 13px;
+        }
+
+        .estrella:nth-child(7) {
+            top: 30%;
+            left: 35%;
+        }
+
+        .estrella:nth-child(8) {
+            top: 40%;
+            left: 75%;
+            font-size: 8px;
+        }
+
+        .estrella:nth-child(9) {
+            top: 55%;
+            left: 15%;
+            font-size: 12px;
+        }
+
+        .estrella:nth-child(10) {
+            top: 60%;
+            left: 40%;
+        }
+
+        .estrella:nth-child(11) {
+            top: 50%;
+            left: 90%;
+            font-size: 12px;
+        }
+
+        .estrella:nth-child(12) {
+            top: 75%;
+            left: 8%;
+            font-size: 8px;
+        }
+
+        .estrella:nth-child(13) {
+            top: 80%;
+            left: 30%;
+            font-size: 13px;
+        }
+
+        .estrella:nth-child(14) {
+            top: 70%;
+            left: 60%;
+        }
+
+        .estrella:nth-child(15) {
+            top: 85%;
+            left: 80%;
+            font-size: 8px;
+        }
+
+        .estrella:nth-child(16) {
+            top: 90%;
+            left: 50%;
+            font-size: 12px;
+        }
+
+        .estrella:nth-child(17) {
+            top: 45%;
+            left: 55%;
+            font-size: 7px;
+        }
+
+        .estrella:nth-child(18) {
+            top: 25%;
+            left: 90%;
+            font-size: 13px;
+        }
+
+        .estrella:nth-child(19) {
+            top: 65%;
+            left: 85%;
+        }
+
+        .estrella:nth-child(20) {
+            top: 5%;
+            left: 70%;
+            font-size: 7px;
+        }
+
+
+        /* Animación suave */
+
+        @keyframes parpadear {
+
+            0% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+
+            100% {
+                opacity: 1;
+            }
+
+        }
+
+
+        /* =========================
+           CONTENIDO
+           ========================= */
+
+        .contenedor {
+
+            text-align: center;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        h1 {
+
+            color: #ffffff;
+
+            font-size: 42px;
+
+            margin-bottom: 30px;
+
+            text-shadow:
+                0 0 10px rgba(255,255,255,0.5),
+                0 0 25px rgba(170,180,255,0.4);
+        }
+
+
+        .botones {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 20px;
+        }
+
+
+        button {
+
+            border: none;
+
+            border-radius: 12px;
+
+            padding: 14px 30px;
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+
+        /* BOTÓN SI */
+
+        #si {
+
+            background: #ff6b9a;
+
+            color: white;
+
+            box-shadow:
+                0 0 15px rgba(255,107,154,0.5);
+        }
+
+
+        #si:hover {
+
+            transform: scale(1.1);
+
+            box-shadow:
+                0 0 25px rgba(255,107,154,0.8);
+        }
+
+
+        /* BOTÓN NO */
+
+        #no {
+
+            background: #ffffff;
+
+            color: #555;
+
+            position: relative;
+        }
+
+
+        /* MENSAJE */
+
+        .mensaje {
+
+            display: none;
+
+            margin-top: 25px;
+
+            font-size: 28px;
+
+            color: #ffffff;
+
+            text-shadow:
+                0 0 10px #ff9fc0;
+        }
+
+
+        /* BOTÓN NEXT */
 
         #siguiente {
+
             display: none;
+
             margin-top: 20px;
+
             background: #e75480;
+
             color: white;
+
+            box-shadow:
+                0 0 15px rgba(231,84,128,0.5);
         }
+
 
         #siguiente:hover {
+
             transform: scale(1.1);
+
+            box-shadow:
+                0 0 25px rgba(231,84,128,0.8);
         }
+
     </style>
+
 </head>
 
+
 <body>
+
+
+    <!-- =========================
+         ESTRELLAS DEL CIELO
+         ========================= -->
+
+    <div class="estrellas">
+
+        <span class="estrella">✦</span>
+        <span class="estrella">✧</span>
+        <span class="estrella">✦</span>
+        <span class="estrella">·</span>
+        <span class="estrella">✧</span>
+        <span class="estrella">✦</span>
+        <span class="estrella">·</span>
+        <span class="estrella">✧</span>
+        <span class="estrella">✦</span>
+        <span class="estrella">·</span>
+        <span class="estrella">✧</span>
+        <span class="estrella">✦</span>
+        <span class="estrella">·</span>
+        <span class="estrella">✧</span>
+        <span class="estrella">✦</span>
+        <span class="estrella">·</span>
+        <span class="estrella">✧</span>
+        <span class="estrella">✦</span>
+        <span class="estrella">·</span>
+        <span class="estrella">✧</span>
+
+    </div>
+
+
+    <!-- =========================
+         CONTENIDO
+         ========================= -->
 
     <div class="contenedor">
 
         <h1>¿Te gusto? :3</h1>
 
+
         <div class="botones">
-            <button id="si">Skibidi Si</button>
-            <button id="no">Nuh :((</button>
+
+            <button id="si">
+                Skibidi Si
+            </button>
+
+            <button id="no">
+                Nuh :((
+            </button>
+
         </div>
+
 
         <div class="mensaje" id="mensaje">
+
             :33
+
         </div>
 
-        <button id="siguiente">Next !!</button>
+
+        <button id="siguiente">
+
+            Next !!
+
+        </button>
 
     </div>
+
 
     <script>
 
         const botonNo = document.getElementById("no");
+
         const botonSi = document.getElementById("si");
+
         const mensaje = document.getElementById("mensaje");
+
         const botonSiguiente = document.getElementById("siguiente");
 
 
-        // El botón NO escapa cuando intentas tocarlo
+        /* =========================
+           BOTÓN NO
+           ========================= */
 
         botonNo.addEventListener("mouseover", escapar);
 
+
         function escapar() {
 
-            const ancho = window.innerWidth - botonNo.offsetWidth;
-            const alto = window.innerHeight - botonNo.offsetHeight;
+            const ancho =
+                window.innerWidth - botonNo.offsetWidth;
 
-            const nuevaX = Math.random() * ancho;
-            const nuevaY = Math.random() * alto;
+            const alto =
+                window.innerHeight - botonNo.offsetHeight;
+
+
+            const nuevaX =
+                Math.random() * ancho;
+
+            const nuevaY =
+                Math.random() * alto;
+
 
             botonNo.style.position = "fixed";
-            botonNo.style.left = nuevaX + "px";
-            botonNo.style.top = nuevaY + "px";
+
+            botonNo.style.left =
+                nuevaX + "px";
+
+            botonNo.style.top =
+                nuevaY + "px";
         }
 
 
-        // Cuando presionas SI
+        /* =========================
+           BOTÓN SI
+           ========================= */
 
         botonSi.addEventListener("click", function() {
 
@@ -141,7 +468,9 @@
         });
 
 
-        // Cuando presionas NEXT !!
+        /* =========================
+           BOTÓN NEXT
+           ========================= */
 
         botonSiguiente.addEventListener("click", function() {
 
