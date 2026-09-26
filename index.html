@@ -23,6 +23,336 @@
         }
 
         /* =========================
+           FONDO ANIMADO
+        ========================= */
+
+        .fondoAnimado {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+            background:
+                radial-gradient(
+                    circle at 50% 50%,
+                    #172554 0%,
+                    #0f172a 45%,
+                    #020617 100%
+                );
+        }
+
+        /* Brillos grandes que se mueven */
+
+        .aurora {
+            position: absolute;
+            width: 55vw;
+            height: 55vw;
+            max-width: 700px;
+            max-height: 700px;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.18;
+            background: #4f46e5;
+            animation: moverAurora 18s ease-in-out infinite alternate;
+        }
+
+        .aurora:nth-child(1) {
+            top: -25%;
+            left: -15%;
+        }
+
+        .aurora:nth-child(2) {
+            bottom: -30%;
+            right: -15%;
+            background: #7c3aed;
+            animation-duration: 23s;
+            animation-delay: -7s;
+        }
+
+        .aurora:nth-child(3) {
+            top: 35%;
+            left: 35%;
+            width: 30vw;
+            height: 30vw;
+            background: #2563eb;
+            opacity: 0.10;
+            animation-duration: 28s;
+            animation-delay: -12s;
+        }
+
+        @keyframes moverAurora {
+
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(70px, -50px) scale(1.15);
+            }
+
+            100% {
+                transform: translate(-50px, 70px) scale(0.95);
+            }
+
+        }
+
+        /* =========================
+           ESTRELLAS ANIMADAS
+        ========================= */
+
+        .estrellaAnimada {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 6px white;
+            animation: estrellaFlotar 3s ease-in-out infinite;
+        }
+
+        .estrellaAnimada:nth-child(4) {
+            top: 8%;
+            left: 12%;
+            animation-delay: -1s;
+            animation-duration: 4s;
+        }
+
+        .estrellaAnimada:nth-child(5) {
+            top: 15%;
+            left: 32%;
+            animation-delay: -2s;
+            animation-duration: 3s;
+        }
+
+        .estrellaAnimada:nth-child(6) {
+            top: 12%;
+            left: 72%;
+            animation-delay: -0.5s;
+            animation-duration: 5s;
+        }
+
+        .estrellaAnimada:nth-child(7) {
+            top: 20%;
+            left: 90%;
+            animation-delay: -3s;
+            animation-duration: 4s;
+        }
+
+        .estrellaAnimada:nth-child(8) {
+            top: 35%;
+            left: 8%;
+            animation-delay: -1.5s;
+            animation-duration: 3.5s;
+        }
+
+        .estrellaAnimada:nth-child(9) {
+            top: 42%;
+            left: 45%;
+            animation-delay: -2.5s;
+            animation-duration: 5s;
+        }
+
+        .estrellaAnimada:nth-child(10) {
+            top: 50%;
+            left: 82%;
+            animation-delay: -1s;
+            animation-duration: 4.5s;
+        }
+
+        .estrellaAnimada:nth-child(11) {
+            top: 65%;
+            left: 15%;
+            animation-delay: -3s;
+            animation-duration: 3s;
+        }
+
+        .estrellaAnimada:nth-child(12) {
+            top: 78%;
+            left: 58%;
+            animation-delay: -1.5s;
+            animation-duration: 4s;
+        }
+
+        .estrellaAnimada:nth-child(13) {
+            top: 85%;
+            left: 85%;
+            animation-delay: -2s;
+            animation-duration: 5s;
+        }
+
+        .estrellaAnimada:nth-child(14) {
+            top: 90%;
+            left: 30%;
+            animation-delay: -4s;
+            animation-duration: 3.5s;
+        }
+
+        .estrellaAnimada:nth-child(15) {
+            top: 70%;
+            left: 92%;
+            animation-delay: -2s;
+            animation-duration: 4s;
+        }
+
+        .estrellaAnimada:nth-child(16) {
+            top: 28%;
+            left: 55%;
+            animation-delay: -1s;
+            animation-duration: 3s;
+        }
+
+        .estrellaAnimada:nth-child(17) {
+            top: 18%;
+            left: 48%;
+            animation-delay: -3s;
+            animation-duration: 5s;
+        }
+
+        .estrellaAnimada:nth-child(18) {
+            top: 60%;
+            left: 52%;
+            animation-delay: -2s;
+            animation-duration: 4s;
+        }
+
+        .estrellaAnimada:nth-child(19) {
+            top: 38%;
+            left: 92%;
+            animation-delay: -1s;
+            animation-duration: 3.5s;
+        }
+
+        .estrellaAnimada:nth-child(20) {
+            top: 75%;
+            left: 5%;
+            animation-delay: -3s;
+            animation-duration: 5s;
+        }
+
+        .estrellaAnimada:nth-child(21) {
+            top: 92%;
+            left: 70%;
+            animation-delay: -2s;
+            animation-duration: 4s;
+        }
+
+        .estrellaAnimada:nth-child(22) {
+            top: 48%;
+            left: 25%;
+            animation-delay: -1s;
+            animation-duration: 3s;
+        }
+
+        .estrellaAnimada:nth-child(23) {
+            top: 5%;
+            left: 85%;
+            animation-delay: -4s;
+            animation-duration: 5s;
+        }
+
+        @keyframes estrellaFlotar {
+
+            0%, 100% {
+                opacity: 0.2;
+                transform: scale(0.7);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+
+        }
+
+        /* =========================
+           ESTRELLAS FUGACES
+        ========================= */
+
+        .estrellaFugaz {
+            position: absolute;
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255,255,255,0.9),
+                transparent
+            );
+            transform: rotate(-35deg);
+            opacity: 0;
+            filter: drop-shadow(0 0 5px white);
+        }
+
+        .fugaz1 {
+            top: 18%;
+            left: -15%;
+            animation: estrellaFugaz 8s linear infinite;
+            animation-delay: 3s;
+        }
+
+        .fugaz2 {
+            top: 42%;
+            left: -15%;
+            animation: estrellaFugaz 11s linear infinite;
+            animation-delay: 7s;
+        }
+
+        .fugaz3 {
+            top: 8%;
+            left: 55%;
+            animation: estrellaFugaz2 13s linear infinite;
+            animation-delay: 10s;
+        }
+
+        @keyframes estrellaFugaz {
+
+            0% {
+                opacity: 0;
+                transform: translate(0, 0) rotate(-35deg);
+            }
+
+            5% {
+                opacity: 1;
+            }
+
+            15% {
+                opacity: 0.8;
+            }
+
+            25% {
+                opacity: 0;
+                transform: translate(120vw, 70vh) rotate(-35deg);
+            }
+
+            100% {
+                opacity: 0;
+            }
+
+        }
+
+        @keyframes estrellaFugaz2 {
+
+            0% {
+                opacity: 0;
+                transform: translate(0, 0) rotate(-35deg);
+            }
+
+            5% {
+                opacity: 1;
+            }
+
+            18% {
+                opacity: 0;
+                transform: translate(-90vw, 75vh) rotate(-35deg);
+            }
+
+            100% {
+                opacity: 0;
+            }
+
+        }
+
+        /* =========================
            PANTALLAS
         ========================= */
 
@@ -33,6 +363,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            z-index: 1;
         }
 
         .pantalla.activa {
@@ -45,7 +376,12 @@
 
         #entrada {
             background:
-                radial-gradient(circle at center, #312e81 0%, #111827 45%, #020617 100%);
+                radial-gradient(
+                    circle at center,
+                    rgba(49, 46, 129, 0.55),
+                    rgba(17, 24, 39, 0.35) 45%,
+                    rgba(2, 6, 23, 0.45) 100%
+                );
             flex-direction: column;
         }
 
@@ -53,6 +389,8 @@
             font-size: 42px;
             margin-bottom: 35px;
             text-shadow: 0 0 20px #818cf8;
+            position: relative;
+            z-index: 2;
         }
 
         #entrar {
@@ -68,6 +406,8 @@
                 0 0 15px #ec4899,
                 0 0 35px rgba(236, 72, 153, 0.6);
             transition: 0.3s;
+            position: relative;
+            z-index: 2;
         }
 
         #entrar:hover {
@@ -81,7 +421,12 @@
         #pregunta {
             flex-direction: column;
             background:
-                radial-gradient(circle at center, #312e81 0%, #111827 50%, #020617 100%);
+                radial-gradient(
+                    circle at center,
+                    rgba(49, 46, 129, 0.55),
+                    rgba(17, 24, 39, 0.35) 50%,
+                    rgba(2, 6, 23, 0.45) 100%
+                );
         }
 
         #pregunta h1 {
@@ -146,7 +491,12 @@
 
         #universo {
             background:
-                radial-gradient(circle at center, #172554 0%, #0f172a 45%, #020617 100%);
+                radial-gradient(
+                    circle at center,
+                    rgba(23, 37, 84, 0.30),
+                    rgba(15, 23, 42, 0.30) 45%,
+                    rgba(2, 6, 23, 0.35) 100%
+                );
             overflow: hidden;
         }
 
@@ -253,6 +603,19 @@
                 0 0 100px rgba(226, 232, 240, 0.25);
             cursor: pointer;
             transition: 0.4s;
+            animation: lunaFlotar 6s ease-in-out infinite;
+        }
+
+        @keyframes lunaFlotar {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
         }
 
         #luna:hover {
@@ -271,7 +634,12 @@
             flex-direction: column;
             padding: 40px;
             background:
-                radial-gradient(circle at center, #172554 0%, #0f172a 55%, #020617 100%);
+                radial-gradient(
+                    circle at center,
+                    rgba(23, 37, 84, 0.35),
+                    rgba(15, 23, 42, 0.35) 55%,
+                    rgba(2, 6, 23, 0.45) 100%
+                );
         }
 
         .historia h1 {
@@ -550,12 +918,54 @@
             .carta {
                 padding: 25px;
             }
+
         }
 
     </style>
 </head>
 
 <body>
+
+
+    <!-- =========================
+         FONDO ANIMADO
+    ========================= -->
+
+    <div class="fondoAnimado">
+
+        <div class="aurora"></div>
+        <div class="aurora"></div>
+        <div class="aurora"></div>
+
+
+        <div class="estrellaAnimada"></div>
+        <div class="estrellaAnimada"></div>
+        <div class="estrellaAnimada"></div>
+        <div class="estrellaAnimada"></div>
+        <div class="estrellaAnimada"></div>
+        <div class="estrellaAnimada"></div>
+        <div class="estrellaAnimada"></div>
+        <div class="estrellaAnimada"></div>
+        <div class="estrellaAnimada"></div>
+        <div class="estrellaAnimada"></div>
+        <div class="estrellaAnimada"></div>
+        <div class="estrellaAnimada"></div>
+        <div class="estrellaAnimada"></div>
+        <div class="estrellaAnimada"></div>
+        <div class="estrellaAnimada"></div>
+        <div class="estrellaAnimada"></div>
+        <div class="estrellaAnimada"></div>
+        <div class="estrellaAnimada"></div>
+        <div class="estrellaAnimada"></div>
+        <div class="estrellaAnimada"></div>
+
+
+        <div class="estrellaFugaz fugaz1"></div>
+        <div class="estrellaFugaz fugaz2"></div>
+        <div class="estrellaFugaz fugaz3"></div>
+
+    </div>
+
 
     <!-- =========================
          AUDIO
@@ -617,8 +1027,6 @@
         <h1>Our Little Universe</h1>
 
 
-        <!-- ESTRELLAS DE FONDO -->
-
         <div class="estrellaFondo" style="top:8%;left:12%;"></div>
         <div class="estrellaFondo" style="top:15%;left:32%;"></div>
         <div class="estrellaFondo" style="top:12%;left:72%;"></div>
@@ -641,16 +1049,12 @@
         <div class="estrellaFondo" style="top:5%;left:85%;"></div>
 
 
-        <!-- ESTRELLAS INTERACTIVAS -->
-
         <div id="estrella1" class="estrella"></div>
 
         <div id="estrella2" class="estrella"></div>
 
         <div id="estrella3" class="estrella"></div>
 
-
-        <!-- LUNA -->
 
         <div id="luna"></div>
 
