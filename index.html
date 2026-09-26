@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -202,7 +203,7 @@
     ========================== -->
 
     <audio id="musica" autoplay loop>
-        <source src="musica.mp3" type="audio/mpeg">
+        <source src="Valentine.mp3" type="audio/mpeg">
     </audio>
 
 
@@ -239,7 +240,7 @@
 
         /* =========================
            MÚSICA
-        ========================== */
+        ========================= */
 
         const musica = document.getElementById("musica");
 
@@ -252,8 +253,8 @@
         // Intentar reproducir automáticamente
         window.addEventListener("load", iniciarMusica);
 
-        // Si el navegador bloqueó el autoplay,
-        // comienza cuando la persona haga su primer clic.
+        // Si el navegador bloquea el autoplay,
+        // empieza al primer clic.
         document.addEventListener("click", iniciarMusica, {
             once: true
         });
@@ -261,7 +262,7 @@
 
         /* =========================
            BOTONES
-        ========================== */
+        ========================= */
 
         const botonSi = document.getElementById("si");
         const botonNo = document.getElementById("no");
@@ -271,7 +272,7 @@
 
         /* =========================
            BOTÓN "SI"
-        ========================== */
+        ========================= */
 
         botonSi.addEventListener("click", function() {
 
@@ -292,7 +293,7 @@
 
         /* =========================
            BOTÓN "NO"
-        ========================== */
+        ========================= */
 
         botonNo.addEventListener("mouseover", function() {
 
@@ -310,7 +311,7 @@
 
         /* =========================
            NEXT
-        ========================== */
+        ========================= */
 
         botonNext.addEventListener("click", function() {
 
@@ -322,3 +323,20 @@
 
 </body>
 </html>
+```
+
+**Tu carpeta de GitHub tiene que quedar así:**
+
+```text
+index.html
+menu.html
+Valentine.mp3
+```
+
+La línea importante es:
+
+```html
+<source src="Valentine.mp3" type="audio/mpeg">
+```
+
+Si `Valentine.mp3` está junto a `index.html`, debería encontrar la canción. **Si no suena apenas abre la página, no significa que esté mal:** Chrome puede bloquear el autoplay con sonido. En ese caso, al hacer el primer clic (por ejemplo, en **Skibidi Si**) comenzará.
