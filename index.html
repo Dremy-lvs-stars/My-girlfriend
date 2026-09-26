@@ -94,10 +94,8 @@
 
         .pantalla {
             position: absolute;
-
             width: 100%;
             height: 100%;
-
             top: 0;
             left: 0;
 
@@ -271,7 +269,6 @@
             top: 35px;
 
             font-size: 32px;
-
             margin: 0;
 
             text-shadow:
@@ -449,7 +446,6 @@
             max-width: 600px;
 
             font-size: 20px;
-
             line-height: 1.6;
         }
 
@@ -457,7 +453,6 @@
             margin-top: 25px;
 
             background: white;
-
             color: #172554;
         }
 
@@ -567,9 +562,7 @@
 
         #cerrarCarta:hover {
             background: #172554;
-
             color: white;
-
             transform: rotate(90deg);
         }
 
@@ -580,7 +573,6 @@
 
         .carta-contenido h2 {
             margin-top: 0;
-
             margin-bottom: 20px;
 
             font-size: 30px;
@@ -669,7 +661,6 @@
 
         #visorImagen.abierto {
             display: flex;
-
             opacity: 1;
         }
 
@@ -741,220 +732,133 @@
 
 
         /* =====================================================
-           REPRODUCTOR DE MÚSICA
+           MINI REPRODUCTOR
         ===================================================== */
 
         #reproductor {
-
             position: fixed;
 
-            z-index: 3000;
+            left: 15px;
+            bottom: 15px;
 
-            bottom: 20px;
+            width: 250px;
 
-            left: 50%;
+            padding: 10px 12px;
 
-            transform: translateX(-50%);
+            background: rgba(2, 6, 23, 0.85);
 
-            width: min(92%, 520px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
 
-            padding: 13px 16px;
+            border-radius: 12px;
 
-            border-radius: 18px;
-
-            background: rgba(15, 23, 42, 0.82);
-
-            border: 1px solid rgba(255,255,255,0.12);
-
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(10px);
 
             box-shadow:
-                0 8px 35px rgba(0,0,0,0.35);
+                0 5px 20px rgba(0, 0, 0, 0.35);
 
+            z-index: 3000;
         }
 
 
-        /* =====================================================
-           INFORMACIÓN DE LA CANCIÓN
-        ===================================================== */
+        /* INFORMACIÓN DE LA CANCIÓN */
 
         #infoCancion {
+            text-align: left;
 
-            text-align: center;
+            margin-bottom: 6px;
 
-            margin-bottom: 7px;
-
+            padding-right: 25px;
         }
 
         #nombreCancion {
-
-            font-size: 15px;
+            font-size: 13px;
 
             font-weight: bold;
 
             color: white;
-
         }
 
         #artistaCancion {
-
-            font-size: 12px;
+            font-size: 10px;
 
             color: #cbd5e1;
 
             margin-top: 2px;
-
         }
 
 
-        /* =====================================================
-           BARRA DE PROGRESO
-        ===================================================== */
+        /* BARRA DE PROGRESO */
 
         #barraProgreso {
-
             width: 100%;
 
-            height: 4px;
-
-            appearance: none;
-
-            border-radius: 10px;
-
-            background: rgba(255,255,255,0.2);
+            height: 3px;
 
             cursor: pointer;
 
-            margin: 3px 0 8px;
-
-        }
-
-        #barraProgreso::-webkit-slider-thumb {
-
-            appearance: none;
-
-            width: 11px;
-            height: 11px;
-
-            border-radius: 50%;
-
-            background: white;
-
-            cursor: pointer;
-
-        }
-
-        #barraProgreso::-moz-range-thumb {
-
-            width: 11px;
-            height: 11px;
-
-            border: none;
-
-            border-radius: 50%;
-
-            background: white;
-
-            cursor: pointer;
-
+            margin: 3px 0;
         }
 
 
-        /* =====================================================
-           TIEMPO
-        ===================================================== */
+        /* TIEMPOS */
 
         #tiempoMusica {
-
             display: flex;
 
             justify-content: space-between;
 
-            font-size: 10px;
+            font-size: 9px;
 
             color: #94a3b8;
-
-            margin-bottom: 5px;
-
         }
 
 
-        /* =====================================================
-           CONTROLES
-        ===================================================== */
+        /* CONTROLES */
 
         .controlesMusica {
-
             display: flex;
 
             justify-content: center;
 
             align-items: center;
 
-            gap: 18px;
+            gap: 8px;
 
+            margin-top: 5px;
         }
 
         .controlMusica {
-
             border: none;
 
             background: transparent;
 
             color: white;
 
+            font-size: 14px;
+
             cursor: pointer;
 
-            font-size: 18px;
-
-            width: 38px;
-            height: 38px;
-
-            border-radius: 50%;
+            padding: 3px;
 
             transition: 0.2s;
-
         }
 
         .controlMusica:hover {
-
-            background: rgba(255,255,255,0.12);
-
-            transform: scale(1.1);
-
+            transform: scale(1.15);
         }
 
         #playPause {
-
-            width: 43px;
-            height: 43px;
-
-            background: white;
-
-            color: #172554;
-
-            font-size: 18px;
-
-        }
-
-        #playPause:hover {
-
-            background: #e2e8f0;
-
+            font-size: 17px;
         }
 
 
-        /* =====================================================
-           VOLUMEN
-        ===================================================== */
+        /* BOTÓN DE VOLUMEN */
 
         #volumen {
-
             position: absolute;
 
-            right: 15px;
-
-            bottom: 17px;
+            right: 8px;
+            top: 8px;
 
             border: none;
 
@@ -962,56 +866,9 @@
 
             color: white;
 
+            font-size: 12px;
+
             cursor: pointer;
-
-            font-size: 16px;
-
-        }
-
-
-        /* =====================================================
-           RESPONSIVE
-        ===================================================== */
-
-        @media (max-width: 600px) {
-
-            #entrada h1 {
-                font-size: 30px;
-            }
-
-            #pregunta h1 {
-                font-size: 34px;
-            }
-
-            .luna {
-                width: 150px;
-                height: 150px;
-            }
-
-            #universo h1 {
-                font-size: 26px;
-            }
-
-            #reproductor {
-
-                bottom: 10px;
-
-                padding: 10px 12px;
-
-            }
-
-            .controlesMusica {
-
-                gap: 10px;
-
-            }
-
-            #volumen {
-
-                display: none;
-
-            }
-
         }
 
     </style>
@@ -1048,7 +905,7 @@
 
 
     <!-- =====================================================
-         AUDIO
+         MÚSICA
     ===================================================== -->
 
     <audio id="musica"></audio>
@@ -1088,17 +945,13 @@
         <button
             id="si"
             class="boton">
-
             Skibidi Si
-
         </button>
 
         <button
             id="no"
             class="boton">
-
             Nuh :(
-
         </button>
 
         <div id="respuesta">
@@ -1108,9 +961,7 @@
         <button
             id="next"
             class="boton">
-
             Next !!
-
         </button>
 
     </section>
@@ -1127,6 +978,8 @@
         </h1>
 
 
+        <!-- ESTRELLA 1 -->
+
         <div
             id="estrella1"
             class="estrella-interactiva">
@@ -1135,6 +988,8 @@
 
         </div>
 
+
+        <!-- ESTRELLA 2 -->
 
         <div
             id="estrella2"
@@ -1145,6 +1000,8 @@
         </div>
 
 
+        <!-- ESTRELLA 3 -->
+
         <div
             id="estrella3"
             class="estrella-interactiva">
@@ -1153,6 +1010,8 @@
 
         </div>
 
+
+        <!-- LUNA -->
 
         <div
             id="luna"
@@ -1172,9 +1031,7 @@
          PANTALLAS DE LAS ESTRELLAS
     ===================================================== -->
 
-    <section
-        id="paginaEstrella1"
-        class="pantalla historia">
+    <section id="paginaEstrella1" class="pantalla historia">
 
         <h1>
             Star 1
@@ -1195,9 +1052,7 @@
     </section>
 
 
-    <section
-        id="paginaEstrella2"
-        class="pantalla historia">
+    <section id="paginaEstrella2" class="pantalla historia">
 
         <h1>
             Star 2
@@ -1218,9 +1073,7 @@
     </section>
 
 
-    <section
-        id="paginaEstrella3"
-        class="pantalla historia">
+    <section id="paginaEstrella3" class="pantalla historia">
 
         <h1>
             Star 3
@@ -1295,7 +1148,7 @@
 
 
     <!-- =====================================================
-         REPRODUCTOR DE MÚSICA
+         MINI REPRODUCTOR
     ===================================================== -->
 
     <div id="reproductor">
@@ -1339,31 +1192,20 @@
 
             <button
                 id="anterior"
-                class="controlMusica"
-                title="Anterior">
-
+                class="controlMusica">
                 ⏮
-
             </button>
-
 
             <button
                 id="playPause"
-                class="controlMusica"
-                title="Reproducir">
-
+                class="controlMusica">
                 ▶
-
             </button>
-
 
             <button
                 id="siguiente"
-                class="controlMusica"
-                title="Siguiente">
-
+                class="controlMusica">
                 ⏭
-
             </button>
 
         </div>
@@ -1372,9 +1214,7 @@
         <button
             id="volumen"
             title="Silenciar">
-
             🔊
-
         </button>
 
     </div>
@@ -1416,12 +1256,6 @@
 
         let indiceActual = 0;
 
-        let musicaActiva = false;
-
-
-        /* =====================================================
-           ELEMENTOS
-        ===================================================== */
 
         const musica =
             document.getElementById("musica");
@@ -1463,8 +1297,8 @@
 
             const segundosRestantes =
                 Math.floor(segundos % 60)
-                .toString()
-                .padStart(2, "0");
+                    .toString()
+                    .padStart(2, "0");
 
             return minutos + ":" + segundosRestantes;
 
@@ -1510,9 +1344,8 @@
                 musica.play()
                     .then(function() {
 
-                        musicaActiva = true;
-
-                        playPause.textContent = "❚❚";
+                        playPause.textContent =
+                            "❚❚";
 
                     })
                     .catch(function(error) {
@@ -1526,26 +1359,12 @@
 
             } else {
 
-                playPause.textContent = "▶";
+                playPause.textContent =
+                    "▶";
 
             }
 
         }
-
-
-        /* =====================================================
-           ENTRAR
-        ===================================================== */
-
-        document
-            .getElementById("entrar")
-            .addEventListener("click", function() {
-
-                cargarCancion(0, true);
-
-                mostrarPantalla("pregunta");
-
-            });
 
 
         /* =====================================================
@@ -1569,47 +1388,59 @@
                 document.getElementById(id);
 
 
-            if (nuevaPantalla) {
-
-                nuevaPantalla.classList.add("activa");
-
-            }
+            nuevaPantalla.classList.add("activa");
 
         }
 
 
         /* =====================================================
-           PLAY / PAUSA
+           ENTRAR
         ===================================================== */
 
-        playPause.addEventListener("click", function() {
+        document
+            .getElementById("entrar")
+            .addEventListener("click", function() {
 
-            if (musica.paused) {
+                cargarCancion(0, true);
 
-                musica.play()
-                    .then(function() {
+                mostrarPantalla("pregunta");
 
-                        musicaActiva = true;
-
-                        playPause.textContent = "❚❚";
-
-                    });
-
-            } else {
-
-                musica.pause();
-
-                musicaActiva = false;
-
-                playPause.textContent = "▶";
-
-            }
-
-        });
+            });
 
 
         /* =====================================================
-           SIGUIENTE
+           PLAY / PAUSE
+        ===================================================== */
+
+        playPause.addEventListener(
+            "click",
+            function() {
+
+                if (musica.paused) {
+
+                    musica.play()
+                        .then(function() {
+
+                            playPause.textContent =
+                                "❚❚";
+
+                        });
+
+                } else {
+
+                    musica.pause();
+
+                    playPause.textContent =
+                        "▶";
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           SIGUIENTE CANCIÓN
         ===================================================== */
 
         document
@@ -1618,7 +1449,10 @@
 
                 indiceActual++;
 
-                if (indiceActual >= canciones.length) {
+                if (
+                    indiceActual >=
+                    canciones.length
+                ) {
 
                     indiceActual = 0;
 
@@ -1633,7 +1467,7 @@
 
 
         /* =====================================================
-           ANTERIOR
+           CANCIÓN ANTERIOR
         ===================================================== */
 
         document
@@ -1658,7 +1492,7 @@
 
 
         /* =====================================================
-           CAMBIO AUTOMÁTICO
+           CUANDO TERMINA UNA CANCIÓN
         ===================================================== */
 
         musica.addEventListener(
@@ -1667,7 +1501,10 @@
 
                 indiceActual++;
 
-                if (indiceActual >= canciones.length) {
+                if (
+                    indiceActual >=
+                    canciones.length
+                ) {
 
                     indiceActual = 0;
 
@@ -1700,7 +1537,7 @@
 
 
         /* =====================================================
-           ACTUALIZAR PROGRESO
+           PROGRESO
         ===================================================== */
 
         musica.addEventListener(
@@ -1710,8 +1547,10 @@
                 if (musica.duration) {
 
                     barraProgreso.value =
-                        (musica.currentTime /
-                        musica.duration) * 100;
+                        (
+                            musica.currentTime /
+                            musica.duration
+                        ) * 100;
 
                 }
 
@@ -1726,7 +1565,7 @@
 
 
         /* =====================================================
-           MOVER BARRA
+           MOVERSE EN LA CANCIÓN
         ===================================================== */
 
         barraProgreso.addEventListener(
@@ -1736,8 +1575,10 @@
                 if (musica.duration) {
 
                     musica.currentTime =
-                        (barraProgreso.value / 100)
-                        * musica.duration;
+                        (
+                            barraProgreso.value /
+                            100
+                        ) * musica.duration;
 
                 }
 
@@ -1746,7 +1587,7 @@
 
 
         /* =====================================================
-           VOLUMEN
+           SILENCIAR / ACTIVAR SONIDO
         ===================================================== */
 
         volumen.addEventListener(
@@ -1759,11 +1600,13 @@
 
                 if (musica.muted) {
 
-                    volumen.textContent = "🔇";
+                    volumen.textContent =
+                        "🔇";
 
                 } else {
 
-                    volumen.textContent = "🔊";
+                    volumen.textContent =
+                        "🔊";
 
                 }
 
@@ -1781,22 +1624,26 @@
 
                 document
                     .getElementById("respuesta")
-                    .style.display = "block";
+                    .style.display =
+                    "block";
 
 
                 document
                     .getElementById("si")
-                    .style.display = "none";
+                    .style.display =
+                    "none";
 
 
                 document
                     .getElementById("no")
-                    .style.display = "none";
+                    .style.display =
+                    "none";
 
 
                 document
                     .getElementById("next")
-                    .style.display = "block";
+                    .style.display =
+                    "block";
 
             });
 
@@ -1807,38 +1654,41 @@
 
         document
             .getElementById("no")
-            .addEventListener("mouseover", function() {
+            .addEventListener(
+                "mouseover",
+                function() {
 
-                const ancho =
-                    window.innerWidth -
-                    this.offsetWidth;
-
-
-                const alto =
-                    window.innerHeight -
-                    this.offsetHeight;
+                    const ancho =
+                        window.innerWidth -
+                        this.offsetWidth;
 
 
-                const nuevaX =
-                    Math.random() * ancho;
+                    const alto =
+                        window.innerHeight -
+                        this.offsetHeight;
 
 
-                const nuevaY =
-                    Math.random() * alto;
+                    const nuevaX =
+                        Math.random() * ancho;
 
 
-                this.style.position =
-                    "fixed";
+                    const nuevaY =
+                        Math.random() * alto;
 
 
-                this.style.left =
-                    nuevaX + "px";
+                    this.style.position =
+                        "fixed";
 
 
-                this.style.top =
-                    nuevaY + "px";
+                    this.style.left =
+                        nuevaX + "px";
 
-            });
+
+                    this.style.top =
+                        nuevaY + "px";
+
+                }
+            );
 
 
         /* =====================================================
@@ -1847,11 +1697,16 @@
 
         document
             .getElementById("next")
-            .addEventListener("click", function() {
+            .addEventListener(
+                "click",
+                function() {
 
-                mostrarPantalla("universo");
+                    mostrarPantalla(
+                        "universo"
+                    );
 
-            });
+                }
+            );
 
 
         /* =====================================================
@@ -1860,13 +1715,16 @@
 
         document
             .getElementById("estrella1")
-            .addEventListener("click", function() {
+            .addEventListener(
+                "click",
+                function() {
 
-                mostrarPantalla(
-                    "paginaEstrella1"
-                );
+                    mostrarPantalla(
+                        "paginaEstrella1"
+                    );
 
-            });
+                }
+            );
 
 
         /* =====================================================
@@ -1875,13 +1733,16 @@
 
         document
             .getElementById("estrella2")
-            .addEventListener("click", function() {
+            .addEventListener(
+                "click",
+                function() {
 
-                mostrarPantalla(
-                    "paginaEstrella2"
-                );
+                    mostrarPantalla(
+                        "paginaEstrella2"
+                    );
 
-            });
+                }
+            );
 
 
         /* =====================================================
@@ -1890,108 +1751,138 @@
 
         document
             .getElementById("estrella3")
-            .addEventListener("click", function() {
+            .addEventListener(
+                "click",
+                function() {
 
-                mostrarPantalla(
-                    "paginaEstrella3"
-                );
+                    mostrarPantalla(
+                        "paginaEstrella3"
+                    );
 
-            });
+                }
+            );
 
 
         /* =====================================================
-           LUNA → CARTA
+           LUNA → ABRIR CARTA
         ===================================================== */
 
         document
             .getElementById("luna")
-            .addEventListener("click", function() {
+            .addEventListener(
+                "click",
+                function() {
 
-                document
-                    .getElementById("cartaLuna")
-                    .classList.add("abierta");
+                    document
+                        .getElementById("cartaLuna")
+                        .classList.add("abierta");
 
-            });
+                }
+            );
 
 
         /* =====================================================
-           CERRAR CARTA
+           CERRAR CARTA CON X
         ===================================================== */
 
         document
             .getElementById("cerrarCarta")
-            .addEventListener("click", function() {
+            .addEventListener(
+                "click",
+                function() {
 
-                document
-                    .getElementById("cartaLuna")
-                    .classList.remove("abierta");
+                    document
+                        .getElementById("cartaLuna")
+                        .classList.remove(
+                            "abierta"
+                        );
 
-            });
+                }
+            );
 
 
         /* =====================================================
-           CLICK FUERA DE LA CARTA
+           CERRAR CARTA AL HACER CLICK FUERA
         ===================================================== */
 
         document
             .getElementById("cartaLuna")
-            .addEventListener("click", function(event) {
+            .addEventListener(
+                "click",
+                function(event) {
 
-                if (event.target === this) {
+                    if (event.target === this) {
 
-                    this.classList.remove("abierta");
+                        this.classList.remove(
+                            "abierta"
+                        );
+
+                    }
 
                 }
-
-            });
+            );
 
 
         /* =====================================================
-           ABRIR MOON.PNG
+           ABRIR MOON.PNG EN GRANDE
         ===================================================== */
 
         document
             .getElementById("imagenMoon")
-            .addEventListener("click", function() {
+            .addEventListener(
+                "click",
+                function() {
 
-                document
-                    .getElementById("visorImagen")
-                    .classList.add("abierto");
+                    document
+                        .getElementById("visorImagen")
+                        .classList.add(
+                            "abierto"
+                        );
 
-            });
+                }
+            );
 
 
         /* =====================================================
-           CERRAR IMAGEN
+           CERRAR IMAGEN GRANDE CON X
         ===================================================== */
 
         document
             .getElementById("cerrarImagen")
-            .addEventListener("click", function() {
+            .addEventListener(
+                "click",
+                function() {
 
-                document
-                    .getElementById("visorImagen")
-                    .classList.remove("abierto");
+                    document
+                        .getElementById("visorImagen")
+                        .classList.remove(
+                            "abierto"
+                        );
 
-            });
+                }
+            );
 
 
         /* =====================================================
-           CLICK FUERA DE IMAGEN
+           CERRAR IMAGEN GRANDE AL HACER CLICK AFUERA
         ===================================================== */
 
         document
             .getElementById("visorImagen")
-            .addEventListener("click", function(event) {
+            .addEventListener(
+                "click",
+                function(event) {
 
-                if (event.target === this) {
+                    if (event.target === this) {
 
-                    this.classList.remove("abierto");
+                        this.classList.remove(
+                            "abierto"
+                        );
+
+                    }
 
                 }
-
-            });
-
+            );
 
     </script>
 
