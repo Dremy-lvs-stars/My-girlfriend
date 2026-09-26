@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -376,7 +377,9 @@
         }
 
 
-        /* Cráteres */
+        /* =====================================================
+           CRÁTERES
+        ===================================================== */
 
         .crater {
 
@@ -543,6 +546,181 @@
             background: white;
 
             color: #172554;
+
+        }
+
+
+        /* =====================================================
+           CARTA DE LA LUNA
+        ===================================================== */
+
+        #cartaLuna {
+
+            position: fixed;
+
+            z-index: 1000;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            display: none;
+
+            justify-content: center;
+            align-items: center;
+
+            background: rgba(2, 6, 23, 0.55);
+
+            backdrop-filter: blur(5px);
+
+            opacity: 0;
+
+            transition: opacity 0.3s;
+
+        }
+
+        #cartaLuna.abierta {
+
+            display: flex;
+
+            opacity: 1;
+
+        }
+
+
+        /* Papel de la carta */
+
+        .carta-contenido {
+
+            position: relative;
+
+            width: min(85%, 520px);
+
+            max-height: 85vh;
+
+            overflow-y: auto;
+
+            padding: 45px 35px 35px;
+
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #fffdf7,
+                    #f8f0dc
+                );
+
+            color: #172554;
+
+            box-shadow:
+                0 0 25px rgba(255,255,255,0.35),
+                0 0 70px rgba(147,197,253,0.4);
+
+            transform: scale(0.85) translateY(20px);
+
+            transition: transform 0.3s;
+
+        }
+
+        #cartaLuna.abierta .carta-contenido {
+
+            transform: scale(1) translateY(0);
+
+        }
+
+
+        /* Botón X */
+
+        #cerrarCarta {
+
+            position: absolute;
+
+            top: 12px;
+            right: 15px;
+
+            width: 35px;
+            height: 35px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: rgba(23, 37, 84, 0.1);
+
+            color: #172554;
+
+            font-size: 22px;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+
+        }
+
+        #cerrarCarta:hover {
+
+            background: #172554;
+
+            color: white;
+
+            transform: rotate(90deg);
+
+        }
+
+
+        /* Título */
+
+        .carta-contenido h2 {
+
+            margin-top: 0;
+
+            margin-bottom: 20px;
+
+            font-size: 30px;
+
+            text-align: center;
+
+            color: #172554;
+
+        }
+
+
+        /* Foto */
+
+        .foto-carta {
+
+            display: block;
+
+            width: 100%;
+
+            max-height: 350px;
+
+            object-fit: cover;
+
+            border-radius: 12px;
+
+            margin: 0 auto 20px;
+
+            box-shadow:
+                0 5px 20px rgba(15, 23, 42, 0.25);
+
+        }
+
+
+        /* Texto de la carta */
+
+        .texto-carta {
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+            text-align: center;
+
+            color: #334155;
 
         }
 
@@ -738,7 +916,7 @@
 
 
     <!-- =====================================================
-         PANTALLA ESTRELLA 1
+         PANTALLAS DE LAS ESTRELLAS
     ===================================================== -->
 
     <section id="paginaEstrella1" class="pantalla historia">
@@ -762,10 +940,6 @@
     </section>
 
 
-    <!-- =====================================================
-         PANTALLA ESTRELLA 2
-    ===================================================== -->
-
     <section id="paginaEstrella2" class="pantalla historia">
 
         <h1>
@@ -786,10 +960,6 @@
 
     </section>
 
-
-    <!-- =====================================================
-         PANTALLA ESTRELLA 3
-    ===================================================== -->
 
     <section id="paginaEstrella3" class="pantalla historia">
 
@@ -813,29 +983,60 @@
 
 
     <!-- =====================================================
-         PANTALLA DE LA LUNA
+         CARTA QUE APARECE AL TOCAR LA LUNA
     ===================================================== -->
 
-    <section id="paginaLuna" class="pantalla historia">
+    <div id="cartaLuna">
 
-        <h1>
-            The Moon
-        </h1>
+        <div class="carta-contenido">
 
-        <p>
-            Si llegaste hasta aquí, significa que encontraste
-            un pequeño pedacito de nuestro universo.
-        </p>
+            <!-- BOTÓN PARA CERRAR -->
 
-        <button
-            class="boton volver"
-            onclick="mostrarPantalla('universo')">
+            <button id="cerrarCarta">
+                ×
+            </button>
 
-            Volver
 
-        </button>
+            <!-- TÍTULO DE LA CARTA -->
 
-    </section>
+            <h2>
+                Para ti ♡
+            </h2>
+
+
+            <!-- =================================================
+                 FOTO
+
+                 CAMBIA "mi-foto.jpg" POR EL NOMBRE
+                 DE TU FOTO.
+                 EJEMPLO:
+                 <img src="foto-kass.jpg">
+            ================================================== -->
+
+            <img
+                src="mi-foto.jpg"
+                alt="Una foto especial"
+                class="foto-carta">
+
+
+            <!-- TEXTO -->
+
+            <p class="texto-carta">
+
+                Quería dejarte algo especial escondido
+                en nuestra pequeña luna.
+
+                <br><br>
+
+                Esta foto es solo un pequeño recuerdo
+                de todo lo bonito que significa tenerte
+                en mi vida. ♡
+
+            </p>
+
+        </div>
+
+    </div>
 
 
     <!-- =====================================================
@@ -898,11 +1099,6 @@
             .getElementById("entrar")
             .addEventListener("click", function() {
 
-
-                /*
-                 * Este clic permite al navegador
-                 * reproducir el audio.
-                 */
 
                 musica.play().catch(function(error) {
 
@@ -1041,14 +1237,48 @@
 
 
         /* =====================================================
-           LUNA
+           LUNA → ABRIR CARTA
         ===================================================== */
 
         document
             .getElementById("luna")
             .addEventListener("click", function() {
 
-                mostrarPantalla("paginaLuna");
+                document
+                    .getElementById("cartaLuna")
+                    .classList.add("abierta");
+
+            });
+
+
+        /* =====================================================
+           CERRAR CARTA CON X
+        ===================================================== */
+
+        document
+            .getElementById("cerrarCarta")
+            .addEventListener("click", function() {
+
+                document
+                    .getElementById("cartaLuna")
+                    .classList.remove("abierta");
+
+            });
+
+
+        /* =====================================================
+           CERRAR CARTA AL HACER CLICK FUERA
+        ===================================================== */
+
+        document
+            .getElementById("cartaLuna")
+            .addEventListener("click", function(event) {
+
+                if (event.target === this) {
+
+                    this.classList.remove("abierta");
+
+                }
 
             });
 
@@ -1082,7 +1312,9 @@
 
             });
 
+
     </script>
 
 </body>
 </html>
+```
