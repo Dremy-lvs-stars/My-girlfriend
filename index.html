@@ -38,23 +38,16 @@
 
         .estrella-fondo {
             position: fixed;
-
             width: 3px;
             height: 3px;
-
             background: white;
-
             border-radius: 50%;
-
             box-shadow: 0 0 8px white;
-
             pointer-events: none;
-
             animation: parpadear 2s infinite alternate;
         }
 
         @keyframes parpadear {
-
             from {
                 opacity: 0.25;
             }
@@ -62,7 +55,6 @@
             to {
                 opacity: 1;
             }
-
         }
 
         .e1  { top: 10%; left: 15%; animation-delay: 0.2s; }
@@ -88,7 +80,7 @@
 
 
         /* =====================================================
-           MÚSICA
+           AUDIO
         ===================================================== */
 
         #musica {
@@ -101,7 +93,6 @@
         ===================================================== */
 
         .pantalla {
-
             position: absolute;
 
             width: 100%;
@@ -116,7 +107,6 @@
             align-items: center;
 
             text-align: center;
-
         }
 
         .pantalla.activa {
@@ -129,7 +119,6 @@
         ===================================================== */
 
         #entrada {
-
             flex-direction: column;
 
             background:
@@ -139,35 +128,28 @@
                     #0f172a 45%,
                     #020617 100%
                 );
-
         }
 
         #entrada h1 {
-
             font-size: 38px;
-
             margin-bottom: 30px;
 
             text-shadow:
                 0 0 10px white,
                 0 0 20px #93c5fd,
                 0 0 35px #3b82f6;
-
         }
 
         #entrar {
-
             font-size: 30px;
 
             width: 80px;
             height: 80px;
 
             border: none;
-
             border-radius: 50%;
 
             background: #ff69b4;
-
             color: white;
 
             cursor: pointer;
@@ -178,13 +160,10 @@
                 0 0 45px #ff69b4;
 
             transition: 0.25s;
-
         }
 
         #entrar:hover {
-
             transform: scale(1.15);
-
         }
 
 
@@ -193,40 +172,30 @@
         ===================================================== */
 
         #pregunta {
-
             flex-direction: column;
-
         }
 
         #pregunta h1 {
-
             font-size: 45px;
-
             margin: 0;
 
             text-shadow:
                 0 0 10px white,
                 0 0 20px #93c5fd,
                 0 0 35px #3b82f6;
-
         }
 
         .carita {
-
             font-size: 30px;
-
             margin: 20px;
-
         }
 
         .boton {
-
             font-size: 20px;
 
             padding: 12px 28px;
 
             border: none;
-
             border-radius: 12px;
 
             cursor: pointer;
@@ -234,65 +203,49 @@
             transition:
                 transform 0.2s,
                 box-shadow 0.2s;
-
         }
 
         .boton:hover {
-
             transform: scale(1.08);
-
         }
 
         #si {
-
             background: #ff69b4;
-
             color: white;
 
             box-shadow:
                 0 0 10px #ff69b4,
                 0 0 25px #ff69b4;
-
         }
 
         #no {
-
             background: white;
-
             color: #222;
 
             position: relative;
-
             margin-top: 10px;
-
         }
 
         #respuesta {
-
             display: none;
 
             font-size: 35px;
-
             margin: 10px;
 
             text-shadow:
                 0 0 10px white,
                 0 0 20px #f9a8d4;
-
         }
 
         #next {
-
             display: none;
 
             background: #60a5fa;
-
             color: white;
 
             box-shadow:
                 0 0 10px #60a5fa,
                 0 0 25px #60a5fa;
-
         }
 
 
@@ -301,7 +254,6 @@
         ===================================================== */
 
         #universo {
-
             flex-direction: column;
 
             background:
@@ -311,11 +263,9 @@
                     #0f172a 45%,
                     #020617 100%
                 );
-
         }
 
         #universo h1 {
-
             position: absolute;
 
             top: 35px;
@@ -327,7 +277,6 @@
             text-shadow:
                 0 0 10px white,
                 0 0 20px #60a5fa;
-
         }
 
 
@@ -336,7 +285,6 @@
         ===================================================== */
 
         .luna {
-
             position: absolute;
 
             width: 190px;
@@ -361,18 +309,15 @@
             cursor: pointer;
 
             transition: 0.3s;
-
         }
 
         .luna:hover {
-
             transform: scale(1.08);
 
             box-shadow:
                 0 0 30px white,
                 0 0 70px #93c5fd,
                 0 0 120px rgba(147, 197, 253, 0.7);
-
         }
 
 
@@ -381,53 +326,43 @@
         ===================================================== */
 
         .crater {
-
             position: absolute;
 
             border-radius: 50%;
 
             background: rgba(100, 116, 139, 0.35);
-
         }
 
         .c1 {
-
             width: 35px;
             height: 35px;
 
             top: 35px;
             left: 40px;
-
         }
 
         .c2 {
-
             width: 25px;
             height: 25px;
 
             top: 100px;
             left: 110px;
-
         }
 
         .c3 {
-
             width: 18px;
             height: 18px;
 
             top: 125px;
             left: 55px;
-
         }
 
         .c4 {
-
             width: 30px;
             height: 30px;
 
             top: 65px;
             left: 125px;
-
         }
 
 
@@ -436,7 +371,6 @@
         ===================================================== */
 
         .estrella-interactiva {
-
             position: absolute;
 
             width: 35px;
@@ -447,7 +381,6 @@
             color: white;
 
             font-size: 35px;
-
             line-height: 35px;
 
             text-shadow:
@@ -458,22 +391,18 @@
 
             animation:
                 brillo 2s infinite alternate;
-
         }
 
         .estrella-interactiva:hover {
-
             transform: scale(1.4);
 
             text-shadow:
                 0 0 10px white,
                 0 0 25px white,
                 0 0 40px #60a5fa;
-
         }
 
         @keyframes brillo {
-
             from {
                 opacity: 0.6;
             }
@@ -481,28 +410,21 @@
             to {
                 opacity: 1;
             }
-
         }
 
         #estrella1 {
-
             top: 28%;
             left: 25%;
-
         }
 
         #estrella2 {
-
             top: 62%;
             left: 18%;
-
         }
 
         #estrella3 {
-
             top: 35%;
             right: 20%;
-
         }
 
 
@@ -511,41 +433,32 @@
         ===================================================== */
 
         .historia {
-
             flex-direction: column;
-
             padding: 30px;
-
         }
 
         .historia h1 {
-
             font-size: 40px;
 
             text-shadow:
                 0 0 10px white,
                 0 0 25px #60a5fa;
-
         }
 
         .historia p {
-
             max-width: 600px;
 
             font-size: 20px;
 
             line-height: 1.6;
-
         }
 
         .volver {
-
             margin-top: 25px;
 
             background: white;
 
             color: #172554;
-
         }
 
 
@@ -554,7 +467,6 @@
         ===================================================== */
 
         #cartaLuna {
-
             position: fixed;
 
             z-index: 1000;
@@ -577,15 +489,11 @@
             opacity: 0;
 
             transition: opacity 0.3s;
-
         }
 
         #cartaLuna.abierta {
-
             display: flex;
-
             opacity: 1;
-
         }
 
 
@@ -594,7 +502,6 @@
         ===================================================== */
 
         .carta-contenido {
-
             position: relative;
 
             width: min(85%, 520px);
@@ -623,13 +530,10 @@
             transform: scale(0.85) translateY(20px);
 
             transition: transform 0.3s;
-
         }
 
         #cartaLuna.abierta .carta-contenido {
-
             transform: scale(1) translateY(0);
-
         }
 
 
@@ -638,7 +542,6 @@
         ===================================================== */
 
         #cerrarCarta {
-
             position: absolute;
 
             top: 12px;
@@ -660,17 +563,14 @@
             cursor: pointer;
 
             transition: 0.2s;
-
         }
 
         #cerrarCarta:hover {
-
             background: #172554;
 
             color: white;
 
             transform: rotate(90deg);
-
         }
 
 
@@ -679,7 +579,6 @@
         ===================================================== */
 
         .carta-contenido h2 {
-
             margin-top: 0;
 
             margin-bottom: 20px;
@@ -689,7 +588,6 @@
             text-align: center;
 
             color: #172554;
-
         }
 
 
@@ -698,7 +596,6 @@
         ===================================================== */
 
         .foto-carta {
-
             display: block;
 
             width: 100%;
@@ -717,13 +614,10 @@
             cursor: pointer;
 
             transition: 0.25s;
-
         }
 
         .foto-carta:hover {
-
             transform: scale(1.02);
-
         }
 
 
@@ -732,7 +626,6 @@
         ===================================================== */
 
         .texto-carta {
-
             font-size: 18px;
 
             line-height: 1.7;
@@ -740,7 +633,6 @@
             text-align: center;
 
             color: #334155;
-
         }
 
 
@@ -749,7 +641,6 @@
         ===================================================== */
 
         #visorImagen {
-
             position: fixed;
 
             z-index: 2000;
@@ -774,15 +665,12 @@
             opacity: 0;
 
             transition: opacity 0.3s;
-
         }
 
         #visorImagen.abierto {
-
             display: flex;
 
             opacity: 1;
-
         }
 
 
@@ -791,7 +679,6 @@
         ===================================================== */
 
         #imagenGrande {
-
             max-width: 90%;
 
             max-height: 85%;
@@ -807,13 +694,10 @@
             transform: scale(0.85);
 
             transition: transform 0.3s;
-
         }
 
         #visorImagen.abierto #imagenGrande {
-
             transform: scale(1);
-
         }
 
 
@@ -822,7 +706,6 @@
         ===================================================== */
 
         #cerrarImagen {
-
             position: absolute;
 
             top: 20px;
@@ -846,49 +729,288 @@
             z-index: 2001;
 
             transition: 0.2s;
-
         }
 
         #cerrarImagen:hover {
-
             background: white;
 
             color: #172554;
 
             transform: rotate(90deg);
+        }
+
+
+        /* =====================================================
+           REPRODUCTOR DE MÚSICA
+        ===================================================== */
+
+        #reproductor {
+
+            position: fixed;
+
+            z-index: 3000;
+
+            bottom: 20px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: min(92%, 520px);
+
+            padding: 13px 16px;
+
+            border-radius: 18px;
+
+            background: rgba(15, 23, 42, 0.82);
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            backdrop-filter: blur(12px);
+
+            box-shadow:
+                0 8px 35px rgba(0,0,0,0.35);
 
         }
 
 
         /* =====================================================
-           BOTÓN DE MÚSICA
+           INFORMACIÓN DE LA CANCIÓN
         ===================================================== */
 
-        #controlMusica {
+        #infoCancion {
 
-            position: fixed;
+            text-align: center;
 
-            z-index: 999;
+            margin-bottom: 7px;
 
-            right: 20px;
-            bottom: 20px;
+        }
 
-            width: 45px;
-            height: 45px;
+        #nombreCancion {
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            color: white;
+
+        }
+
+        #artistaCancion {
+
+            font-size: 12px;
+
+            color: #cbd5e1;
+
+            margin-top: 2px;
+
+        }
+
+
+        /* =====================================================
+           BARRA DE PROGRESO
+        ===================================================== */
+
+        #barraProgreso {
+
+            width: 100%;
+
+            height: 4px;
+
+            appearance: none;
+
+            border-radius: 10px;
+
+            background: rgba(255,255,255,0.2);
+
+            cursor: pointer;
+
+            margin: 3px 0 8px;
+
+        }
+
+        #barraProgreso::-webkit-slider-thumb {
+
+            appearance: none;
+
+            width: 11px;
+            height: 11px;
+
+            border-radius: 50%;
+
+            background: white;
+
+            cursor: pointer;
+
+        }
+
+        #barraProgreso::-moz-range-thumb {
+
+            width: 11px;
+            height: 11px;
 
             border: none;
 
             border-radius: 50%;
 
-            background: rgba(255,255,255,0.15);
+            background: white;
+
+            cursor: pointer;
+
+        }
+
+
+        /* =====================================================
+           TIEMPO
+        ===================================================== */
+
+        #tiempoMusica {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            font-size: 10px;
+
+            color: #94a3b8;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        /* =====================================================
+           CONTROLES
+        ===================================================== */
+
+        .controlesMusica {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 18px;
+
+        }
+
+        .controlMusica {
+
+            border: none;
+
+            background: transparent;
 
             color: white;
 
             cursor: pointer;
 
-            backdrop-filter: blur(5px);
+            font-size: 18px;
 
-            font-size: 20px;
+            width: 38px;
+            height: 38px;
+
+            border-radius: 50%;
+
+            transition: 0.2s;
+
+        }
+
+        .controlMusica:hover {
+
+            background: rgba(255,255,255,0.12);
+
+            transform: scale(1.1);
+
+        }
+
+        #playPause {
+
+            width: 43px;
+            height: 43px;
+
+            background: white;
+
+            color: #172554;
+
+            font-size: 18px;
+
+        }
+
+        #playPause:hover {
+
+            background: #e2e8f0;
+
+        }
+
+
+        /* =====================================================
+           VOLUMEN
+        ===================================================== */
+
+        #volumen {
+
+            position: absolute;
+
+            right: 15px;
+
+            bottom: 17px;
+
+            border: none;
+
+            background: transparent;
+
+            color: white;
+
+            cursor: pointer;
+
+            font-size: 16px;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 600px) {
+
+            #entrada h1 {
+                font-size: 30px;
+            }
+
+            #pregunta h1 {
+                font-size: 34px;
+            }
+
+            .luna {
+                width: 150px;
+                height: 150px;
+            }
+
+            #universo h1 {
+                font-size: 26px;
+            }
+
+            #reproductor {
+
+                bottom: 10px;
+
+                padding: 10px 12px;
+
+            }
+
+            .controlesMusica {
+
+                gap: 10px;
+
+            }
+
+            #volumen {
+
+                display: none;
+
+            }
 
         }
 
@@ -926,12 +1048,10 @@
 
 
     <!-- =====================================================
-         MÚSICA
+         AUDIO
     ===================================================== -->
 
-    <audio id="musica" loop>
-        <source src="Amtrak.mp3" type="audio/mpeg">
-    </audio>
+    <audio id="musica"></audio>
 
 
     <!-- =====================================================
@@ -968,13 +1088,17 @@
         <button
             id="si"
             class="boton">
+
             Skibidi Si
+
         </button>
 
         <button
             id="no"
             class="boton">
+
             Nuh :(
+
         </button>
 
         <div id="respuesta">
@@ -984,7 +1108,9 @@
         <button
             id="next"
             class="boton">
+
             Next !!
+
         </button>
 
     </section>
@@ -1001,8 +1127,6 @@
         </h1>
 
 
-        <!-- ESTRELLA 1 -->
-
         <div
             id="estrella1"
             class="estrella-interactiva">
@@ -1011,8 +1135,6 @@
 
         </div>
 
-
-        <!-- ESTRELLA 2 -->
 
         <div
             id="estrella2"
@@ -1023,8 +1145,6 @@
         </div>
 
 
-        <!-- ESTRELLA 3 -->
-
         <div
             id="estrella3"
             class="estrella-interactiva">
@@ -1033,8 +1153,6 @@
 
         </div>
 
-
-        <!-- LUNA -->
 
         <div
             id="luna"
@@ -1054,7 +1172,9 @@
          PANTALLAS DE LAS ESTRELLAS
     ===================================================== -->
 
-    <section id="paginaEstrella1" class="pantalla historia">
+    <section
+        id="paginaEstrella1"
+        class="pantalla historia">
 
         <h1>
             Star 1
@@ -1075,7 +1195,9 @@
     </section>
 
 
-    <section id="paginaEstrella2" class="pantalla historia">
+    <section
+        id="paginaEstrella2"
+        class="pantalla historia">
 
         <h1>
             Star 2
@@ -1096,7 +1218,9 @@
     </section>
 
 
-    <section id="paginaEstrella3" class="pantalla historia">
+    <section
+        id="paginaEstrella3"
+        class="pantalla historia">
 
         <h1>
             Star 3
@@ -1125,26 +1249,13 @@
 
         <div class="carta-contenido">
 
-            <!-- BOTÓN X -->
-
             <button id="cerrarCarta">
                 ×
             </button>
 
-
-            <!-- TÍTULO -->
-
             <h2>
-               Me ... a moon ♡
+                Me ... a moon ♡
             </h2>
-
-
-            <!-- =================================================
-                 IMAGEN MOON.PNG
-
-                 IMPORTANTE:
-                 Moon.png debe estar junto a index.html
-            ================================================== -->
 
             <img
                 src="Moon.png"
@@ -1152,16 +1263,11 @@
                 class="foto-carta"
                 id="imagenMoon">
 
-
-            <!-- TEXTO -->
-
             <p class="texto-carta">
 
                 Un poco de mi.....
 
                 <br><br>
-
-            
 
             </p>
 
@@ -1189,12 +1295,89 @@
 
 
     <!-- =====================================================
-         CONTROL DE MÚSICA
+         REPRODUCTOR DE MÚSICA
     ===================================================== -->
 
-    <button id="controlMusica">
-        🔊
-    </button>
+    <div id="reproductor">
+
+        <div id="infoCancion">
+
+            <div id="nombreCancion">
+                Amtrak
+            </div>
+
+            <div id="artistaCancion">
+                Los Retros
+            </div>
+
+        </div>
+
+
+        <input
+            type="range"
+            id="barraProgreso"
+            min="0"
+            max="100"
+            value="0"
+            step="0.1">
+
+
+        <div id="tiempoMusica">
+
+            <span id="tiempoActual">
+                0:00
+            </span>
+
+            <span id="duracion">
+                0:00
+            </span>
+
+        </div>
+
+
+        <div class="controlesMusica">
+
+            <button
+                id="anterior"
+                class="controlMusica"
+                title="Anterior">
+
+                ⏮
+
+            </button>
+
+
+            <button
+                id="playPause"
+                class="controlMusica"
+                title="Reproducir">
+
+                ▶
+
+            </button>
+
+
+            <button
+                id="siguiente"
+                class="controlMusica"
+                title="Siguiente">
+
+                ⏭
+
+            </button>
+
+        </div>
+
+
+        <button
+            id="volumen"
+            title="Silenciar">
+
+            🔊
+
+        </button>
+
+    </div>
 
 
     <!-- =====================================================
@@ -1205,13 +1388,164 @@
 
 
         /* =====================================================
-           MÚSICA
+           PLAYLIST
+        ===================================================== */
+
+        const canciones = [
+
+            {
+                archivo: "Amtrak.mp3",
+                nombre: "Amtrak",
+                artista: "Los Retros"
+            },
+
+            {
+                archivo: "Valentine.mp3",
+                nombre: "Valentine",
+                artista: "Laufey"
+            },
+
+            {
+                archivo: "Harvey.mp3",
+                nombre: "Harvey",
+                artista: "Hers"
+            }
+
+        ];
+
+
+        let indiceActual = 0;
+
+        let musicaActiva = false;
+
+
+        /* =====================================================
+           ELEMENTOS
         ===================================================== */
 
         const musica =
             document.getElementById("musica");
 
-        let musicaActiva = true;
+        const nombreCancion =
+            document.getElementById("nombreCancion");
+
+        const artistaCancion =
+            document.getElementById("artistaCancion");
+
+        const playPause =
+            document.getElementById("playPause");
+
+        const barraProgreso =
+            document.getElementById("barraProgreso");
+
+        const tiempoActual =
+            document.getElementById("tiempoActual");
+
+        const duracion =
+            document.getElementById("duracion");
+
+        const volumen =
+            document.getElementById("volumen");
+
+
+        /* =====================================================
+           FORMATO DE TIEMPO
+        ===================================================== */
+
+        function formatoTiempo(segundos) {
+
+            if (!isFinite(segundos)) {
+                return "0:00";
+            }
+
+            const minutos =
+                Math.floor(segundos / 60);
+
+            const segundosRestantes =
+                Math.floor(segundos % 60)
+                .toString()
+                .padStart(2, "0");
+
+            return minutos + ":" + segundosRestantes;
+
+        }
+
+
+        /* =====================================================
+           CARGAR CANCIÓN
+        ===================================================== */
+
+        function cargarCancion(indice, reproducir = false) {
+
+            indiceActual = indice;
+
+            const cancion =
+                canciones[indiceActual];
+
+
+            musica.src =
+                cancion.archivo;
+
+            musica.load();
+
+
+            nombreCancion.textContent =
+                cancion.nombre;
+
+            artistaCancion.textContent =
+                cancion.artista;
+
+
+            barraProgreso.value = 0;
+
+            tiempoActual.textContent =
+                "0:00";
+
+            duracion.textContent =
+                "0:00";
+
+
+            if (reproducir) {
+
+                musica.play()
+                    .then(function() {
+
+                        musicaActiva = true;
+
+                        playPause.textContent = "❚❚";
+
+                    })
+                    .catch(function(error) {
+
+                        console.log(
+                            "No se pudo reproducir:",
+                            error
+                        );
+
+                    });
+
+            } else {
+
+                playPause.textContent = "▶";
+
+            }
+
+        }
+
+
+        /* =====================================================
+           ENTRAR
+        ===================================================== */
+
+        document
+            .getElementById("entrar")
+            .addEventListener("click", function() {
+
+                cargarCancion(0, true);
+
+                mostrarPantalla("pregunta");
+
+            });
 
 
         /* =====================================================
@@ -1235,33 +1569,206 @@
                 document.getElementById(id);
 
 
-            nuevaPantalla.classList.add("activa");
+            if (nuevaPantalla) {
+
+                nuevaPantalla.classList.add("activa");
+
+            }
 
         }
 
 
         /* =====================================================
-           ENTRAR
+           PLAY / PAUSA
+        ===================================================== */
+
+        playPause.addEventListener("click", function() {
+
+            if (musica.paused) {
+
+                musica.play()
+                    .then(function() {
+
+                        musicaActiva = true;
+
+                        playPause.textContent = "❚❚";
+
+                    });
+
+            } else {
+
+                musica.pause();
+
+                musicaActiva = false;
+
+                playPause.textContent = "▶";
+
+            }
+
+        });
+
+
+        /* =====================================================
+           SIGUIENTE
         ===================================================== */
 
         document
-            .getElementById("entrar")
+            .getElementById("siguiente")
             .addEventListener("click", function() {
 
+                indiceActual++;
 
-                musica.play().catch(function(error) {
+                if (indiceActual >= canciones.length) {
 
-                    console.log(
-                        "No se pudo reproducir:",
-                        error
-                    );
+                    indiceActual = 0;
 
-                });
+                }
 
-
-                mostrarPantalla("pregunta");
+                cargarCancion(
+                    indiceActual,
+                    true
+                );
 
             });
+
+
+        /* =====================================================
+           ANTERIOR
+        ===================================================== */
+
+        document
+            .getElementById("anterior")
+            .addEventListener("click", function() {
+
+                indiceActual--;
+
+                if (indiceActual < 0) {
+
+                    indiceActual =
+                        canciones.length - 1;
+
+                }
+
+                cargarCancion(
+                    indiceActual,
+                    true
+                );
+
+            });
+
+
+        /* =====================================================
+           CAMBIO AUTOMÁTICO
+        ===================================================== */
+
+        musica.addEventListener(
+            "ended",
+            function() {
+
+                indiceActual++;
+
+                if (indiceActual >= canciones.length) {
+
+                    indiceActual = 0;
+
+                }
+
+                cargarCancion(
+                    indiceActual,
+                    true
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           DURACIÓN
+        ===================================================== */
+
+        musica.addEventListener(
+            "loadedmetadata",
+            function() {
+
+                duracion.textContent =
+                    formatoTiempo(
+                        musica.duration
+                    );
+
+            }
+        );
+
+
+        /* =====================================================
+           ACTUALIZAR PROGRESO
+        ===================================================== */
+
+        musica.addEventListener(
+            "timeupdate",
+            function() {
+
+                if (musica.duration) {
+
+                    barraProgreso.value =
+                        (musica.currentTime /
+                        musica.duration) * 100;
+
+                }
+
+
+                tiempoActual.textContent =
+                    formatoTiempo(
+                        musica.currentTime
+                    );
+
+            }
+        );
+
+
+        /* =====================================================
+           MOVER BARRA
+        ===================================================== */
+
+        barraProgreso.addEventListener(
+            "input",
+            function() {
+
+                if (musica.duration) {
+
+                    musica.currentTime =
+                        (barraProgreso.value / 100)
+                        * musica.duration;
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           VOLUMEN
+        ===================================================== */
+
+        volumen.addEventListener(
+            "click",
+            function() {
+
+                musica.muted =
+                    !musica.muted;
+
+
+                if (musica.muted) {
+
+                    volumen.textContent = "🔇";
+
+                } else {
+
+                    volumen.textContent = "🔊";
+
+                }
+
+            }
+        );
 
 
         /* =====================================================
@@ -1271,7 +1778,6 @@
         document
             .getElementById("si")
             .addEventListener("click", function() {
-
 
                 document
                     .getElementById("respuesta")
@@ -1303,7 +1809,6 @@
             .getElementById("no")
             .addEventListener("mouseover", function() {
 
-
                 const ancho =
                     window.innerWidth -
                     this.offsetWidth;
@@ -1322,10 +1827,13 @@
                     Math.random() * alto;
 
 
-                this.style.position = "fixed";
+                this.style.position =
+                    "fixed";
+
 
                 this.style.left =
                     nuevaX + "px";
+
 
                 this.style.top =
                     nuevaY + "px";
@@ -1354,7 +1862,9 @@
             .getElementById("estrella1")
             .addEventListener("click", function() {
 
-                mostrarPantalla("paginaEstrella1");
+                mostrarPantalla(
+                    "paginaEstrella1"
+                );
 
             });
 
@@ -1367,7 +1877,9 @@
             .getElementById("estrella2")
             .addEventListener("click", function() {
 
-                mostrarPantalla("paginaEstrella2");
+                mostrarPantalla(
+                    "paginaEstrella2"
+                );
 
             });
 
@@ -1380,13 +1892,15 @@
             .getElementById("estrella3")
             .addEventListener("click", function() {
 
-                mostrarPantalla("paginaEstrella3");
+                mostrarPantalla(
+                    "paginaEstrella3"
+                );
 
             });
 
 
         /* =====================================================
-           LUNA → ABRIR CARTA
+           LUNA → CARTA
         ===================================================== */
 
         document
@@ -1401,7 +1915,7 @@
 
 
         /* =====================================================
-           CERRAR CARTA CON X
+           CERRAR CARTA
         ===================================================== */
 
         document
@@ -1416,7 +1930,7 @@
 
 
         /* =====================================================
-           CERRAR CARTA AL HACER CLICK FUERA
+           CLICK FUERA DE LA CARTA
         ===================================================== */
 
         document
@@ -1433,7 +1947,7 @@
 
 
         /* =====================================================
-           ABRIR MOON.PNG EN GRANDE
+           ABRIR MOON.PNG
         ===================================================== */
 
         document
@@ -1448,7 +1962,7 @@
 
 
         /* =====================================================
-           CERRAR IMAGEN GRANDE CON X
+           CERRAR IMAGEN
         ===================================================== */
 
         document
@@ -1463,7 +1977,7 @@
 
 
         /* =====================================================
-           CERRAR IMAGEN GRANDE AL HACER CLICK AFUERA
+           CLICK FUERA DE IMAGEN
         ===================================================== */
 
         document
@@ -1473,36 +1987,6 @@
                 if (event.target === this) {
 
                     this.classList.remove("abierto");
-
-                }
-
-            });
-
-
-        /* =====================================================
-           CONTROL DE MÚSICA
-        ===================================================== */
-
-        document
-            .getElementById("controlMusica")
-            .addEventListener("click", function() {
-
-
-                if (musicaActiva) {
-
-                    musica.pause();
-
-                    musicaActiva = false;
-
-                    this.textContent = "🔇";
-
-                } else {
-
-                    musica.play();
-
-                    musicaActiva = true;
-
-                    this.textContent = "🔊";
 
                 }
 
