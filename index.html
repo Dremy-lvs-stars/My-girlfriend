@@ -3,50 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>For Kass, my love <3</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
 
-        body {
+        html, body {
             margin: 0;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
             overflow: hidden;
             font-family: Arial, sans-serif;
-
-            background:
-                radial-gradient(circle at 50% 40%, #172554 0%, #0f172a 45%, #020617 100%);
-
             color: white;
         }
 
+        body {
+            background:
+                radial-gradient(
+                    circle at 50% 40%,
+                    #172554 0%,
+                    #0f172a 45%,
+                    #020617 100%
+                );
+        }
 
-        /* =========================
-           ESTRELLAS
-        ========================= */
 
-        .estrella {
-            position: absolute;
+        /* =====================================================
+           ESTRELLAS DEL FONDO
+        ===================================================== */
+
+        .estrella-fondo {
+            position: fixed;
+
             width: 3px;
             height: 3px;
+
             background: white;
+
             border-radius: 50%;
+
             box-shadow: 0 0 8px white;
+
             pointer-events: none;
 
             animation: parpadear 2s infinite alternate;
         }
 
         @keyframes parpadear {
+
             from {
-                opacity: 0.3;
+                opacity: 0.25;
             }
 
             to {
                 opacity: 1;
             }
+
         }
 
         .e1  { top: 10%; left: 15%; animation-delay: 0.2s; }
@@ -71,45 +87,87 @@
         .e20 { top: 92%; left: 10%; animation-delay: 0.8s; }
 
 
-        /* =========================
-           PANTALLA DE ENTRADA
-        ========================= */
+        /* =====================================================
+           MÚSICA
+        ===================================================== */
 
-        #entrada {
-            position: fixed;
-            inset: 0;
+        #musica {
+            display: none;
+        }
 
-            z-index: 100;
 
-            display: flex;
-            flex-direction: column;
+        /* =====================================================
+           TODAS LAS PANTALLAS
+        ===================================================== */
+
+        .pantalla {
+
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            top: 0;
+            left: 0;
+
+            display: none;
+
             justify-content: center;
             align-items: center;
 
-            background:
-                radial-gradient(circle at 50% 40%, #172554 0%, #0f172a 45%, #020617 100%);
+            text-align: center;
 
-            transition: opacity 0.8s ease;
+        }
+
+        .pantalla.activa {
+            display: flex;
+        }
+
+
+        /* =====================================================
+           PANTALLA DE ENTRADA
+        ===================================================== */
+
+        #entrada {
+
+            flex-direction: column;
+
+            background:
+                radial-gradient(
+                    circle at 50% 40%,
+                    #172554 0%,
+                    #0f172a 45%,
+                    #020617 100%
+                );
+
         }
 
         #entrada h1 {
+
             font-size: 38px;
-            margin: 0 0 25px 0;
+
+            margin-bottom: 30px;
 
             text-shadow:
                 0 0 10px white,
                 0 0 20px #93c5fd,
                 0 0 35px #3b82f6;
+
         }
 
         #entrar {
-            font-size: 24px;
-            padding: 14px 35px;
+
+            font-size: 30px;
+
+            width: 80px;
+            height: 80px;
 
             border: none;
-            border-radius: 15px;
+
+            border-radius: 50%;
 
             background: #ff69b4;
+
             color: white;
 
             cursor: pointer;
@@ -117,322 +175,912 @@
             box-shadow:
                 0 0 10px #ff69b4,
                 0 0 25px #ff69b4,
-                0 0 40px #ff69b4;
+                0 0 45px #ff69b4;
 
-            transition: transform 0.2s;
+            transition: 0.25s;
+
         }
 
         #entrar:hover {
-            transform: scale(1.1);
+
+            transform: scale(1.15);
+
         }
 
 
-        /* =========================
-           CONTENIDO PRINCIPAL
-        ========================= */
+        /* =====================================================
+           PANTALLA ¿TE GUSTO?
+        ===================================================== */
 
-        #pagina {
-            height: 100vh;
+        #pregunta {
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            opacity: 0;
-
-            transition: opacity 0.8s ease;
-        }
-
-        .contenedor {
-            position: relative;
-            z-index: 10;
-
-            text-align: center;
-
-            display: flex;
             flex-direction: column;
-            align-items: center;
 
-            gap: 20px;
         }
 
-        h1 {
-            font-size: 45px;
-            margin: 0;
+        #pregunta h1 {
 
-            color: white;
+            font-size: 45px;
+
+            margin: 0;
 
             text-shadow:
                 0 0 10px white,
                 0 0 20px #93c5fd,
                 0 0 35px #3b82f6;
+
         }
 
         .carita {
+
             font-size: 30px;
-            margin-bottom: 10px;
+
+            margin: 20px;
+
         }
 
+        .boton {
 
-        /* =========================
-           BOTONES
-        ========================= */
-
-        button {
             font-size: 20px;
+
             padding: 12px 28px;
 
             border: none;
+
             border-radius: 12px;
 
             cursor: pointer;
 
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition:
+                transform 0.2s,
+                box-shadow 0.2s;
+
         }
 
-        button:hover {
+        .boton:hover {
+
             transform: scale(1.08);
+
         }
 
         #si {
+
             background: #ff69b4;
+
             color: white;
 
             box-shadow:
                 0 0 10px #ff69b4,
                 0 0 25px #ff69b4;
+
         }
 
         #no {
+
             background: white;
+
             color: #222;
 
             position: relative;
+
+            margin-top: 10px;
+
+        }
+
+        #respuesta {
+
+            display: none;
+
+            font-size: 35px;
+
+            margin: 10px;
+
+            text-shadow:
+                0 0 10px white,
+                0 0 20px #f9a8d4;
+
         }
 
         #next {
+
             display: none;
 
             background: #60a5fa;
+
             color: white;
 
             box-shadow:
                 0 0 10px #60a5fa,
                 0 0 25px #60a5fa;
+
         }
 
-        #respuesta {
-            font-size: 35px;
-            display: none;
+
+        /* =====================================================
+           MENÚ DEL UNIVERSO
+        ===================================================== */
+
+        #universo {
+
+            flex-direction: column;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #172554 0%,
+                    #0f172a 45%,
+                    #020617 100%
+                );
+
+        }
+
+        #universo h1 {
+
+            position: absolute;
+
+            top: 35px;
+
+            font-size: 32px;
+
+            margin: 0;
 
             text-shadow:
                 0 0 10px white,
-                0 0 20px #f9a8d4;
+                0 0 20px #60a5fa;
+
         }
+
+
+        /* =====================================================
+           LUNA
+        ===================================================== */
+
+        .luna {
+
+            position: absolute;
+
+            width: 190px;
+            height: 190px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle at 35% 30%,
+                    #ffffff,
+                    #dbeafe 45%,
+                    #94a3b8 75%,
+                    #64748b 100%
+                );
+
+            box-shadow:
+                0 0 20px #dbeafe,
+                0 0 50px #93c5fd,
+                0 0 100px rgba(147, 197, 253, 0.5);
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+        .luna:hover {
+
+            transform: scale(1.08);
+
+            box-shadow:
+                0 0 30px white,
+                0 0 70px #93c5fd,
+                0 0 120px rgba(147, 197, 253, 0.7);
+
+        }
+
+
+        /* Cráteres */
+
+        .crater {
+
+            position: absolute;
+
+            border-radius: 50%;
+
+            background: rgba(100, 116, 139, 0.35);
+
+        }
+
+        .c1 {
+
+            width: 35px;
+            height: 35px;
+
+            top: 35px;
+            left: 40px;
+
+        }
+
+        .c2 {
+
+            width: 25px;
+            height: 25px;
+
+            top: 100px;
+            left: 110px;
+
+        }
+
+        .c3 {
+
+            width: 18px;
+            height: 18px;
+
+            top: 125px;
+            left: 55px;
+
+        }
+
+        .c4 {
+
+            width: 30px;
+            height: 30px;
+
+            top: 65px;
+            left: 125px;
+
+        }
+
+
+        /* =====================================================
+           ESTRELLAS INTERACTIVAS
+        ===================================================== */
+
+        .estrella-interactiva {
+
+            position: absolute;
+
+            width: 35px;
+            height: 35px;
+
+            cursor: pointer;
+
+            color: white;
+
+            font-size: 35px;
+
+            line-height: 35px;
+
+            text-shadow:
+                0 0 8px white,
+                0 0 18px #93c5fd;
+
+            transition: 0.3s;
+
+            animation:
+                brillo 2s infinite alternate;
+
+        }
+
+        .estrella-interactiva:hover {
+
+            transform: scale(1.4);
+
+            text-shadow:
+                0 0 10px white,
+                0 0 25px white,
+                0 0 40px #60a5fa;
+
+        }
+
+        @keyframes brillo {
+
+            from {
+                opacity: 0.6;
+            }
+
+            to {
+                opacity: 1;
+            }
+
+        }
+
+        #estrella1 {
+
+            top: 28%;
+            left: 25%;
+
+        }
+
+        #estrella2 {
+
+            top: 62%;
+            left: 18%;
+
+        }
+
+        #estrella3 {
+
+            top: 35%;
+            right: 20%;
+
+        }
+
+
+        /* =====================================================
+           PANTALLAS DE HISTORIAS
+        ===================================================== */
+
+        .historia {
+
+            flex-direction: column;
+
+            padding: 30px;
+
+        }
+
+        .historia h1 {
+
+            font-size: 40px;
+
+            text-shadow:
+                0 0 10px white,
+                0 0 25px #60a5fa;
+
+        }
+
+        .historia p {
+
+            max-width: 600px;
+
+            font-size: 20px;
+
+            line-height: 1.6;
+
+        }
+
+        .volver {
+
+            margin-top: 25px;
+
+            background: white;
+
+            color: #172554;
+
+        }
+
+
+        /* =====================================================
+           BOTÓN DE MÚSICA
+        ===================================================== */
+
+        #controlMusica {
+
+            position: fixed;
+
+            z-index: 999;
+
+            right: 20px;
+            bottom: 20px;
+
+            width: 45px;
+            height: 45px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.15);
+
+            color: white;
+
+            cursor: pointer;
+
+            backdrop-filter: blur(5px);
+
+            font-size: 20px;
+
+        }
+
     </style>
 </head>
+
 
 <body>
 
 
-    <!-- =========================
-         ESTRELLAS
-    ========================= -->
+    <!-- =====================================================
+         ESTRELLAS DE FONDO
+    ===================================================== -->
 
-    <span class="estrella e1"></span>
-    <span class="estrella e2"></span>
-    <span class="estrella e3"></span>
-    <span class="estrella e4"></span>
-    <span class="estrella e5"></span>
-    <span class="estrella e6"></span>
-    <span class="estrella e7"></span>
-    <span class="estrella e8"></span>
-    <span class="estrella e9"></span>
-    <span class="estrella e10"></span>
-    <span class="estrella e11"></span>
-    <span class="estrella e12"></span>
-    <span class="estrella e13"></span>
-    <span class="estrella e14"></span>
-    <span class="estrella e15"></span>
-    <span class="estrella e16"></span>
-    <span class="estrella e17"></span>
-    <span class="estrella e18"></span>
-    <span class="estrella e19"></span>
-    <span class="estrella e20"></span>
+    <span class="estrella-fondo e1"></span>
+    <span class="estrella-fondo e2"></span>
+    <span class="estrella-fondo e3"></span>
+    <span class="estrella-fondo e4"></span>
+    <span class="estrella-fondo e5"></span>
+    <span class="estrella-fondo e6"></span>
+    <span class="estrella-fondo e7"></span>
+    <span class="estrella-fondo e8"></span>
+    <span class="estrella-fondo e9"></span>
+    <span class="estrella-fondo e10"></span>
+    <span class="estrella-fondo e11"></span>
+    <span class="estrella-fondo e12"></span>
+    <span class="estrella-fondo e13"></span>
+    <span class="estrella-fondo e14"></span>
+    <span class="estrella-fondo e15"></span>
+    <span class="estrella-fondo e16"></span>
+    <span class="estrella-fondo e17"></span>
+    <span class="estrella-fondo e18"></span>
+    <span class="estrella-fondo e19"></span>
+    <span class="estrella-fondo e20"></span>
 
 
-    <!-- =========================
+    <!-- =====================================================
          MÚSICA
-    ========================= -->
+    ===================================================== -->
 
     <audio id="musica" loop>
-        <source src="Valentine.mp3" type="audio/mpeg">
+        <source src="Amtrak.mp3" type="audio/mpeg">
     </audio>
 
 
-    <!-- =========================
-         PANTALLA DE ENTRADA
-    ========================= -->
+    <!-- =====================================================
+         PANTALLA 1 — ENTRADA
+    ===================================================== -->
 
-    <div id="entrada">
+    <section id="entrada" class="pantalla activa">
 
-        <h1>Click to enter ♡</h1>
+        <h1>
+            Click to enter ♡
+        </h1>
 
         <button id="entrar">
             ♡
         </button>
 
-    </div>
+    </section>
 
 
-    <!-- =========================
-         PÁGINA PRINCIPAL
-    ========================= -->
+    <!-- =====================================================
+         PANTALLA 2 — ¿TE GUSTO?
+    ===================================================== -->
 
-    <div id="pagina">
+    <section id="pregunta" class="pantalla">
 
-        <div class="contenedor">
+        <h1>
+            ¿Te gusto? :3
+        </h1>
 
-            <h1>¿Te gusto? :3</h1>
+        <div class="carita">
+            ♡
+        </div>
 
-            <div class="carita">
-                ♡
-            </div>
+        <button
+            id="si"
+            class="boton">
+            Skibidi Si
+        </button>
 
-            <button id="si">
-                Skibidi Si
-            </button>
+        <button
+            id="no"
+            class="boton">
+            Nuh :(
+        </button>
 
-            <button id="no">
-                Nuh :(
-            </button>
+        <div id="respuesta">
+            :33
+        </div>
 
-            <div id="respuesta">
-                :33
-            </div>
+        <button
+            id="next"
+            class="boton">
+            Next !!
+        </button>
 
-            <button id="next">
-                Next !!
-            </button>
+    </section>
+
+
+    <!-- =====================================================
+         PANTALLA 3 — UNIVERSO
+    ===================================================== -->
+
+    <section id="universo" class="pantalla">
+
+        <h1>
+            Our Little Universe
+        </h1>
+
+
+        <!-- ESTRELLA 1 -->
+
+        <div
+            id="estrella1"
+            class="estrella-interactiva">
+
+            ★
 
         </div>
 
-    </div>
 
+        <!-- ESTRELLA 2 -->
+
+        <div
+            id="estrella2"
+            class="estrella-interactiva">
+
+            ★
+
+        </div>
+
+
+        <!-- ESTRELLA 3 -->
+
+        <div
+            id="estrella3"
+            class="estrella-interactiva">
+
+            ★
+
+        </div>
+
+
+        <!-- LUNA -->
+
+        <div
+            id="luna"
+            class="luna">
+
+            <div class="crater c1"></div>
+            <div class="crater c2"></div>
+            <div class="crater c3"></div>
+            <div class="crater c4"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PANTALLA ESTRELLA 1
+    ===================================================== -->
+
+    <section id="paginaEstrella1" class="pantalla historia">
+
+        <h1>
+            Star 1
+        </h1>
+
+        <p>
+            Una pequeña estrella guarda algo especial...
+        </p>
+
+        <button
+            class="boton volver"
+            onclick="mostrarPantalla('universo')">
+
+            Volver
+
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+         PANTALLA ESTRELLA 2
+    ===================================================== -->
+
+    <section id="paginaEstrella2" class="pantalla historia">
+
+        <h1>
+            Star 2
+        </h1>
+
+        <p>
+            Algunas cosas brillan más cuando las miras de cerca.
+        </p>
+
+        <button
+            class="boton volver"
+            onclick="mostrarPantalla('universo')">
+
+            Volver
+
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+         PANTALLA ESTRELLA 3
+    ===================================================== -->
+
+    <section id="paginaEstrella3" class="pantalla historia">
+
+        <h1>
+            Star 3
+        </h1>
+
+        <p>
+            Y esta estrella tiene una historia que todavía falta contar.
+        </p>
+
+        <button
+            class="boton volver"
+            onclick="mostrarPantalla('universo')">
+
+            Volver
+
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+         PANTALLA DE LA LUNA
+    ===================================================== -->
+
+    <section id="paginaLuna" class="pantalla historia">
+
+        <h1>
+            The Moon
+        </h1>
+
+        <p>
+            Si llegaste hasta aquí, significa que encontraste
+            un pequeño pedacito de nuestro universo.
+        </p>
+
+        <button
+            class="boton volver"
+            onclick="mostrarPantalla('universo')">
+
+            Volver
+
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTROL DE MÚSICA
+    ===================================================== -->
+
+    <button id="controlMusica">
+        🔊
+    </button>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
 
     <script>
 
-        /* =========================
-           ELEMENTOS
-        ========================= */
 
-        const entrada = document.getElementById("entrada");
-        const botonEntrar = document.getElementById("entrar");
+        /* =====================================================
+           MÚSICA
+        ===================================================== */
 
-        const pagina = document.getElementById("pagina");
+        const musica =
+            document.getElementById("musica");
 
-        const musica = document.getElementById("musica");
-
-        const botonSi = document.getElementById("si");
-        const botonNo = document.getElementById("no");
-
-        const respuesta = document.getElementById("respuesta");
-        const botonNext = document.getElementById("next");
+        let musicaActiva = true;
 
 
-        /* =========================
-           ENTRAR A LA PÁGINA
-        ========================= */
+        /* =====================================================
+           FUNCIÓN PARA CAMBIAR DE PANTALLA
+        ===================================================== */
 
-        botonEntrar.addEventListener("click", function() {
+        function mostrarPantalla(id) {
 
-            /*
-             * Como el usuario acaba de hacer clic,
-             * el navegador permite reproducir el audio.
-             */
+            const pantallas =
+                document.querySelectorAll(".pantalla");
 
-            musica.play().catch(error => {
-                console.log("No se pudo reproducir la música:", error);
+
+            pantallas.forEach(function(pantalla) {
+
+                pantalla.classList.remove("activa");
+
             });
 
 
-            /* Desaparecer pantalla de entrada */
-
-            entrada.style.opacity = "0";
-
-
-            /* Aparecer página principal */
-
-            pagina.style.opacity = "1";
+            const nuevaPantalla =
+                document.getElementById(id);
 
 
-            /* Quitar pantalla de entrada después
-               de la animación */
+            nuevaPantalla.classList.add("activa");
 
-            setTimeout(function() {
-                entrada.style.display = "none";
-            }, 800);
-
-        });
+        }
 
 
-        /* =========================
-           BOTÓN "SI"
-        ========================= */
+        /* =====================================================
+           ENTRAR
+        ===================================================== */
 
-        botonSi.addEventListener("click", function() {
-
-            // La música continúa reproduciéndose
-
-            respuesta.style.display = "block";
-
-            botonSi.style.display = "none";
-
-            botonNo.style.display = "none";
-
-            botonNext.style.display = "block";
-
-        });
+        document
+            .getElementById("entrar")
+            .addEventListener("click", function() {
 
 
-        /* =========================
-           BOTÓN "NO"
-        ========================= */
+                /*
+                 * Este clic permite al navegador
+                 * reproducir el audio.
+                 */
 
-        botonNo.addEventListener("mouseover", function() {
+                musica.play().catch(function(error) {
 
-            const ancho =
-                window.innerWidth - botonNo.offsetWidth;
+                    console.log(
+                        "No se pudo reproducir:",
+                        error
+                    );
 
-            const alto =
-                window.innerHeight - botonNo.offsetHeight;
-
-
-            const nuevaX =
-                Math.random() * ancho;
-
-            const nuevaY =
-                Math.random() * alto;
+                });
 
 
-            botonNo.style.position = "fixed";
+                mostrarPantalla("pregunta");
 
-            botonNo.style.left = nuevaX + "px";
-
-            botonNo.style.top = nuevaY + "px";
-
-        });
+            });
 
 
-        /* =========================
+        /* =====================================================
+           BOTÓN SI
+        ===================================================== */
+
+        document
+            .getElementById("si")
+            .addEventListener("click", function() {
+
+
+                document
+                    .getElementById("respuesta")
+                    .style.display = "block";
+
+
+                document
+                    .getElementById("si")
+                    .style.display = "none";
+
+
+                document
+                    .getElementById("no")
+                    .style.display = "none";
+
+
+                document
+                    .getElementById("next")
+                    .style.display = "block";
+
+            });
+
+
+        /* =====================================================
+           BOTÓN NO
+        ===================================================== */
+
+        document
+            .getElementById("no")
+            .addEventListener("mouseover", function() {
+
+
+                const ancho =
+                    window.innerWidth -
+                    this.offsetWidth;
+
+
+                const alto =
+                    window.innerHeight -
+                    this.offsetHeight;
+
+
+                const nuevaX =
+                    Math.random() * ancho;
+
+
+                const nuevaY =
+                    Math.random() * alto;
+
+
+                this.style.position = "fixed";
+
+                this.style.left =
+                    nuevaX + "px";
+
+                this.style.top =
+                    nuevaY + "px";
+
+            });
+
+
+        /* =====================================================
            NEXT
-        ========================= */
+        ===================================================== */
 
-        botonNext.addEventListener("click", function() {
+        document
+            .getElementById("next")
+            .addEventListener("click", function() {
 
-            window.location.href = "menu.html";
+                mostrarPantalla("universo");
 
-        });
+            });
+
+
+        /* =====================================================
+           ESTRELLA 1
+        ===================================================== */
+
+        document
+            .getElementById("estrella1")
+            .addEventListener("click", function() {
+
+                mostrarPantalla("paginaEstrella1");
+
+            });
+
+
+        /* =====================================================
+           ESTRELLA 2
+        ===================================================== */
+
+        document
+            .getElementById("estrella2")
+            .addEventListener("click", function() {
+
+                mostrarPantalla("paginaEstrella2");
+
+            });
+
+
+        /* =====================================================
+           ESTRELLA 3
+        ===================================================== */
+
+        document
+            .getElementById("estrella3")
+            .addEventListener("click", function() {
+
+                mostrarPantalla("paginaEstrella3");
+
+            });
+
+
+        /* =====================================================
+           LUNA
+        ===================================================== */
+
+        document
+            .getElementById("luna")
+            .addEventListener("click", function() {
+
+                mostrarPantalla("paginaLuna");
+
+            });
+
+
+        /* =====================================================
+           CONTROL DE MÚSICA
+        ===================================================== */
+
+        document
+            .getElementById("controlMusica")
+            .addEventListener("click", function() {
+
+
+                if (musicaActiva) {
+
+                    musica.pause();
+
+                    musicaActiva = false;
+
+                    this.textContent = "🔇";
+
+                } else {
+
+                    musica.play();
+
+                    musicaActiva = true;
+
+                    this.textContent = "🔊";
+
+                }
+
+            });
 
     </script>
 
