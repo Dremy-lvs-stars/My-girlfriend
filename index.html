@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¿Te gusto? :3</title>
+    <title>For Kass, my love <3</title>
 
     <style>
         * {
@@ -20,15 +20,12 @@
             background:
                 radial-gradient(circle at 50% 40%, #172554 0%, #0f172a 45%, #020617 100%);
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
             color: white;
         }
 
+
         /* =========================
-           ESTRELLAS DEL FONDO
+           ESTRELLAS
         ========================= */
 
         .estrella {
@@ -53,8 +50,6 @@
             }
         }
 
-        /* Posiciones de las estrellas */
-
         .e1  { top: 10%; left: 15%; animation-delay: 0.2s; }
         .e2  { top: 20%; left: 30%; animation-delay: 0.8s; }
         .e3  { top: 15%; left: 70%; animation-delay: 1.2s; }
@@ -78,8 +73,76 @@
 
 
         /* =========================
-           CONTENIDO
+           PANTALLA DE ENTRADA
         ========================= */
+
+        #entrada {
+            position: fixed;
+            inset: 0;
+
+            z-index: 100;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            background:
+                radial-gradient(circle at 50% 40%, #172554 0%, #0f172a 45%, #020617 100%);
+
+            transition: opacity 0.8s ease;
+        }
+
+        #entrada h1 {
+            font-size: 38px;
+            margin: 0 0 25px 0;
+
+            text-shadow:
+                0 0 10px white,
+                0 0 20px #93c5fd,
+                0 0 35px #3b82f6;
+        }
+
+        #entrar {
+            font-size: 24px;
+            padding: 14px 35px;
+
+            border: none;
+            border-radius: 15px;
+
+            background: #ff69b4;
+            color: white;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 0 10px #ff69b4,
+                0 0 25px #ff69b4,
+                0 0 40px #ff69b4;
+
+            transition: transform 0.2s;
+        }
+
+        #entrar:hover {
+            transform: scale(1.1);
+        }
+
+
+        /* =========================
+           CONTENIDO PRINCIPAL
+        ========================= */
+
+        #pagina {
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            opacity: 0;
+
+            transition: opacity 0.8s ease;
+        }
 
         .contenedor {
             position: relative;
@@ -172,9 +235,10 @@
 
 <body>
 
+
     <!-- =========================
          ESTRELLAS
-    ========================== -->
+    ========================= -->
 
     <span class="estrella e1"></span>
     <span class="estrella e2"></span>
@@ -200,38 +264,59 @@
 
     <!-- =========================
          MÚSICA
-    ========================== -->
+    ========================= -->
 
-    <audio id="musica" autoplay loop>
+    <audio id="musica" loop>
         <source src="Valentine.mp3" type="audio/mpeg">
     </audio>
 
 
     <!-- =========================
-         CONTENIDO
-    ========================== -->
+         PANTALLA DE ENTRADA
+    ========================= -->
 
-    <div class="contenedor">
+    <div id="entrada">
 
-        <h1>¿Te gusto? :3</h1>
+        <h1>Click to enter ♡</h1>
 
-        <div class="carita">♡</div>
-
-        <button id="si">
-            Skibidi Si
+        <button id="entrar">
+            ♡
         </button>
 
-        <button id="no">
-            Nuh :(
-        </button>
+    </div>
 
-        <div id="respuesta">
-            :33
+
+    <!-- =========================
+         PÁGINA PRINCIPAL
+    ========================= -->
+
+    <div id="pagina">
+
+        <div class="contenedor">
+
+            <h1>¿Te gusto? :3</h1>
+
+            <div class="carita">
+                ♡
+            </div>
+
+            <button id="si">
+                Skibidi Si
+            </button>
+
+            <button id="no">
+                Nuh :(
+            </button>
+
+            <div id="respuesta">
+                :33
+            </div>
+
+            <button id="next">
+                Next !!
+            </button>
+
         </div>
-
-        <button id="next">
-            Next !!
-        </button>
 
     </div>
 
@@ -239,35 +324,57 @@
     <script>
 
         /* =========================
-           MÚSICA
+           ELEMENTOS
         ========================= */
+
+        const entrada = document.getElementById("entrada");
+        const botonEntrar = document.getElementById("entrar");
+
+        const pagina = document.getElementById("pagina");
 
         const musica = document.getElementById("musica");
 
-        function iniciarMusica() {
-            musica.play().catch(() => {
-                // El navegador puede bloquear el autoplay.
-            });
-        }
+        const botonSi = document.getElementById("si");
+        const botonNo = document.getElementById("no");
 
-        // Intentar reproducir automáticamente
-        window.addEventListener("load", iniciarMusica);
-
-        // Si el navegador bloquea el autoplay,
-        // empieza al primer clic.
-        document.addEventListener("click", iniciarMusica, {
-            once: true
-        });
+        const respuesta = document.getElementById("respuesta");
+        const botonNext = document.getElementById("next");
 
 
         /* =========================
-           BOTONES
+           ENTRAR A LA PÁGINA
         ========================= */
 
-        const botonSi = document.getElementById("si");
-        const botonNo = document.getElementById("no");
-        const respuesta = document.getElementById("respuesta");
-        const botonNext = document.getElementById("next");
+        botonEntrar.addEventListener("click", function() {
+
+            /*
+             * Como el usuario acaba de hacer clic,
+             * el navegador permite reproducir el audio.
+             */
+
+            musica.play().catch(error => {
+                console.log("No se pudo reproducir la música:", error);
+            });
+
+
+            /* Desaparecer pantalla de entrada */
+
+            entrada.style.opacity = "0";
+
+
+            /* Aparecer página principal */
+
+            pagina.style.opacity = "1";
+
+
+            /* Quitar pantalla de entrada después
+               de la animación */
+
+            setTimeout(function() {
+                entrada.style.display = "none";
+            }, 800);
+
+        });
 
 
         /* =========================
@@ -276,18 +383,16 @@
 
         botonSi.addEventListener("click", function() {
 
-            // Asegurar que la música empiece
-            iniciarMusica();
+            // La música continúa reproduciéndose
 
-            // Mostrar respuesta
             respuesta.style.display = "block";
 
-            // Ocultar botones
             botonSi.style.display = "none";
+
             botonNo.style.display = "none";
 
-            // Mostrar siguiente
             botonNext.style.display = "block";
+
         });
 
 
@@ -297,15 +402,26 @@
 
         botonNo.addEventListener("mouseover", function() {
 
-            const ancho = window.innerWidth - botonNo.offsetWidth;
-            const alto = window.innerHeight - botonNo.offsetHeight;
+            const ancho =
+                window.innerWidth - botonNo.offsetWidth;
 
-            const nuevaX = Math.random() * ancho;
-            const nuevaY = Math.random() * alto;
+            const alto =
+                window.innerHeight - botonNo.offsetHeight;
+
+
+            const nuevaX =
+                Math.random() * ancho;
+
+            const nuevaY =
+                Math.random() * alto;
+
 
             botonNo.style.position = "fixed";
+
             botonNo.style.left = nuevaX + "px";
+
             botonNo.style.top = nuevaY + "px";
+
         });
 
 
@@ -325,18 +441,32 @@
 </html>
 ```
 
-**Tu carpeta de GitHub tiene que quedar así:**
+### En GitHub solo necesitas tener esto
 
 ```text
-index.html
-menu.html
-Valentine.mp3
+tu-repositorio/
+│
+├── index.html
+├── menu.html
+└── Valentine.mp3
 ```
 
-La línea importante es:
+**No cambies el nombre de `Valentine.mp3`** si el archivo está escrito exactamente así.
 
-```html
-<source src="Valentine.mp3" type="audio/mpeg">
-```
+Ahora, cuando Kass abra la página:
 
-Si `Valentine.mp3` está junto a `index.html`, debería encontrar la canción. **Si no suena apenas abre la página, no significa que esté mal:** Chrome puede bloquear el autoplay con sonido. En ese caso, al hacer el primer clic (por ejemplo, en **Skibidi Si**) comenzará.
+**1.** Aparece:
+
+> Click to enter ♡
+
+**2.** Presiona el botón `♡`.
+
+**3.** `Valentine.mp3` comienza inmediatamente.
+
+**4.** La pantalla hace una transición suave.
+
+**5.** Aparece tu `¿Te gusto? :3`.
+
+**6.** La canción sigue sonando mientras usa la página.
+
+Y como el clic ocurre antes de `musica.play()`, estás usando la forma normal que permiten los navegadores para reproducir audio con sonido.
