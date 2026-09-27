@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -22,6 +24,7 @@
             color: white;
         }
 
+
         /* =========================
            VIDEO DE FONDO
         ========================= */
@@ -29,12 +32,16 @@
         #fondoVideo {
             position: fixed;
             inset: 0;
+
             width: 100%;
             height: 100%;
+
             object-fit: cover;
+
             z-index: 0;
             pointer-events: none;
         }
+
 
         /* =========================
            PANTALLAS
@@ -43,10 +50,14 @@
         .pantalla {
             position: absolute;
             inset: 0;
+
             display: none;
+
             justify-content: center;
             align-items: center;
+
             text-align: center;
+
             z-index: 1;
         }
 
@@ -54,11 +65,13 @@
             display: flex;
         }
 
+
         /* =========================
            ENTRADA
         ========================= */
 
         #entrada {
+
             background:
                 radial-gradient(
                     circle at center,
@@ -66,30 +79,45 @@
                     rgba(17, 24, 39, 0.20) 45%,
                     rgba(2, 6, 23, 0.25) 100%
                 );
+
             flex-direction: column;
         }
 
         #entrada h1 {
+
             font-size: 42px;
+
             margin-bottom: 35px;
-            text-shadow: 0 0 20px #818cf8;
+
+            text-shadow:
+                0 0 20px #818cf8;
+
             position: relative;
             z-index: 2;
         }
 
         #entrar {
+
             border: none;
+
             background: #ec4899;
             color: white;
+
             width: 75px;
             height: 75px;
+
             border-radius: 50%;
+
             font-size: 30px;
+
             cursor: pointer;
+
             box-shadow:
                 0 0 15px #ec4899,
                 0 0 35px rgba(236, 72, 153, 0.6);
+
             transition: 0.3s;
+
             position: relative;
             z-index: 2;
         }
@@ -98,12 +126,15 @@
             transform: scale(1.12);
         }
 
+
         /* =========================
            PREGUNTA
         ========================= */
 
         #pregunta {
+
             flex-direction: column;
+
             background:
                 radial-gradient(
                     circle at center,
@@ -114,31 +145,47 @@
         }
 
         #pregunta h1 {
+
             font-size: 42px;
+
             margin-bottom: 35px;
-            text-shadow: 0 0 15px #818cf8;
+
+            text-shadow:
+                0 0 15px #818cf8;
         }
 
         .botonesPregunta {
+
             display: flex;
+
             gap: 20px;
+
             justify-content: center;
             align-items: center;
         }
 
         .botonesPregunta button {
+
             border: none;
+
             padding: 13px 25px;
+
             border-radius: 12px;
+
             font-size: 16px;
+
             cursor: pointer;
+
             transition: 0.2s;
         }
 
         #si {
+
             background: #ec4899;
             color: white;
-            box-shadow: 0 0 15px rgba(236, 72, 153, 0.5);
+
+            box-shadow:
+                0 0 15px rgba(236, 72, 153, 0.5);
         }
 
         #si:hover {
@@ -146,34 +193,51 @@
         }
 
         #no {
+
             background: #475569;
             color: white;
         }
 
         #respuesta {
+
             margin-top: 25px;
+
             font-size: 28px;
+
             display: none;
         }
 
         #next {
+
             display: none;
+
             margin-top: 20px;
+
             padding: 10px 22px;
+
             border: none;
+
             border-radius: 10px;
+
             background: #818cf8;
+
             color: white;
+
             cursor: pointer;
+
             font-size: 15px;
-            box-shadow: 0 0 15px rgba(129, 140, 248, 0.5);
+
+            box-shadow:
+                0 0 15px rgba(129, 140, 248, 0.5);
         }
+
 
         /* =========================
            UNIVERSO
         ========================= */
 
         #universo {
+
             background:
                 radial-gradient(
                     circle at center,
@@ -181,51 +245,79 @@
                     rgba(15, 23, 42, 0.18) 45%,
                     rgba(2, 6, 23, 0.20) 100%
                 );
+
             overflow: hidden;
         }
 
         #universo h1 {
+
             position: absolute;
+
             top: 35px;
+
             left: 50%;
+
             transform: translateX(-50%);
+
             font-size: 34px;
+
             z-index: 10;
+
             white-space: nowrap;
-            text-shadow: 0 0 15px #60a5fa;
+
+            text-shadow:
+                0 0 15px #60a5fa;
         }
+
 
         /* =========================
            ESTRELLAS DEL UNIVERSO
         ========================= */
 
         .estrellaFondo {
+
             position: absolute;
+
             width: 3px;
             height: 3px;
+
             background: white;
+
             border-radius: 50%;
-            box-shadow: 0 0 7px white;
-            animation: parpadear 2s infinite alternate;
+
+            box-shadow:
+                0 0 7px white;
+
+            animation:
+                parpadear 2s infinite alternate;
         }
 
         @keyframes parpadear {
+
             from {
+
                 opacity: 0.25;
+
                 transform: scale(0.7);
             }
 
             to {
+
                 opacity: 1;
+
                 transform: scale(1.3);
             }
         }
 
         .estrella {
+
             position: absolute;
+
             width: 35px;
             height: 35px;
+
             background: white;
+
             clip-path: polygon(
                 50% 0%,
                 61% 38%,
@@ -236,9 +328,15 @@
                 0% 50%,
                 39% 38%
             );
-            filter: drop-shadow(0 0 10px white);
+
+            filter:
+                drop-shadow(0 0 10px white);
+
             cursor: pointer;
-            animation: brilloEstrella 2s infinite alternate;
+
+            animation:
+                brilloEstrella 2s infinite alternate;
+
             transition: 0.3s;
         }
 
@@ -247,6 +345,7 @@
         }
 
         @keyframes brilloEstrella {
+
             from {
                 opacity: 0.6;
             }
@@ -257,39 +356,56 @@
         }
 
         #estrella1 {
+
             top: 28%;
             left: 25%;
         }
 
         #estrella2 {
+
             top: 55%;
             left: 68%;
         }
 
         #estrella3 {
+
             top: 72%;
             left: 37%;
         }
+
 
         /* =========================
            LUNA
         ========================= */
 
         #luna {
+
             position: absolute;
+
             width: 125px;
             height: 125px;
+
             border-radius: 50%;
+
             right: 13%;
             top: 25%;
+
             background: #f8fafc;
+
             box-shadow:
+
                 0 0 20px #e2e8f0,
+
                 0 0 50px rgba(226, 232, 240, 0.6),
+
                 0 0 100px rgba(226, 232, 240, 0.25);
+
             cursor: pointer;
+
             transition: 0.4s;
-            animation: lunaFlotar 6s ease-in-out infinite;
+
+            animation:
+                lunaFlotar 6s ease-in-out infinite;
         }
 
         @keyframes lunaFlotar {
@@ -301,25 +417,34 @@
             50% {
                 transform: translateY(-8px);
             }
-
         }
 
         #luna:hover {
+
             transform: scale(1.08);
+
             box-shadow:
+
                 0 0 30px #f8fafc,
+
                 0 0 70px rgba(226, 232, 240, 0.7),
+
                 0 0 120px rgba(226, 232, 240, 0.3);
         }
+
 
         /* =========================
            PÁGINAS DE HISTORIA
         ========================= */
 
         .historia {
+
             flex-direction: column;
+
             padding: 40px;
+
             background:
+
                 radial-gradient(
                     circle at center,
                     rgba(23, 37, 84, 0.20),
@@ -329,46 +454,166 @@
         }
 
         .historia h1 {
+
             font-size: 35px;
+
             margin-bottom: 25px;
-            text-shadow: 0 0 15px #60a5fa;
+
+            text-shadow:
+                0 0 15px #60a5fa;
         }
 
         .historia p {
+
             max-width: 650px;
+
             line-height: 1.7;
+
             color: #cbd5e1;
+
             font-size: 17px;
         }
 
         .volver {
+
             margin-top: 30px;
+
             padding: 10px 22px;
+
             border: none;
+
             border-radius: 10px;
+
             background: #334155;
+
             color: white;
+
             cursor: pointer;
+
             transition: 0.2s;
         }
 
         .volver:hover {
+
             background: #475569;
+
             transform: scale(1.05);
         }
+
+
+        /* =========================
+           HISTORIA 1
+        ========================= */
+
+        .historia-contenido {
+
+            width: min(90%, 600px);
+
+            max-height: 85vh;
+
+            overflow-y: auto;
+
+            padding: 35px 30px;
+
+            background:
+                rgba(15, 23, 42, 0.72);
+
+            border:
+                1px solid rgba(255, 255, 255, 0.15);
+
+            border-radius: 25px;
+
+            backdrop-filter: blur(12px);
+
+            -webkit-backdrop-filter: blur(12px);
+
+            box-shadow:
+                0 0 30px rgba(255, 255, 255, 0.08);
+        }
+
+        .historia-fecha {
+
+            font-size: 14px;
+
+            letter-spacing: 5px;
+
+            color: #94a3b8;
+
+            margin-bottom: 15px;
+        }
+
+        .historia-contenido h1 {
+
+            margin: 5px 0 20px;
+
+            font-size: 32px;
+
+            font-weight: 400;
+
+            text-shadow:
+                0 0 15px #60a5fa;
+        }
+
+        .linea {
+
+            width: 70px;
+
+            height: 1px;
+
+            background:
+                rgba(255, 255, 255, 0.5);
+
+            margin:
+                0 auto 25px;
+        }
+
+        .historia-contenido p {
+
+            max-width: 500px;
+
+            margin: 18px auto;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+
+            color: #cbd5e1;
+        }
+
+        .historia-contenido .final-historia {
+
+            margin-top: 28px;
+
+            color: white;
+
+            font-size: 17px;
+        }
+
+        .historia-contenido .volver {
+            margin-top: 25px;
+        }
+
 
         /* =========================
            CARTA DE LA LUNA
         ========================= */
 
         #cartaLuna {
+
             position: fixed;
+
             inset: 0;
-            background: rgba(0, 0, 0, 0.75);
+
+            background:
+                rgba(0, 0, 0, 0.75);
+
             display: none;
+
             justify-content: center;
             align-items: center;
+
             z-index: 2000;
+
             padding: 20px;
         }
 
@@ -377,42 +622,74 @@
         }
 
         .carta {
+
             position: relative;
+
             width: min(700px, 90vw);
+
             max-height: 85vh;
+
             overflow-y: auto;
+
             background:
-                linear-gradient(145deg, #172554, #0f172a);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+                linear-gradient(
+                    145deg,
+                    #172554,
+                    #0f172a
+                );
+
+            border:
+                1px solid rgba(255, 255, 255, 0.15);
+
             border-radius: 20px;
+
             padding: 35px;
+
             box-shadow:
+
                 0 0 30px rgba(96, 165, 250, 0.25),
+
                 0 20px 60px rgba(0, 0, 0, 0.5);
         }
 
         .carta h1 {
+
             margin-top: 0;
+
             font-size: 30px;
+
             color: #f8fafc;
         }
 
         .carta p {
+
             color: #cbd5e1;
+
             line-height: 1.8;
+
             font-size: 16px;
+
             white-space: pre-line;
         }
 
         #imagenMoon {
+
             width: 220px;
+
             max-width: 100%;
+
             border-radius: 12px;
+
             display: block;
+
             margin: 20px auto;
+
             cursor: pointer;
+
             transition: 0.3s;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+
+            box-shadow:
+                0 0 20px rgba(255, 255, 255, 0.15);
         }
 
         #imagenMoon:hover {
@@ -420,28 +697,44 @@
         }
 
         #cerrarCarta {
+
             position: absolute;
+
             top: 12px;
             right: 16px;
+
             border: none;
+
             background: transparent;
+
             color: white;
+
             font-size: 25px;
+
             cursor: pointer;
         }
+
 
         /* =========================
            VISOR DE IMAGEN
         ========================= */
 
         #visorImagen {
+
             position: fixed;
+
             inset: 0;
-            background: rgba(0, 0, 0, 0.92);
+
+            background:
+                rgba(0, 0, 0, 0.92);
+
             display: none;
+
             justify-content: center;
             align-items: center;
+
             z-index: 4000;
+
             padding: 30px;
         }
 
@@ -450,100 +743,163 @@
         }
 
         #imagenGrande {
+
             max-width: 90vw;
+
             max-height: 90vh;
+
             object-fit: contain;
+
             border-radius: 10px;
-            box-shadow: 0 0 40px rgba(255, 255, 255, 0.15);
+
+            box-shadow:
+                0 0 40px rgba(255, 255, 255, 0.15);
         }
 
         #cerrarImagen {
+
             position: absolute;
+
             top: 20px;
             right: 30px;
+
             border: none;
+
             background: transparent;
+
             color: white;
+
             font-size: 35px;
+
             cursor: pointer;
         }
+
 
         /* =========================
            REPRODUCTOR
         ========================= */
 
         #reproductor {
+
             position: fixed;
+
             left: 12px;
             bottom: 12px;
+
             width: 210px;
+
             padding: 8px 10px;
-            background: rgba(2, 6, 23, 0.82);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+
+            background:
+                rgba(2, 6, 23, 0.82);
+
+            border:
+                1px solid rgba(255, 255, 255, 0.12);
+
             border-radius: 10px;
+
             backdrop-filter: blur(8px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+
+            box-shadow:
+                0 4px 15px rgba(0, 0, 0, 0.35);
+
             z-index: 3000;
         }
 
         #infoCancion {
+
             text-align: left;
+
             margin-bottom: 4px;
+
             padding-right: 22px;
+
             white-space: nowrap;
+
             overflow: hidden;
+
             text-overflow: ellipsis;
         }
 
         #nombreCancion {
+
             display: inline;
+
             font-size: 11px;
+
             font-weight: bold;
+
             color: white;
         }
 
         #artistaCancion {
+
             display: inline;
+
             font-size: 10px;
+
             color: #94a3b8;
         }
 
         #artistaCancion::before {
+
             content: " - ";
+
             color: #64748b;
         }
 
         #barraProgreso {
+
             width: 100%;
+
             height: 2px;
+
             cursor: pointer;
+
             margin: 2px 0 3px;
         }
 
         #tiempoMusica {
+
             display: flex;
+
             justify-content: space-between;
+
             font-size: 8px;
+
             color: #64748b;
         }
 
         .controlesMusica {
+
             display: flex;
+
             justify-content: center;
+
             align-items: center;
+
             gap: 5px;
+
             margin-top: 3px;
         }
 
         .controlMusica {
+
             width: 24px;
             height: 22px;
+
             padding: 0;
+
             border: none;
+
             background: transparent;
+
             color: white;
+
             font-size: 11px;
+
             cursor: pointer;
+
             transition: 0.2s;
         }
 
@@ -556,18 +912,28 @@
         }
 
         #volumen {
+
             position: absolute;
+
             right: 7px;
             top: 7px;
+
             width: 18px;
             height: 18px;
+
             padding: 0;
+
             border: none;
+
             background: transparent;
+
             color: white;
+
             font-size: 10px;
+
             cursor: pointer;
         }
+
 
         /* =========================
            RESPONSIVE
@@ -577,26 +943,33 @@
 
             #entrada h1,
             #pregunta h1 {
+
                 font-size: 30px;
             }
 
             #universo h1 {
+
                 font-size: 25px;
             }
 
             #luna {
+
                 width: 90px;
                 height: 90px;
+
                 right: 10%;
             }
 
             .estrella {
+
                 width: 27px;
                 height: 27px;
             }
 
             #reproductor {
+
                 width: 190px;
+
                 left: 8px;
                 bottom: 8px;
             }
@@ -605,10 +978,30 @@
                 padding: 25px;
             }
 
+            .historia-contenido {
+
+                width: 92%;
+
+                padding:
+                    28px 22px;
+            }
+
+            .historia-contenido h1 {
+
+                font-size: 27px;
+            }
+
+            .historia-contenido p {
+
+                font-size: 15px;
+            }
+
         }
 
     </style>
+
 </head>
+
 
 <body>
 
@@ -625,7 +1018,12 @@
         playsinline
         preload="auto"
     >
-        <source src="Estrellas.mp4" type="video/mp4">
+
+        <source
+            src="Estrellas.mp4"
+            type="video/mp4"
+        >
+
     </video>
 
 
@@ -640,11 +1038,18 @@
          PANTALLA DE ENTRADA
     ========================= -->
 
-    <section id="entrada" class="pantalla activa">
+    <section
+        id="entrada"
+        class="pantalla activa"
+    >
 
-        <h1>For Kass, my love &lt;3</h1>
+        <h1>
+            For Kass, my love &lt;3
+        </h1>
 
-        <button id="entrar">♡</button>
+        <button id="entrar">
+            ♡
+        </button>
 
     </section>
 
@@ -653,9 +1058,14 @@
          PANTALLA DE PREGUNTA
     ========================= -->
 
-    <section id="pregunta" class="pantalla">
+    <section
+        id="pregunta"
+        class="pantalla"
+    >
 
-        <h1>¿Te gusto? :3</h1>
+        <h1>
+            ¿Te gusto? :3
+        </h1>
 
         <div class="botonesPregunta">
 
@@ -684,39 +1094,138 @@
          UNIVERSO
     ========================= -->
 
-    <section id="universo" class="pantalla">
+    <section
+        id="universo"
+        class="pantalla"
+    >
 
-        <h1>Our Little Universe</h1>
-
-
-        <div class="estrellaFondo" style="top:8%;left:12%;"></div>
-        <div class="estrellaFondo" style="top:15%;left:32%;"></div>
-        <div class="estrellaFondo" style="top:12%;left:72%;"></div>
-        <div class="estrellaFondo" style="top:20%;left:90%;"></div>
-        <div class="estrellaFondo" style="top:35%;left:8%;"></div>
-        <div class="estrellaFondo" style="top:42%;left:45%;"></div>
-        <div class="estrellaFondo" style="top:50%;left:82%;"></div>
-        <div class="estrellaFondo" style="top:65%;left:15%;"></div>
-        <div class="estrellaFondo" style="top:78%;left:58%;"></div>
-        <div class="estrellaFondo" style="top:85%;left:85%;"></div>
-        <div class="estrellaFondo" style="top:90%;left:30%;"></div>
-        <div class="estrellaFondo" style="top:70%;left:92%;"></div>
-        <div class="estrellaFondo" style="top:28%;left:55%;"></div>
-        <div class="estrellaFondo" style="top:18%;left:48%;"></div>
-        <div class="estrellaFondo" style="top:60%;left:52%;"></div>
-        <div class="estrellaFondo" style="top:38%;left:92%;"></div>
-        <div class="estrellaFondo" style="top:75%;left:5%;"></div>
-        <div class="estrellaFondo" style="top:92%;left:70%;"></div>
-        <div class="estrellaFondo" style="top:48%;left:25%;"></div>
-        <div class="estrellaFondo" style="top:5%;left:85%;"></div>
+        <h1>
+            Our Little Universe
+        </h1>
 
 
-        <div id="estrella1" class="estrella"></div>
+        <!-- Estrellas pequeñas -->
 
-        <div id="estrella2" class="estrella"></div>
+        <div
+            class="estrellaFondo"
+            style="top:8%;left:12%;"
+        ></div>
 
-        <div id="estrella3" class="estrella"></div>
+        <div
+            class="estrellaFondo"
+            style="top:15%;left:32%;"
+        ></div>
 
+        <div
+            class="estrellaFondo"
+            style="top:12%;left:72%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:20%;left:90%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:35%;left:8%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:42%;left:45%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:50%;left:82%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:65%;left:15%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:78%;left:58%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:85%;left:85%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:90%;left:30%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:70%;left:92%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:28%;left:55%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:18%;left:48%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:60%;left:52%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:38%;left:92%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:75%;left:5%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:92%;left:70%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:48%;left:25%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:5%;left:85%;"
+        ></div>
+
+
+        <!-- Estrellas principales -->
+
+        <div
+            id="estrella1"
+            class="estrella"
+        ></div>
+
+        <div
+            id="estrella2"
+            class="estrella"
+        ></div>
+
+        <div
+            id="estrella3"
+            class="estrella"
+        ></div>
+
+
+        <!-- Luna -->
 
         <div id="luna"></div>
 
@@ -727,20 +1236,55 @@
          HISTORIA 1
     ========================= -->
 
-    <section id="historia1" class="pantalla historia">
+    <section
+        id="historia1"
+        class="pantalla historia"
+    >
 
-        <h1>Star I</h1>
+        <div class="historia-contenido">
 
-        <p>
-            Hay cosas que aparecen de la nada y terminan
-            significando muchísimo más de lo que imaginabas.
+            <div class="historia-fecha">
+                20 · 09 · 2026
+            </div>
 
-            Esta pequeña estrella es una de ellas.
-        </p>
+            <h1>
+                Where it all began ♡
+            </h1>
 
-        <button class="volver">
-            Volver
-        </button>
+            <div class="linea"></div>
+
+            <p>
+                Supongo que todo comenzó porque las dos nos
+                parecíamos divertidas e interesantes.
+            </p>
+
+            <p>
+                Empezamos a hablar poco a poco, sin saber muy bien
+                a dónde nos llevaría todo esto.
+            </p>
+
+            <p>
+                Y siendo sinceras... las dos ya estábamos
+                medio enamoradas.
+            </p>
+
+            <p>
+                Entre conversaciones, risas y momentos juntas,
+                ese pequeño interés terminó convirtiéndose
+                en algo mucho más bonito.
+            </p>
+
+            <p class="final-historia">
+                Y así, el 20 de septiembre de 2026,
+                dejamos de ser un "casi" y nos convertimos
+                en nosotras. ♡
+            </p>
+
+            <button class="volver">
+                Volver a las estrellas
+            </button>
+
+        </div>
 
     </section>
 
@@ -749,9 +1293,14 @@
          HISTORIA 2
     ========================= -->
 
-    <section id="historia2" class="pantalla historia">
+    <section
+        id="historia2"
+        class="pantalla historia"
+    >
 
-        <h1>Star II</h1>
+        <h1>
+            Star II
+        </h1>
 
         <p>
             Entre todas las estrellas que existen,
@@ -770,9 +1319,14 @@
          HISTORIA 3
     ========================= -->
 
-    <section id="historia3" class="pantalla historia">
+    <section
+        id="historia3"
+        class="pantalla historia"
+    >
 
-        <h1>Star III</h1>
+        <h1>
+            Star III
+        </h1>
 
         <p>
             Quizás el universo sea enorme,
@@ -810,7 +1364,7 @@
             >
 
             <p>
-Un poco de mi.....
+                Un poco de mi.....
                 click en la imagen para hacerla más grande
             </p>
 
@@ -921,6 +1475,7 @@ Un poco de mi.....
 
     <script>
 
+
         /* =========================
            CAMBIO DE PANTALLAS
         ========================= */
@@ -935,10 +1490,12 @@ Un poco de mi.....
 
                 });
 
+
             document
                 .getElementById(id)
                 .classList.add("activa");
         }
+
 
 
         /* =========================
@@ -948,13 +1505,17 @@ Un poco de mi.....
         const fondoVideo =
             document.getElementById("fondoVideo");
 
-        fondoVideo.play().catch(function() {
 
-            console.log(
-                "El navegador esperará para reproducir el video."
-            );
+        fondoVideo
+            .play()
+            .catch(function() {
 
-        });
+                console.log(
+                    "El navegador esperará para reproducir el video."
+                );
+
+            });
+
 
 
         /* =========================
@@ -996,26 +1557,34 @@ Un poco de mi.....
         const musica =
             document.getElementById("musica");
 
+
         const nombreCancion =
             document.getElementById("nombreCancion");
+
 
         const artistaCancion =
             document.getElementById("artistaCancion");
 
+
         const playPause =
             document.getElementById("playPause");
+
 
         const barraProgreso =
             document.getElementById("barraProgreso");
 
+
         const tiempoActual =
             document.getElementById("tiempoActual");
+
 
         const duracion =
             document.getElementById("duracion");
 
+
         const volumen =
             document.getElementById("volumen");
+
 
 
         /* =========================
@@ -1025,19 +1594,24 @@ Un poco de mi.....
         function formatoTiempo(segundos) {
 
             if (!isFinite(segundos)) {
+
                 return "0:00";
             }
+
 
             const minutos =
                 Math.floor(segundos / 60);
 
+
             const segundosRestantes =
                 Math.floor(segundos % 60)
-                .toString()
-                .padStart(2, "0");
+                    .toString()
+                    .padStart(2, "0");
+
 
             return minutos + ":" + segundosRestantes;
         }
+
 
 
         /* =========================
@@ -1051,6 +1625,7 @@ Un poco de mi.....
 
             indiceActual = indice;
 
+
             const cancion =
                 canciones[indiceActual];
 
@@ -1058,11 +1633,13 @@ Un poco de mi.....
             musica.src =
                 cancion.archivo;
 
+
             musica.load();
 
 
             nombreCancion.textContent =
                 cancion.nombre;
+
 
             artistaCancion.textContent =
                 cancion.artista;
@@ -1070,8 +1647,10 @@ Un poco de mi.....
 
             barraProgreso.value = 0;
 
+
             tiempoActual.textContent =
                 "0:00";
+
 
             duracion.textContent =
                 "0:00";
@@ -1104,6 +1683,7 @@ Un poco de mi.....
         }
 
 
+
         /* =========================
            ENTRAR
         ========================= */
@@ -1120,6 +1700,7 @@ Un poco de mi.....
 
                 }
             );
+
 
 
         /* =========================
@@ -1150,6 +1731,7 @@ Un poco de mi.....
             );
 
 
+
         /* =========================
            BOTÓN NO
         ========================= */
@@ -1167,6 +1749,7 @@ Un poco de mi.....
                     botonNo.offsetWidth -
                     30;
 
+
                 const alto =
                     window.innerHeight -
                     botonNo.offsetHeight -
@@ -1176,13 +1759,17 @@ Un poco de mi.....
                 botonNo.style.position =
                     "fixed";
 
+
                 botonNo.style.left =
                     Math.random() * ancho + "px";
 
+
                 botonNo.style.top =
                     Math.random() * alto + "px";
+
             }
         );
+
 
 
         /* =========================
@@ -1199,6 +1786,7 @@ Un poco de mi.....
 
                 }
             );
+
 
 
         /* =========================
@@ -1241,6 +1829,7 @@ Un poco de mi.....
             );
 
 
+
         /* =========================
            BOTONES VOLVER
         ========================= */
@@ -1261,6 +1850,7 @@ Un poco de mi.....
             });
 
 
+
         /* =========================
            LUNA
         ========================= */
@@ -1268,8 +1858,10 @@ Un poco de mi.....
         const luna =
             document.getElementById("luna");
 
+
         const cartaLuna =
             document.getElementById("cartaLuna");
+
 
         const cerrarCarta =
             document.getElementById("cerrarCarta");
@@ -1309,6 +1901,7 @@ Un poco de mi.....
         );
 
 
+
         /* =========================
            VISOR DE MOON.PNG
         ========================= */
@@ -1316,8 +1909,10 @@ Un poco de mi.....
         const imagenMoon =
             document.getElementById("imagenMoon");
 
+
         const visorImagen =
             document.getElementById("visorImagen");
+
 
         const cerrarImagen =
             document.getElementById("cerrarImagen");
@@ -1357,6 +1952,7 @@ Un poco de mi.....
         );
 
 
+
         /* =========================
            PLAY / PAUSE
         ========================= */
@@ -1382,11 +1978,11 @@ Un poco de mi.....
 
                     playPause.textContent =
                         "▶";
-
                 }
 
             }
         );
+
 
 
         /* =========================
@@ -1401,6 +1997,7 @@ Un poco de mi.....
 
                     indiceActual++;
 
+
                     if (
                         indiceActual >=
                         canciones.length
@@ -1410,6 +2007,7 @@ Un poco de mi.....
 
                     }
 
+
                     cargarCancion(
                         indiceActual,
                         true
@@ -1417,6 +2015,7 @@ Un poco de mi.....
 
                 }
             );
+
 
 
         /* =========================
@@ -1431,12 +2030,14 @@ Un poco de mi.....
 
                     indiceActual--;
 
+
                     if (indiceActual < 0) {
 
                         indiceActual =
                             canciones.length - 1;
 
                     }
+
 
                     cargarCancion(
                         indiceActual,
@@ -1445,6 +2046,7 @@ Un poco de mi.....
 
                 }
             );
+
 
 
         /* =========================
@@ -1457,6 +2059,7 @@ Un poco de mi.....
 
                 indiceActual++;
 
+
                 if (
                     indiceActual >=
                     canciones.length
@@ -1466,6 +2069,7 @@ Un poco de mi.....
 
                 }
 
+
                 cargarCancion(
                     indiceActual,
                     true
@@ -1473,6 +2077,7 @@ Un poco de mi.....
 
             }
         );
+
 
 
         /* =========================
@@ -1490,6 +2095,7 @@ Un poco de mi.....
 
             }
         );
+
 
 
         /* =========================
@@ -1510,6 +2116,7 @@ Un poco de mi.....
 
                 }
 
+
                 tiempoActual.textContent =
                     formatoTiempo(
                         musica.currentTime
@@ -1517,6 +2124,7 @@ Un poco de mi.....
 
             }
         );
+
 
 
         /* =========================
@@ -1539,6 +2147,7 @@ Un poco de mi.....
 
             }
         );
+
 
 
         /* =========================
@@ -1564,4 +2173,5 @@ Un poco de mi.....
     </script>
 
 </body>
+
 </html>
