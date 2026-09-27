@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>For Kass, my love <3</title>
 
@@ -12,7 +18,8 @@
             box-sizing: border-box;
         }
 
-        html, body {
+        html,
+        body {
             margin: 0;
             width: 100%;
             height: 100%;
@@ -22,43 +29,62 @@
             color: white;
         }
 
-        /* =========================
+
+        /* =========================================
            VIDEO DE FONDO
-        ========================= */
+        ========================================= */
 
         #fondoVideo {
+
             position: fixed;
+
             inset: 0;
+
             width: 100%;
             height: 100%;
+
             object-fit: cover;
+
             z-index: 0;
+
             pointer-events: none;
         }
 
-        /* =========================
+
+        /* =========================================
            PANTALLAS
-        ========================= */
+        ========================================= */
 
         .pantalla {
+
             position: absolute;
+
             inset: 0;
+
             display: none;
+
             justify-content: center;
+
             align-items: center;
+
             text-align: center;
+
             z-index: 1;
         }
 
+
         .pantalla.activa {
+
             display: flex;
         }
 
-        /* =========================
+
+        /* =========================================
            ENTRADA
-        ========================= */
+        ========================================= */
 
         #entrada {
+
             background:
                 radial-gradient(
                     circle at center,
@@ -66,44 +92,75 @@
                     rgba(17, 24, 39, 0.20) 45%,
                     rgba(2, 6, 23, 0.25) 100%
                 );
+
             flex-direction: column;
         }
 
+
         #entrada h1 {
+
             font-size: 42px;
+
             margin-bottom: 35px;
-            text-shadow: 0 0 20px #818cf8;
+
+            text-shadow:
+                0 0 20px #818cf8;
+
             position: relative;
+
             z-index: 2;
         }
 
+
         #entrar {
+
             border: none;
+
             background: #ec4899;
+
             color: white;
+
             width: 75px;
             height: 75px;
+
             border-radius: 50%;
+
             font-size: 30px;
+
             cursor: pointer;
+
             box-shadow:
                 0 0 15px #ec4899,
                 0 0 35px rgba(236, 72, 153, 0.6);
+
             transition: 0.3s;
+
             position: relative;
-            z-index: 2;
+
+            z-index: 100;
         }
 
+
         #entrar:hover {
+
             transform: scale(1.12);
         }
 
-        /* =========================
+
+        #entrar:active {
+
+            transform: scale(0.95);
+        }
+
+
+        /* =========================================
            PREGUNTA
-        ========================= */
+        ========================================= */
 
         #pregunta {
+
             flex-direction: column;
+
             background:
                 radial-gradient(
                     circle at center,
@@ -113,67 +170,118 @@
                 );
         }
 
+
         #pregunta h1 {
+
             font-size: 42px;
+
             margin-bottom: 35px;
-            text-shadow: 0 0 15px #818cf8;
+
+            text-shadow:
+                0 0 15px #818cf8;
         }
 
+
         .botonesPregunta {
+
             display: flex;
+
             gap: 20px;
+
             justify-content: center;
+
             align-items: center;
         }
 
+
         .botonesPregunta button {
+
             border: none;
+
             padding: 13px 25px;
+
             border-radius: 12px;
+
             font-size: 16px;
+
             cursor: pointer;
+
             transition: 0.2s;
         }
 
+
         #si {
+
             background: #ec4899;
+
             color: white;
-            box-shadow: 0 0 15px rgba(236, 72, 153, 0.5);
+
+            box-shadow:
+                0 0 15px rgba(236, 72, 153, 0.5);
         }
 
+
         #si:hover {
+
             transform: scale(1.08);
         }
 
+
         #no {
+
             background: #475569;
+
             color: white;
         }
+
 
         #respuesta {
+
             margin-top: 25px;
+
             font-size: 28px;
+
             display: none;
         }
+
 
         #next {
+
             display: none;
+
             margin-top: 20px;
+
             padding: 10px 22px;
+
             border: none;
+
             border-radius: 10px;
+
             background: #818cf8;
+
             color: white;
+
             cursor: pointer;
+
             font-size: 15px;
-            box-shadow: 0 0 15px rgba(129, 140, 248, 0.5);
+
+            box-shadow:
+                0 0 15px rgba(129, 140, 248, 0.5);
         }
 
-        /* =========================
+
+        #next:hover {
+
+            transform: scale(1.05);
+        }
+
+
+        /* =========================================
            UNIVERSO
-        ========================= */
+        ========================================= */
 
         #universo {
+
             background:
                 radial-gradient(
                     circle at center,
@@ -181,51 +289,86 @@
                     rgba(15, 23, 42, 0.18) 45%,
                     rgba(2, 6, 23, 0.20) 100%
                 );
+
             overflow: hidden;
         }
 
+
         #universo h1 {
+
             position: absolute;
+
             top: 35px;
+
             left: 50%;
+
             transform: translateX(-50%);
+
             font-size: 34px;
+
             z-index: 10;
+
             white-space: nowrap;
-            text-shadow: 0 0 15px #60a5fa;
+
+            text-shadow:
+                0 0 15px #60a5fa;
         }
 
-        /* =========================
-           ESTRELLAS DEL UNIVERSO
-        ========================= */
+
+        /* =========================================
+           ESTRELLAS PEQUEÑAS
+        ========================================= */
 
         .estrellaFondo {
+
             position: absolute;
+
             width: 3px;
             height: 3px;
+
             background: white;
+
             border-radius: 50%;
-            box-shadow: 0 0 7px white;
-            animation: parpadear 2s infinite alternate;
+
+            box-shadow:
+                0 0 7px white;
+
+            animation:
+                parpadear 2s infinite alternate;
         }
 
+
         @keyframes parpadear {
+
             from {
+
                 opacity: 0.25;
+
                 transform: scale(0.7);
             }
 
             to {
+
                 opacity: 1;
+
                 transform: scale(1.3);
             }
         }
 
+
+        /* =========================================
+           ESTRELLAS PRINCIPALES
+        ========================================= */
+
         .estrella {
+
             position: absolute;
+
             width: 35px;
             height: 35px;
+
             background: white;
+
             clip-path: polygon(
                 50% 0%,
                 61% 38%,
@@ -236,89 +379,138 @@
                 0% 50%,
                 39% 38%
             );
-            filter: drop-shadow(0 0 10px white);
+
+            filter:
+                drop-shadow(0 0 10px white);
+
             cursor: pointer;
-            animation: brilloEstrella 2s infinite alternate;
+
+            animation:
+                brilloEstrella 2s infinite alternate;
+
             transition: 0.3s;
+
+            z-index: 5;
         }
 
+
         .estrella:hover {
+
             transform: scale(1.4);
         }
 
+
         @keyframes brilloEstrella {
+
             from {
+
                 opacity: 0.6;
             }
 
             to {
+
                 opacity: 1;
             }
         }
 
+
         #estrella1 {
+
             top: 28%;
+
             left: 25%;
         }
 
+
         #estrella2 {
+
             top: 55%;
+
             left: 68%;
         }
 
+
         #estrella3 {
+
             top: 72%;
+
             left: 37%;
         }
 
-        /* =========================
+
+        /* =========================================
            LUNA
-        ========================= */
+        ========================================= */
 
         #luna {
+
             position: absolute;
+
             width: 125px;
             height: 125px;
+
             border-radius: 50%;
+
             right: 13%;
+
             top: 25%;
+
             background: #f8fafc;
+
             box-shadow:
                 0 0 20px #e2e8f0,
                 0 0 50px rgba(226, 232, 240, 0.6),
                 0 0 100px rgba(226, 232, 240, 0.25);
+
             cursor: pointer;
+
             transition: 0.4s;
-            animation: lunaFlotar 6s ease-in-out infinite;
+
+            animation:
+                lunaFlotar 6s ease-in-out infinite;
+
+            z-index: 6;
         }
+
 
         @keyframes lunaFlotar {
 
-            0%, 100% {
+            0%,
+            100% {
+
                 transform: translateY(0);
             }
 
             50% {
+
                 transform: translateY(-8px);
             }
-
         }
 
+
         #luna:hover {
+
             transform: scale(1.08);
+
             box-shadow:
                 0 0 30px #f8fafc,
                 0 0 70px rgba(226, 232, 240, 0.7),
                 0 0 120px rgba(226, 232, 240, 0.3);
         }
 
-        /* =========================
-           PÁGINAS DE HISTORIA
-        ========================= */
+
+        /* =========================================
+           HISTORIAS
+        ========================================= */
 
         .historia {
+
             flex-direction: column;
+
             padding: 40px;
+
+            overflow-y: auto;
+
             background:
                 radial-gradient(
                     circle at center,
@@ -328,294 +520,517 @@
                 );
         }
 
+
         .historia h1 {
+
             font-size: 35px;
+
             margin-bottom: 25px;
-            text-shadow: 0 0 15px #60a5fa;
+
+            text-shadow:
+                0 0 15px #60a5fa;
         }
+
 
         .historia p {
-            max-width: 650px;
-            line-height: 1.7;
+
+            max-width: 700px;
+
+            line-height: 1.8;
+
             color: #cbd5e1;
+
             font-size: 17px;
+
+            white-space: pre-line;
+
+            text-align: center;
         }
 
+
         .volver {
+
             margin-top: 30px;
+
             padding: 10px 22px;
+
             border: none;
+
             border-radius: 10px;
+
             background: #334155;
+
             color: white;
+
             cursor: pointer;
+
             transition: 0.2s;
         }
 
+
         .volver:hover {
+
             background: #475569;
+
             transform: scale(1.05);
         }
 
-        /* =========================
+
+        /* =========================================
            CARTA DE LA LUNA
-        ========================= */
+        ========================================= */
 
         #cartaLuna {
+
             position: fixed;
+
             inset: 0;
-            background: rgba(0, 0, 0, 0.75);
+
+            background:
+                rgba(0, 0, 0, 0.75);
+
             display: none;
+
             justify-content: center;
+
             align-items: center;
+
             z-index: 2000;
+
             padding: 20px;
         }
 
+
         #cartaLuna.activa {
+
             display: flex;
         }
 
+
         .carta {
+
             position: relative;
+
             width: min(700px, 90vw);
+
             max-height: 85vh;
+
             overflow-y: auto;
+
             background:
-                linear-gradient(145deg, #172554, #0f172a);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+                linear-gradient(
+                    145deg,
+                    #172554,
+                    #0f172a
+                );
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.15);
+
             border-radius: 20px;
+
             padding: 35px;
+
             box-shadow:
                 0 0 30px rgba(96, 165, 250, 0.25),
                 0 20px 60px rgba(0, 0, 0, 0.5);
         }
 
+
         .carta h1 {
+
             margin-top: 0;
+
             font-size: 30px;
+
             color: #f8fafc;
         }
 
+
         .carta p {
+
             color: #cbd5e1;
+
             line-height: 1.8;
+
             font-size: 16px;
+
             white-space: pre-line;
         }
 
+
         #imagenMoon {
+
             width: 220px;
+
             max-width: 100%;
+
             border-radius: 12px;
+
             display: block;
+
             margin: 20px auto;
+
             cursor: pointer;
+
             transition: 0.3s;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+
+            box-shadow:
+                0 0 20px
+                rgba(255, 255, 255, 0.15);
         }
 
+
         #imagenMoon:hover {
+
             transform: scale(1.03);
         }
 
+
         #cerrarCarta {
+
             position: absolute;
+
             top: 12px;
+
             right: 16px;
+
             border: none;
+
             background: transparent;
+
             color: white;
+
             font-size: 25px;
+
             cursor: pointer;
         }
 
-        /* =========================
+
+        /* =========================================
            VISOR DE IMAGEN
-        ========================= */
+        ========================================= */
 
         #visorImagen {
+
             position: fixed;
+
             inset: 0;
-            background: rgba(0, 0, 0, 0.92);
+
+            background:
+                rgba(0, 0, 0, 0.92);
+
             display: none;
+
             justify-content: center;
+
             align-items: center;
+
             z-index: 4000;
+
             padding: 30px;
         }
 
+
         #visorImagen.activa {
+
             display: flex;
         }
 
+
         #imagenGrande {
+
             max-width: 90vw;
+
             max-height: 90vh;
+
             object-fit: contain;
+
             border-radius: 10px;
-            box-shadow: 0 0 40px rgba(255, 255, 255, 0.15);
+
+            box-shadow:
+                0 0 40px
+                rgba(255, 255, 255, 0.15);
         }
 
+
         #cerrarImagen {
+
             position: absolute;
+
             top: 20px;
+
             right: 30px;
+
             border: none;
+
             background: transparent;
+
             color: white;
+
             font-size: 35px;
+
             cursor: pointer;
         }
 
-        /* =========================
+
+        /* =========================================
            REPRODUCTOR
-        ========================= */
+        ========================================= */
 
         #reproductor {
+
             position: fixed;
+
             left: 12px;
+
             bottom: 12px;
+
             width: 210px;
+
             padding: 8px 10px;
-            background: rgba(2, 6, 23, 0.82);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+
+            background:
+                rgba(2, 6, 23, 0.82);
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.12);
+
             border-radius: 10px;
+
             backdrop-filter: blur(8px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+
+            box-shadow:
+                0 4px 15px
+                rgba(0, 0, 0, 0.35);
+
             z-index: 3000;
         }
 
+
         #infoCancion {
+
             text-align: left;
+
             margin-bottom: 4px;
+
             padding-right: 22px;
+
             white-space: nowrap;
+
             overflow: hidden;
+
             text-overflow: ellipsis;
         }
 
+
         #nombreCancion {
+
             display: inline;
+
             font-size: 11px;
+
             font-weight: bold;
+
             color: white;
         }
 
+
         #artistaCancion {
+
             display: inline;
+
             font-size: 10px;
+
             color: #94a3b8;
         }
 
+
         #artistaCancion::before {
+
             content: " - ";
+
             color: #64748b;
         }
 
+
         #barraProgreso {
+
             width: 100%;
+
             height: 2px;
+
             cursor: pointer;
+
             margin: 2px 0 3px;
         }
 
+
         #tiempoMusica {
+
             display: flex;
+
             justify-content: space-between;
+
             font-size: 8px;
+
             color: #64748b;
         }
 
+
         .controlesMusica {
+
             display: flex;
+
             justify-content: center;
+
             align-items: center;
+
             gap: 5px;
+
             margin-top: 3px;
         }
 
+
         .controlMusica {
+
             width: 24px;
+
             height: 22px;
+
             padding: 0;
+
             border: none;
+
             background: transparent;
+
             color: white;
+
             font-size: 11px;
+
             cursor: pointer;
+
             transition: 0.2s;
         }
 
+
         .controlMusica:hover {
+
             transform: scale(1.2);
         }
 
+
         #playPause {
+
             font-size: 13px;
         }
 
+
         #volumen {
+
             position: absolute;
+
             right: 7px;
+
             top: 7px;
+
             width: 18px;
+
             height: 18px;
+
             padding: 0;
+
             border: none;
+
             background: transparent;
+
             color: white;
+
             font-size: 10px;
+
             cursor: pointer;
         }
 
-        /* =========================
+
+        /* =========================================
            RESPONSIVE
-        ========================= */
+        ========================================= */
 
         @media (max-width: 600px) {
 
             #entrada h1,
             #pregunta h1 {
+
                 font-size: 30px;
             }
 
+
             #universo h1 {
+
                 font-size: 25px;
             }
 
+
             #luna {
+
                 width: 90px;
+
                 height: 90px;
+
                 right: 10%;
             }
 
+
             .estrella {
+
                 width: 27px;
+
                 height: 27px;
             }
 
+
             #reproductor {
+
                 width: 190px;
+
                 left: 8px;
+
                 bottom: 8px;
             }
 
+
             .carta {
+
                 padding: 25px;
             }
 
+
+            .historia {
+
+                padding:
+                    25px 20px 100px;
+            }
+
+
+            .historia p {
+
+                font-size: 15px;
+            }
         }
 
     </style>
+
 </head>
+
 
 <body>
 
 
-    <!-- =========================
-         VIDEO DE FONDO
-    ========================= -->
+    <!-- =========================================
+         VIDEO
+    ========================================= -->
 
     <video
         id="fondoVideo"
@@ -625,69 +1040,112 @@
         playsinline
         preload="auto"
     >
-        <source src="Estrellas.mp4" type="video/mp4">
+
+        <source
+            src="Estrellas.mp4"
+            type="video/mp4"
+        >
+
     </video>
 
 
-    <!-- =========================
+    <!-- =========================================
          AUDIO
-    ========================= -->
+    ========================================= -->
 
-    <audio id="musica"></audio>
+    <audio
+        id="musica"
+        preload="auto"
+    ></audio>
 
 
-    <!-- =========================
-         PANTALLA DE ENTRADA
-    ========================= -->
+    <!-- =========================================
+         ENTRADA
+    ========================================= -->
 
-    <section id="entrada" class="pantalla activa">
+    <section
+        id="entrada"
+        class="pantalla activa"
+    >
 
-        <h1>For Kass, my love &lt;3</h1>
+        <h1>
+            For Kass, my love &lt;3
+        </h1>
 
-        <button id="entrar">♡</button>
+        <button
+            id="entrar"
+            type="button"
+        >
+            ♡
+        </button>
 
     </section>
 
 
-    <!-- =========================
-         PANTALLA DE PREGUNTA
-    ========================= -->
+    <!-- =========================================
+         PREGUNTA
+    ========================================= -->
 
-    <section id="pregunta" class="pantalla">
+    <section
+        id="pregunta"
+        class="pantalla"
+    >
 
-        <h1>¿Te gusto? :3</h1>
+        <h1>
+            ¿Te gusto? :3
+        </h1>
+
 
         <div class="botonesPregunta">
 
-            <button id="si">
+            <button
+                id="si"
+                type="button"
+            >
                 Skibidi Si
             </button>
 
-            <button id="no">
+
+            <button
+                id="no"
+                type="button"
+            >
                 Nuh :(
             </button>
 
         </div>
 
+
         <div id="respuesta">
             :33
         </div>
 
-        <button id="next">
+
+        <button
+            id="next"
+            type="button"
+        >
             Next !!
         </button>
 
     </section>
 
 
-    <!-- =========================
+    <!-- =========================================
          UNIVERSO
-    ========================= -->
+    ========================================= -->
 
-    <section id="universo" class="pantalla">
+    <section
+        id="universo"
+        class="pantalla"
+    >
 
-        <h1>Our Little Universe</h1>
+        <h1>
+            Our Little Universe
+        </h1>
 
+
+        <!-- ESTRELLAS PEQUEÑAS -->
 
         <div class="estrellaFondo" style="top:8%;left:12%;"></div>
         <div class="estrellaFondo" style="top:15%;left:32%;"></div>
@@ -711,97 +1169,216 @@
         <div class="estrellaFondo" style="top:5%;left:85%;"></div>
 
 
-        <div id="estrella1" class="estrella"></div>
+        <!-- ESTRELLAS INTERACTIVAS -->
 
-        <div id="estrella2" class="estrella"></div>
+        <div
+            id="estrella1"
+            class="estrella"
+        ></div>
 
-        <div id="estrella3" class="estrella"></div>
 
+        <div
+            id="estrella2"
+            class="estrella"
+        ></div>
+
+
+        <div
+            id="estrella3"
+            class="estrella"
+        ></div>
+
+
+        <!-- LUNA -->
 
         <div id="luna"></div>
 
     </section>
 
 
-    <!-- =========================
+    <!-- =========================================
          HISTORIA 1
-    ========================= -->
+    ========================================= -->
 
-    <section id="historia1" class="pantalla historia">
+    <section
+        id="historia1"
+        class="pantalla historia"
+    >
 
-        <h1>Star I</h1>
+        <h1>
+            Where it all began ♡
+        </h1>
+
 
         <p>
-            Hay cosas que aparecen de la nada y terminan
-            significando muchísimo más de lo que imaginabas.
+Todo comenzó hace más de un año.
 
-            Esta pequeña estrella es una de ellas.
+Nos empezamos a hablar por un simple interés, por curiosidad y porque, de alguna manera, las dos pensábamos que la otra era divertida e interesante.
+
+Creo que si hubiéramos tenido la oportunidad de conocernos más desde ese momento, y si no hubiera existido esa persona de por medio, las cosas probablemente habrían sido diferentes.
+
+Siento que, después de conocernos un poco más, quizá un mes después hubiéramos terminado siendo pareja.
+
+Pero no pasó así.
+
+Y aunque en ese momento no se dio, supongo que algunas cosas simplemente necesitan esperar un poco antes de encontrar su momento.
+
+Y ese momento terminó siendo este 20 de septiembre de 2026.
+
+Para ti quizá no fue algo que apareció de la nada. Era algo que ya estabas pensando, algo que de alguna manera ya estabas esperando.
+
+Para mí, en cambio, fue algo mucho más inesperado.
+
+No pensé que terminaríamos aquí, siendo nosotras.
+
+Y lo más curioso es que aprendí a amarte bastante rápido.
+
+Con tu interés, con tu atención, con la forma en la que empezaste a estar presente en mis días, poco a poco fui sintiendo algo más por ti.
+
+Sin darme cuenta, empecé a enamorarme.
+
+No sé exactamente en qué momento pasó.
+
+No podría señalar una conversación y decir "fue aquí".
+
+Simplemente pasó.
+
+Entre hablar contigo, reírnos, conocernos y compartir pequeñas cosas, empezaste a convertirte en alguien demasiado importante para mí.
+
+Y ahora que lo pienso, es extraño cómo algo que comenzó con un simple interés terminó convirtiéndose en algo que significa tanto para mí.
+
+Pasamos de ser dos personas que se parecían divertidas e interesantes a ser dos personas que decidieron elegirse.
+
+Tal vez nuestra historia pudo haber comenzado mucho antes, pero quizá necesitábamos todo ese tiempo para llegar exactamente hasta donde estamos ahora.
+
+No sé cómo pasó todo, ni en qué momento dejé de simplemente hablar contigo y empecé a quererte de esta manera.
+
+Solo sé que pasó.
+
+Y aquí estamos, comenzando nuestra historia oficialmente este 20 de septiembre de 2026. ♡
         </p>
 
-        <button class="volver">
+
+        <button
+            class="volver"
+            type="button"
+        >
             Volver
         </button>
 
     </section>
 
 
-    <!-- =========================
+    <!-- =========================================
          HISTORIA 2
-    ========================= -->
+    ========================================= -->
 
-    <section id="historia2" class="pantalla historia">
+    <section
+        id="historia2"
+        class="pantalla historia"
+    >
 
-        <h1>Star II</h1>
+        <h1>
+            Star II
+        </h1>
+
 
         <p>
-            Entre todas las estrellas que existen,
-            me alegra haber encontrado la que me hace
-            querer quedarme mirando un poquito más.
+Hay pequeñas cosas de ti que probablemente no
+sepas cuánto significan para mí.
+
+La forma en la que me prestas atención,
+la manera en la que me haces reír,
+las conversaciones tontas,
+los pequeños detalles y simplemente
+el hecho de poder tenerte en mis días.
+
+Quizá no siempre sé cómo decirte lo mucho
+que significan esas cosas.
+
+Pero las noto.
+
+Y las guardo conmigo.
         </p>
 
-        <button class="volver">
+
+        <button
+            class="volver"
+            type="button"
+        >
             Volver
         </button>
 
     </section>
 
 
-    <!-- =========================
+    <!-- =========================================
          HISTORIA 3
-    ========================= -->
+    ========================================= -->
 
-    <section id="historia3" class="pantalla historia">
+    <section
+        id="historia3"
+        class="pantalla historia"
+    >
 
-        <h1>Star III</h1>
+        <h1>
+            Star III
+        </h1>
+
 
         <p>
-            Quizás el universo sea enorme,
-            pero algunas personas hacen que se sienta
-            un poquito más pequeño y especial.
+No sé exactamente qué nos espera después de esto.
+
+Pero me gusta pensar que esta estrella
+no representa solamente lo que ya vivimos,
+sino también todas las cosas que todavía
+nos quedan por vivir.
+
+Más conversaciones.
+
+Más momentos.
+
+Más recuerdos.
+
+Y muchas más razones para seguir
+eligiéndonos.
+
+Quizá el universo sea enorme,
+pero me gusta que dentro de todo ese espacio
+termináramos encontrándonos.
         </p>
 
-        <button class="volver">
+
+        <button
+            class="volver"
+            type="button"
+        >
             Volver
         </button>
 
     </section>
 
 
-    <!-- =========================
+    <!-- =========================================
          CARTA DE LA LUNA
-    ========================= -->
+    ========================================= -->
 
     <div id="cartaLuna">
 
         <div class="carta">
 
-            <button id="cerrarCarta">
+            <button
+                id="cerrarCarta"
+                type="button"
+            >
                 ×
             </button>
+
 
             <h1>
                 Me ... a moon ♡
             </h1>
+
 
             <img
                 id="imagenMoon"
@@ -809,9 +1386,30 @@
                 alt="Moon"
             >
 
+
             <p>
 Un poco de mi.....
-                click en la imagen para hacerla más grande
+
+Hay muchas cosas que me cuesta decir en persona.
+
+No siempre sé cómo explicar lo que siento,
+y mucho menos cómo demostrarlo.
+
+Supongo que esta página es una de mis formas
+de intentar hacerlo.
+
+No soy alguien que escriba cartas todo el tiempo
+ni alguien que siempre sabe cómo expresar cariño.
+
+Pero contigo quiero intentarlo.
+
+Así que si llegaste hasta aquí,
+supongo que ya sabes una parte de lo que
+normalmente me cuesta decir.
+
+Te quiero muchísimo, Kass. ♡
+
+Click en la imagen para hacerla más grande.
             </p>
 
         </div>
@@ -819,15 +1417,19 @@ Un poco de mi.....
     </div>
 
 
-    <!-- =========================
+    <!-- =========================================
          VISOR DE IMAGEN
-    ========================= -->
+    ========================================= -->
 
     <div id="visorImagen">
 
-        <button id="cerrarImagen">
+        <button
+            id="cerrarImagen"
+            type="button"
+        >
             ×
         </button>
+
 
         <img
             id="imagenGrande"
@@ -838,9 +1440,9 @@ Un poco de mi.....
     </div>
 
 
-    <!-- =========================
+    <!-- =========================================
          REPRODUCTOR
-    ========================= -->
+    ========================================= -->
 
     <div id="reproductor">
 
@@ -885,22 +1487,27 @@ Un poco de mi.....
             <button
                 id="anterior"
                 class="controlMusica"
+                type="button"
                 title="Anterior"
             >
                 ⏮
             </button>
 
+
             <button
                 id="playPause"
                 class="controlMusica"
+                type="button"
                 title="Reproducir / Pausar"
             >
                 ▶
             </button>
 
+
             <button
                 id="siguiente"
                 class="controlMusica"
+                type="button"
                 title="Siguiente"
             >
                 ⏭
@@ -911,6 +1518,7 @@ Un poco de mi.....
 
         <button
             id="volumen"
+            type="button"
             title="Silenciar"
         >
             🔊
@@ -921,9 +1529,44 @@ Un poco de mi.....
 
     <script>
 
-        /* =========================
-           CAMBIO DE PANTALLAS
-        ========================= */
+        /* =========================================
+           ELEMENTOS
+        ========================================= */
+
+        const musica =
+            document.getElementById("musica");
+
+        const botonEntrar =
+            document.getElementById("entrar");
+
+        const fondoVideo =
+            document.getElementById("fondoVideo");
+
+        const nombreCancion =
+            document.getElementById("nombreCancion");
+
+        const artistaCancion =
+            document.getElementById("artistaCancion");
+
+        const barraProgreso =
+            document.getElementById("barraProgreso");
+
+        const tiempoActual =
+            document.getElementById("tiempoActual");
+
+        const duracion =
+            document.getElementById("duracion");
+
+        const playPause =
+            document.getElementById("playPause");
+
+        const volumen =
+            document.getElementById("volumen");
+
+
+        /* =========================================
+           CAMBIAR PANTALLA
+        ========================================= */
 
         function mostrarPantalla(id) {
 
@@ -935,31 +1578,36 @@ Un poco de mi.....
 
                 });
 
-            document
-                .getElementById(id)
-                .classList.add("activa");
+
+            const pantalla =
+                document.getElementById(id);
+
+
+            if (pantalla) {
+
+                pantalla.classList.add("activa");
+            }
         }
 
 
-        /* =========================
-           VIDEO DE FONDO
-        ========================= */
+        /* =========================================
+           VIDEO
+        ========================================= */
 
-        const fondoVideo =
-            document.getElementById("fondoVideo");
+        fondoVideo
+            .play()
+            .catch(function() {
 
-        fondoVideo.play().catch(function() {
+                console.log(
+                    "El video se reproducirá cuando el navegador lo permita."
+                );
 
-            console.log(
-                "El navegador esperará para reproducir el video."
-            );
-
-        });
+            });
 
 
-        /* =========================
+        /* =========================================
            PLAYLIST
-        ========================= */
+        ========================================= */
 
         const canciones = [
 
@@ -993,56 +1641,40 @@ Un poco de mi.....
         let indiceActual = 0;
 
 
-        const musica =
-            document.getElementById("musica");
-
-        const nombreCancion =
-            document.getElementById("nombreCancion");
-
-        const artistaCancion =
-            document.getElementById("artistaCancion");
-
-        const playPause =
-            document.getElementById("playPause");
-
-        const barraProgreso =
-            document.getElementById("barraProgreso");
-
-        const tiempoActual =
-            document.getElementById("tiempoActual");
-
-        const duracion =
-            document.getElementById("duracion");
-
-        const volumen =
-            document.getElementById("volumen");
-
-
-        /* =========================
-           FORMATO DEL TIEMPO
-        ========================= */
+        /* =========================================
+           FORMATO DE TIEMPO
+        ========================================= */
 
         function formatoTiempo(segundos) {
 
-            if (!isFinite(segundos)) {
+            if (
+                !segundos ||
+                isNaN(segundos)
+            ) {
+
                 return "0:00";
             }
+
 
             const minutos =
                 Math.floor(segundos / 60);
 
-            const segundosRestantes =
-                Math.floor(segundos % 60)
-                .toString()
-                .padStart(2, "0");
 
-            return minutos + ":" + segundosRestantes;
+            const segundosRestantes =
+                Math.floor(segundos % 60);
+
+
+            return (
+                minutos +
+                ":" +
+                String(segundosRestantes).padStart(2, "0")
+            );
         }
 
 
-        /* =========================
+        /* =========================================
            CARGAR CANCIÓN
-        ========================= */
+        ========================================= */
 
         function cargarCancion(
             indice,
@@ -1051,18 +1683,20 @@ Un poco de mi.....
 
             indiceActual = indice;
 
+
             const cancion =
                 canciones[indiceActual];
 
 
-            musica.src =
-                cancion.archivo;
+            if (!cancion) {
 
-            musica.load();
+                return;
+            }
 
 
             nombreCancion.textContent =
                 cancion.nombre;
+
 
             artistaCancion.textContent =
                 cancion.artista;
@@ -1077,24 +1711,51 @@ Un poco de mi.....
                 "0:00";
 
 
+            /*
+             * No usamos load() aquí antes del play.
+             * Esto hace que el navegador reciba
+             * directamente la reproducción desde
+             * el evento de clic.
+             */
+
+            musica.src =
+                cancion.archivo;
+
+
+            musica.volume = 0.7;
+
+            musica.muted = false;
+
+
             if (reproducir) {
 
-                musica
-                    .play()
-                    .then(function() {
+                const promesa =
+                    musica.play();
 
-                        playPause.textContent =
-                            "❚❚";
 
-                    })
-                    .catch(function(error) {
+                if (promesa !== undefined) {
 
-                        console.log(
-                            "No se pudo reproducir:",
-                            error
-                        );
+                    promesa
+                        .then(function() {
 
-                    });
+                            playPause.textContent =
+                                "❚❚";
+
+                        })
+                        .catch(function(error) {
+
+                            console.error(
+                                "No se pudo reproducir " +
+                                cancion.archivo,
+                                error
+                            );
+
+
+                            playPause.textContent =
+                                "▶";
+                        });
+
+                }
 
             } else {
 
@@ -1104,27 +1765,40 @@ Un poco de mi.....
         }
 
 
-        /* =========================
-           ENTRAR
-        ========================= */
+        /* =========================================
+           BOTÓN DE ENTRADA
+        ========================================= */
 
-        document
-            .getElementById("entrar")
-            .addEventListener(
-                "click",
-                function() {
+        botonEntrar.addEventListener(
+            "click",
+            function() {
 
-                    cargarCancion(0, true);
+                /*
+                 * Primero cambiamos la pantalla.
+                 */
 
-                    mostrarPantalla("pregunta");
+                mostrarPantalla(
+                    "pregunta"
+                );
 
-                }
-            );
+
+                /*
+                 * Después iniciamos la música
+                 * desde el mismo clic.
+                 */
+
+                cargarCancion(
+                    0,
+                    true
+                );
+
+            }
+        );
 
 
-        /* =========================
+        /* =========================================
            BOTÓN SI
-        ========================= */
+        ========================================= */
 
         document
             .getElementById("si")
@@ -1134,25 +1808,28 @@ Un poco de mi.....
 
                     document
                         .getElementById("respuesta")
-                        .style.display = "block";
+                        .style.display =
+                        "block";
 
 
                     document
                         .querySelector(".botonesPregunta")
-                        .style.display = "none";
+                        .style.display =
+                        "none";
 
 
                     document
                         .getElementById("next")
-                        .style.display = "inline-block";
+                        .style.display =
+                        "inline-block";
 
                 }
             );
 
 
-        /* =========================
+        /* =========================================
            BOTÓN NO
-        ========================= */
+        ========================================= */
 
         const botonNo =
             document.getElementById("no");
@@ -1167,6 +1844,7 @@ Un poco de mi.....
                     botonNo.offsetWidth -
                     30;
 
+
                 const alto =
                     window.innerHeight -
                     botonNo.offsetHeight -
@@ -1176,18 +1854,27 @@ Un poco de mi.....
                 botonNo.style.position =
                     "fixed";
 
+
                 botonNo.style.left =
-                    Math.random() * ancho + "px";
+                    Math.max(
+                        10,
+                        Math.random() * ancho
+                    ) + "px";
+
 
                 botonNo.style.top =
-                    Math.random() * alto + "px";
+                    Math.max(
+                        10,
+                        Math.random() * alto
+                    ) + "px";
+
             }
         );
 
 
-        /* =========================
+        /* =========================================
            NEXT
-        ========================= */
+        ========================================= */
 
         document
             .getElementById("next")
@@ -1195,15 +1882,17 @@ Un poco de mi.....
                 "click",
                 function() {
 
-                    mostrarPantalla("universo");
+                    mostrarPantalla(
+                        "universo"
+                    );
 
                 }
             );
 
 
-        /* =========================
-           ESTRELLAS
-        ========================= */
+        /* =========================================
+           ESTRELLA 1
+        ========================================= */
 
         document
             .getElementById("estrella1")
@@ -1211,11 +1900,17 @@ Un poco de mi.....
                 "click",
                 function() {
 
-                    mostrarPantalla("historia1");
+                    mostrarPantalla(
+                        "historia1"
+                    );
 
                 }
             );
 
+
+        /* =========================================
+           ESTRELLA 2
+        ========================================= */
 
         document
             .getElementById("estrella2")
@@ -1223,11 +1918,17 @@ Un poco de mi.....
                 "click",
                 function() {
 
-                    mostrarPantalla("historia2");
+                    mostrarPantalla(
+                        "historia2"
+                    );
 
                 }
             );
 
+
+        /* =========================================
+           ESTRELLA 3
+        ========================================= */
 
         document
             .getElementById("estrella3")
@@ -1235,15 +1936,17 @@ Un poco de mi.....
                 "click",
                 function() {
 
-                    mostrarPantalla("historia3");
+                    mostrarPantalla(
+                        "historia3"
+                    );
 
                 }
             );
 
 
-        /* =========================
-           BOTONES VOLVER
-        ========================= */
+        /* =========================================
+           VOLVER
+        ========================================= */
 
         document
             .querySelectorAll(".volver")
@@ -1253,7 +1956,9 @@ Un poco de mi.....
                     "click",
                     function() {
 
-                        mostrarPantalla("universo");
+                        mostrarPantalla(
+                            "universo"
+                        );
 
                     }
                 );
@@ -1261,15 +1966,17 @@ Un poco de mi.....
             });
 
 
-        /* =========================
+        /* =========================================
            LUNA
-        ========================= */
+        ========================================= */
 
         const luna =
             document.getElementById("luna");
 
+
         const cartaLuna =
             document.getElementById("cartaLuna");
+
 
         const cerrarCarta =
             document.getElementById("cerrarCarta");
@@ -1279,7 +1986,9 @@ Un poco de mi.....
             "click",
             function() {
 
-                cartaLuna.classList.add("activa");
+                cartaLuna.classList.add(
+                    "activa"
+                );
 
             }
         );
@@ -1289,7 +1998,9 @@ Un poco de mi.....
             "click",
             function() {
 
-                cartaLuna.classList.remove("activa");
+                cartaLuna.classList.remove(
+                    "activa"
+                );
 
             }
         );
@@ -1299,25 +2010,31 @@ Un poco de mi.....
             "click",
             function(evento) {
 
-                if (evento.target === cartaLuna) {
+                if (
+                    evento.target ===
+                    cartaLuna
+                ) {
 
-                    cartaLuna.classList.remove("activa");
-
+                    cartaLuna.classList.remove(
+                        "activa"
+                    );
                 }
 
             }
         );
 
 
-        /* =========================
-           VISOR DE MOON.PNG
-        ========================= */
+        /* =========================================
+           IMAGEN MOON
+        ========================================= */
 
         const imagenMoon =
             document.getElementById("imagenMoon");
 
+
         const visorImagen =
             document.getElementById("visorImagen");
+
 
         const cerrarImagen =
             document.getElementById("cerrarImagen");
@@ -1327,7 +2044,9 @@ Un poco de mi.....
             "click",
             function() {
 
-                visorImagen.classList.add("activa");
+                visorImagen.classList.add(
+                    "activa"
+                );
 
             }
         );
@@ -1337,7 +2056,9 @@ Un poco de mi.....
             "click",
             function() {
 
-                visorImagen.classList.remove("activa");
+                visorImagen.classList.remove(
+                    "activa"
+                );
 
             }
         );
@@ -1347,9 +2068,14 @@ Un poco de mi.....
             "click",
             function(evento) {
 
-                if (evento.target === visorImagen) {
+                if (
+                    evento.target ===
+                    visorImagen
+                ) {
 
-                    visorImagen.classList.remove("activa");
+                    visorImagen.classList.remove(
+                        "activa"
+                    );
 
                 }
 
@@ -1357,9 +2083,9 @@ Un poco de mi.....
         );
 
 
-        /* =========================
+        /* =========================================
            PLAY / PAUSE
-        ========================= */
+        ========================================= */
 
         playPause.addEventListener(
             "click",
@@ -1374,6 +2100,14 @@ Un poco de mi.....
                             playPause.textContent =
                                 "❚❚";
 
+                        })
+                        .catch(function(error) {
+
+                            console.error(
+                                "No se pudo reproducir:",
+                                error
+                            );
+
                         });
 
                 } else {
@@ -1382,16 +2116,15 @@ Un poco de mi.....
 
                     playPause.textContent =
                         "▶";
-
                 }
 
             }
         );
 
 
-        /* =========================
-           SIGUIENTE
-        ========================= */
+        /* =========================================
+           SIGUIENTE CANCIÓN
+        ========================================= */
 
         document
             .getElementById("siguiente")
@@ -1401,14 +2134,15 @@ Un poco de mi.....
 
                     indiceActual++;
 
+
                     if (
                         indiceActual >=
                         canciones.length
                     ) {
 
                         indiceActual = 0;
-
                     }
+
 
                     cargarCancion(
                         indiceActual,
@@ -1419,9 +2153,9 @@ Un poco de mi.....
             );
 
 
-        /* =========================
-           ANTERIOR
-        ========================= */
+        /* =========================================
+           CANCIÓN ANTERIOR
+        ========================================= */
 
         document
             .getElementById("anterior")
@@ -1431,12 +2165,15 @@ Un poco de mi.....
 
                     indiceActual--;
 
-                    if (indiceActual < 0) {
+
+                    if (
+                        indiceActual < 0
+                    ) {
 
                         indiceActual =
                             canciones.length - 1;
-
                     }
+
 
                     cargarCancion(
                         indiceActual,
@@ -1447,9 +2184,9 @@ Un poco de mi.....
             );
 
 
-        /* =========================
-           SIGUIENTE AUTOMÁTICO
-        ========================= */
+        /* =========================================
+           CAMBIO AUTOMÁTICO
+        ========================================= */
 
         musica.addEventListener(
             "ended",
@@ -1457,14 +2194,15 @@ Un poco de mi.....
 
                 indiceActual++;
 
+
                 if (
                     indiceActual >=
                     canciones.length
                 ) {
 
                     indiceActual = 0;
-
                 }
+
 
                 cargarCancion(
                     indiceActual,
@@ -1475,9 +2213,9 @@ Un poco de mi.....
         );
 
 
-        /* =========================
-           DURACIÓN
-        ========================= */
+        /* =========================================
+           METADATA
+        ========================================= */
 
         musica.addEventListener(
             "loadedmetadata",
@@ -1492,23 +2230,26 @@ Un poco de mi.....
         );
 
 
-        /* =========================
-           PROGRESO
-        ========================= */
+        /* =========================================
+           ACTUALIZAR PROGRESO
+        ========================================= */
 
         musica.addEventListener(
             "timeupdate",
             function() {
 
-                if (musica.duration) {
+                if (
+                    musica.duration &&
+                    !isNaN(musica.duration)
+                ) {
 
                     barraProgreso.value =
                         (
                             musica.currentTime /
                             musica.duration
                         ) * 100;
-
                 }
+
 
                 tiempoActual.textContent =
                     formatoTiempo(
@@ -1519,31 +2260,34 @@ Un poco de mi.....
         );
 
 
-        /* =========================
+        /* =========================================
            CAMBIAR POSICIÓN
-        ========================= */
+        ========================================= */
 
         barraProgreso.addEventListener(
             "input",
             function() {
 
-                if (musica.duration) {
+                if (
+                    musica.duration &&
+                    !isNaN(musica.duration)
+                ) {
 
                     musica.currentTime =
                         (
                             barraProgreso.value /
                             100
-                        ) * musica.duration;
-
+                        ) *
+                        musica.duration;
                 }
 
             }
         );
 
 
-        /* =========================
+        /* =========================================
            VOLUMEN
-        ========================= */
+        ========================================= */
 
         volumen.addEventListener(
             "click",
@@ -1561,7 +2305,54 @@ Un poco de mi.....
             }
         );
 
+
+        /* =========================================
+           ESTADO DEL AUDIO
+        ========================================= */
+
+        musica.addEventListener(
+            "play",
+            function() {
+
+                playPause.textContent =
+                    "❚❚";
+
+            }
+        );
+
+
+        musica.addEventListener(
+            "pause",
+            function() {
+
+                playPause.textContent =
+                    "▶";
+
+            }
+        );
+
+
+        /* =========================================
+           ERROR DE AUDIO
+        ========================================= */
+
+        musica.addEventListener(
+            "error",
+            function() {
+
+                console.error(
+                    "No se pudo cargar el archivo de música."
+                );
+
+                console.error(
+                    "Revisa que Amtrak.mp3 esté en la misma carpeta que index.html."
+                );
+
+            }
+        );
+
     </script>
 
 </body>
+
 </html>
