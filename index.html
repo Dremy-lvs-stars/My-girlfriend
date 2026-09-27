@@ -656,6 +656,158 @@
 
 
         /* =========================
+           VENTANAS DE MANTENIMIENTO
+        ========================= */
+
+        .ventanaMantenimiento {
+
+            position: fixed;
+
+            inset: 0;
+
+            display: none;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 20px;
+
+            background:
+                rgba(2, 6, 23, 0.55);
+
+            backdrop-filter:
+                blur(6px);
+
+            z-index: 3500;
+        }
+
+
+        .ventanaMantenimiento.activa {
+
+            display: flex;
+        }
+
+
+        .contenidoMantenimiento {
+
+            position: relative;
+
+            width: min(400px, 88vw);
+
+            padding: 35px 30px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(23, 37, 84, 0.98),
+                    rgba(15, 23, 42, 0.98)
+                );
+
+            border:
+                1px solid rgba(255, 255, 255, 0.16);
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 0 25px rgba(96, 165, 250, 0.18),
+                0 20px 50px rgba(0, 0, 0, 0.6);
+
+            text-align: center;
+
+            animation:
+                aparecerMantenimiento 0.35s ease;
+        }
+
+
+        @keyframes aparecerMantenimiento {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    scale(0.92)
+                    translateY(10px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    scale(1)
+                    translateY(0);
+            }
+        }
+
+
+        .contenidoMantenimiento h1 {
+
+            margin:
+                0 0 15px;
+
+            font-size: 24px;
+
+            color: #f8fafc;
+
+            text-shadow:
+                0 0 12px rgba(96, 165, 250, 0.7);
+        }
+
+
+        .contenidoMantenimiento p {
+
+            margin: 0;
+
+            color: #cbd5e1;
+
+            font-size: 15px;
+
+            line-height: 1.6;
+        }
+
+
+        .cerrarMantenimiento {
+
+            position: absolute;
+
+            top: 10px;
+
+            right: 12px;
+
+            width: 30px;
+
+            height: 30px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255, 255, 255, 0.06);
+
+            color: #e2e8f0;
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+            transition: 0.25s;
+        }
+
+
+        .cerrarMantenimiento:hover {
+
+            background:
+                rgba(236, 72, 153, 0.25);
+
+            transform:
+                rotate(90deg);
+        }
+
+
+        /* =========================
            CARTA DE LA LUNA
         ========================= */
 
@@ -1153,6 +1305,27 @@
                 line-height: 1.7;
             }
 
+
+            .contenidoMantenimiento {
+
+                width: 92vw;
+
+                padding:
+                    30px 22px;
+            }
+
+
+            .contenidoMantenimiento h1 {
+
+                font-size: 21px;
+            }
+
+
+            .contenidoMantenimiento p {
+
+                font-size: 14px;
+            }
+
         }
 
     </style>
@@ -1279,105 +1452,26 @@
 
         <!-- Estrellas pequeñas de fondo -->
 
-        <div
-            class="estrellaFondo"
-            style="top:8%;left:12%;"
-        ></div>
-
-        <div
-            class="estrellaFondo"
-            style="top:15%;left:32%;"
-        ></div>
-
-        <div
-            class="estrellaFondo"
-            style="top:12%;left:72%;"
-        ></div>
-
-        <div
-            class="estrellaFondo"
-            style="top:20%;left:90%;"
-        ></div>
-
-        <div
-            class="estrellaFondo"
-            style="top:35%;left:8%;"
-        ></div>
-
-        <div
-            class="estrellaFondo"
-            style="top:42%;left:45%;"
-        ></div>
-
-        <div
-            class="estrellaFondo"
-            style="top:50%;left:82%;"
-        ></div>
-
-        <div
-            class="estrellaFondo"
-            style="top:65%;left:15%;"
-        ></div>
-
-        <div
-            class="estrellaFondo"
-            style="top:78%;left:58%;"
-        ></div>
-
-        <div
-            class="estrellaFondo"
-            style="top:85%;left:85%;"
-        ></div>
-
-        <div
-            class="estrellaFondo"
-            style="top:90%;left:30%;"
-        ></div>
-
-        <div
-            class="estrellaFondo"
-            style="top:70%;left:92%;"
-        ></div>
-
-        <div
-            class="estrellaFondo"
-            style="top:28%;left:55%;"
-        ></div>
-
-        <div
-            class="estrellaFondo"
-            style="top:18%;left:48%;"
-        ></div>
-
-        <div
-            class="estrellaFondo"
-            style="top:60%;left:52%;"
-        ></div>
-
-        <div
-            class="estrellaFondo"
-            style="top:38%;left:92%;"
-        ></div>
-
-        <div
-            class="estrellaFondo"
-            style="top:75%;left:5%;"
-        ></div>
-
-        <div
-            class="estrellaFondo"
-            style="top:92%;left:70%;"
-        ></div>
-
-        <div
-            class="estrellaFondo"
-            style="top:48%;left:25%;"
-        ></div>
-
-        <div
-            class="estrellaFondo"
-            style="top:5%;left:85%;"
-        ></div>
+        <div class="estrellaFondo" style="top:8%;left:12%;"></div>
+        <div class="estrellaFondo" style="top:15%;left:32%;"></div>
+        <div class="estrellaFondo" style="top:12%;left:72%;"></div>
+        <div class="estrellaFondo" style="top:20%;left:90%;"></div>
+        <div class="estrellaFondo" style="top:35%;left:8%;"></div>
+        <div class="estrellaFondo" style="top:42%;left:45%;"></div>
+        <div class="estrellaFondo" style="top:50%;left:82%;"></div>
+        <div class="estrellaFondo" style="top:65%;left:15%;"></div>
+        <div class="estrellaFondo" style="top:78%;left:58%;"></div>
+        <div class="estrellaFondo" style="top:85%;left:85%;"></div>
+        <div class="estrellaFondo" style="top:90%;left:30%;"></div>
+        <div class="estrellaFondo" style="top:70%;left:92%;"></div>
+        <div class="estrellaFondo" style="top:28%;left:55%;"></div>
+        <div class="estrellaFondo" style="top:18%;left:48%;"></div>
+        <div class="estrellaFondo" style="top:60%;left:52%;"></div>
+        <div class="estrellaFondo" style="top:38%;left:92%;"></div>
+        <div class="estrellaFondo" style="top:75%;left:5%;"></div>
+        <div class="estrellaFondo" style="top:92%;left:70%;"></div>
+        <div class="estrellaFondo" style="top:48%;left:25%;"></div>
+        <div class="estrellaFondo" style="top:5%;left:85%;"></div>
 
 
         <!-- Estrella 1 -->
@@ -1419,7 +1513,6 @@
 
         <div class="contenidoEstrella1">
 
-
             <button
                 id="cerrarEstrella1"
                 type="button"
@@ -1433,7 +1526,7 @@
             </h1>
 
 
-          <p>
+            <p>
 Todo comenzó hace más de un año. Nos comenzamos a hablar por un simple interés y por nuestro humor casual, sin pensar realmente en todo lo que iba a terminar pasando después. Sé que si nos hubiéramos conocido más y no hubiera habido esa persona de por medio, probablemente un mes después hubiéramos acabado siendo pareja. Pero no se dio en ese momento, y aunque en ese entonces no lo entendía, supongo que las cosas tenían que pasar a su propio tiempo.
 
 Y aunque nuestra historia no comenzó oficialmente ahí, sí lo hizo este 20/09. No fue un comienzo rápido, y de tu parte fue algo que ya estabas pensando y que, de alguna manera, ya habías imaginado. Para mí, en cambio, fue algo mucho más inesperado. No pensé que ese día terminaríamos dando ese paso y que todo lo que había estado pasando entre nosotras terminaría convirtiéndose en algo real.
@@ -1447,8 +1540,75 @@ A veces pienso en cómo todo pudo haber sido diferente si las cosas hubieran pas
 No sé cómo pasó todo. No sé en qué momento nos convertimos en esto ni cómo alguien que comenzó siendo un simple interés terminó siendo una persona tan importante para mí. Solo sé que pasó, que me enamoré de ti más rápido de lo que esperaba y que ahora, cuando miro todo lo que nos llevó hasta este momento, me alegra muchísimo que haya terminado siendo contigo.
 
 Y aquí estamos, empezando oficialmente nuestra historia este 20/09. Quizá no fue el comienzo que alguna vez imaginamos, pero es nuestro comienzo. Y eso, para mí, lo hace especial. ♡
-</p>
+            </p>
 
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         VENTANA DE ESTRELLA 2
+    ================================================== -->
+
+    <div
+        id="ventanaEstrella2"
+        class="ventanaMantenimiento"
+    >
+
+        <div class="contenidoMantenimiento">
+
+            <button
+                id="cerrarEstrella2"
+                class="cerrarMantenimiento"
+                type="button"
+            >
+                ×
+            </button>
+
+
+            <h1>
+                En mantenimiento...
+            </h1>
+
+
+            <p>
+Esta parte de nuestro universo todavía está siendo preparada ♡
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         VENTANA DE ESTRELLA 3
+    ================================================== -->
+
+    <div
+        id="ventanaEstrella3"
+        class="ventanaMantenimiento"
+    >
+
+        <div class="contenidoMantenimiento">
+
+            <button
+                id="cerrarEstrella3"
+                class="cerrarMantenimiento"
+                type="button"
+            >
+                ×
+            </button>
+
+
+            <h1>
+                En mantenimiento...
+            </h1>
+
+
+            <p>
+Esta parte de nuestro universo todavía está siendo preparada ♡
+            </p>
 
         </div>
 
@@ -1462,7 +1622,6 @@ Y aquí estamos, empezando oficialmente nuestra historia este 20/09. Quizá no f
     <div id="cartaLuna">
 
         <div class="carta">
-
 
             <button
                 id="cerrarCarta"
@@ -1490,7 +1649,6 @@ Un poco de mi.....
 Click en la imagen para hacerla más grande.
             </p>
 
-
         </div>
 
     </div>
@@ -1501,7 +1659,6 @@ Click en la imagen para hacerla más grande.
     ========================= -->
 
     <div id="visorImagen">
-
 
         <button
             id="cerrarImagen"
@@ -1517,7 +1674,6 @@ Click en la imagen para hacerla más grande.
             alt="Moon"
         >
 
-
     </div>
 
 
@@ -1526,7 +1682,6 @@ Click en la imagen para hacerla más grande.
     ========================= -->
 
     <div id="reproductor">
-
 
         <div id="infoCancion">
 
@@ -1566,7 +1721,6 @@ Click en la imagen para hacerla más grande.
 
         <div class="controlesMusica">
 
-
             <button
                 id="anterior"
                 class="controlMusica"
@@ -1596,7 +1750,6 @@ Click en la imagen para hacerla más grande.
                 ⏭
             </button>
 
-
         </div>
 
 
@@ -1607,7 +1760,6 @@ Click en la imagen para hacerla más grande.
         >
             🔊
         </button>
-
 
     </div>
 
@@ -1863,7 +2015,6 @@ Click en la imagen para hacerla más grande.
                 "click",
                 function() {
 
-
                     document
                         .getElementById("respuesta")
                         .style.display =
@@ -1896,7 +2047,6 @@ Click en la imagen para hacerla más grande.
         botonNo.addEventListener(
             "mouseover",
             function() {
-
 
                 const ancho =
                     window.innerWidth -
@@ -1949,9 +2099,7 @@ Click en la imagen para hacerla más grande.
 
         /* ==================================================
            ESTRELLA 1
-           
-           AHORA ABRE UNA VENTANA,
-           NO CAMBIA DE PANTALLA.
+           ABRE SU VENTANA
         ================================================== */
 
         const estrella1 =
@@ -1994,8 +2142,6 @@ Click en la imagen para hacerla más grande.
         );
 
 
-        /* Cerrar haciendo clic fuera */
-
         ventanaEstrella1.addEventListener(
             "click",
             function(evento) {
@@ -2015,40 +2161,136 @@ Click en la imagen para hacerla más grande.
         );
 
 
-        /* =========================
+        /* ==================================================
            ESTRELLA 2
-        ========================= */
+           VENTANA DE MANTENIMIENTO
+        ================================================== */
 
-        document
-            .getElementById("estrella2")
-            .addEventListener(
-                "click",
-                function() {
-
-                    mostrarPantalla(
-                        "historia2"
-                    );
-
-                }
+        const estrella2 =
+            document.getElementById(
+                "estrella2"
             );
 
 
-        /* =========================
+        const ventanaEstrella2 =
+            document.getElementById(
+                "ventanaEstrella2"
+            );
+
+
+        const cerrarEstrella2 =
+            document.getElementById(
+                "cerrarEstrella2"
+            );
+
+
+        estrella2.addEventListener(
+            "click",
+            function() {
+
+                ventanaEstrella2
+                    .classList
+                    .add("activa");
+
+            }
+        );
+
+
+        cerrarEstrella2.addEventListener(
+            "click",
+            function() {
+
+                ventanaEstrella2
+                    .classList
+                    .remove("activa");
+
+            }
+        );
+
+
+        ventanaEstrella2.addEventListener(
+            "click",
+            function(evento) {
+
+                if (
+                    evento.target ===
+                    ventanaEstrella2
+                ) {
+
+                    ventanaEstrella2
+                        .classList
+                        .remove("activa");
+
+                }
+
+            }
+        );
+
+
+        /* ==================================================
            ESTRELLA 3
-        ========================= */
+           VENTANA DE MANTENIMIENTO
+        ================================================== */
 
-        document
-            .getElementById("estrella3")
-            .addEventListener(
-                "click",
-                function() {
+        const estrella3 =
+            document.getElementById(
+                "estrella3"
+            );
 
-                    mostrarPantalla(
-                        "historia3"
-                    );
+
+        const ventanaEstrella3 =
+            document.getElementById(
+                "ventanaEstrella3"
+            );
+
+
+        const cerrarEstrella3 =
+            document.getElementById(
+                "cerrarEstrella3"
+            );
+
+
+        estrella3.addEventListener(
+            "click",
+            function() {
+
+                ventanaEstrella3
+                    .classList
+                    .add("activa");
+
+            }
+        );
+
+
+        cerrarEstrella3.addEventListener(
+            "click",
+            function() {
+
+                ventanaEstrella3
+                    .classList
+                    .remove("activa");
+
+            }
+        );
+
+
+        ventanaEstrella3.addEventListener(
+            "click",
+            function(evento) {
+
+                if (
+                    evento.target ===
+                    ventanaEstrella3
+                ) {
+
+                    ventanaEstrella3
+                        .classList
+                        .remove("activa");
 
                 }
-            );
+
+            }
+        );
 
 
         /* =========================
@@ -2187,7 +2429,6 @@ Click en la imagen para hacerla más grande.
             "click",
             function() {
 
-
                 if (musica.paused) {
 
                     musica
@@ -2230,7 +2471,6 @@ Click en la imagen para hacerla más grande.
                 "click",
                 function() {
 
-
                     indiceActual++;
 
 
@@ -2263,7 +2503,6 @@ Click en la imagen para hacerla más grande.
                 "click",
                 function() {
 
-
                     indiceActual--;
 
 
@@ -2293,7 +2532,6 @@ Click en la imagen para hacerla más grande.
         musica.addEventListener(
             "ended",
             function() {
-
 
                 indiceActual++;
 
@@ -2342,7 +2580,6 @@ Click en la imagen para hacerla más grande.
             "timeupdate",
             function() {
 
-
                 if (musica.duration) {
 
                     barraProgreso.value =
@@ -2371,7 +2608,6 @@ Click en la imagen para hacerla más grande.
             "input",
             function() {
 
-
                 if (musica.duration) {
 
                     musica.currentTime =
@@ -2394,7 +2630,6 @@ Click en la imagen para hacerla más grande.
         volumen.addEventListener(
             "click",
             function() {
-
 
                 musica.muted =
                     !musica.muted;
