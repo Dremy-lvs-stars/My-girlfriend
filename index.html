@@ -648,8 +648,16 @@
          VIDEO DE FONDO
     ========================= -->
 
-    <video id="fondoVideo" autoplay muted loop playsinline preload="auto">
+    <video
+        id="fondoVideo"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto">
+
         <source src="Estrellas.mp4" type="video/mp4">
+
     </video>
 
 
@@ -661,7 +669,9 @@
 
         <h1>For Kass, my love &lt;3</h1>
 
-        <button id="entrar">♡</button>
+        <button id="entrar">
+            ♡
+        </button>
 
     </section>
 
@@ -672,9 +682,13 @@
 
     <section id="pregunta" class="pantalla">
 
-        <div class="corazon">♡</div>
+        <div class="corazon">
+            ♡
+        </div>
 
-        <h1>¿Te gusto? :3</h1>
+        <h1>
+            ¿Te gusto? :3
+        </h1>
 
         <div class="botones-pregunta">
 
@@ -705,9 +719,9 @@
 
     <section id="universo" class="pantalla">
 
-        <h1>Our Little Universe</h1>
-
-        <!-- Estrellas de fondo -->
+        <h1>
+            Our Little Universe
+        </h1>
 
         <div class="estrellaFondo e1"></div>
         <div class="estrellaFondo e2"></div>
@@ -731,7 +745,7 @@
         <div class="estrellaFondo e20"></div>
 
 
-        <!-- Luna -->
+        <!-- LUNA -->
 
         <div class="luna" id="luna">
 
@@ -743,7 +757,7 @@
         </div>
 
 
-        <!-- Estrellas principales -->
+        <!-- ESTRELLAS -->
 
         <div
             class="estrella"
@@ -778,7 +792,9 @@
                 20 · 09 · 2026
             </div>
 
-            <h1>Where it all began ♡</h1>
+            <h1>
+                Where it all began ♡
+            </h1>
 
             <div class="linea"></div>
 
@@ -853,7 +869,9 @@
             <button
                 class="volver"
                 onclick="mostrarPantalla('universo')">
+
                 Volver a las estrellas
+
             </button>
 
         </div>
@@ -873,7 +891,9 @@
                 STAR II
             </div>
 
-            <h1>Little things ♡</h1>
+            <h1>
+                Little things ♡
+            </h1>
 
             <div class="linea"></div>
 
@@ -886,7 +906,9 @@
             <button
                 class="volver"
                 onclick="mostrarPantalla('universo')">
+
                 Volver a las estrellas
+
             </button>
 
         </div>
@@ -906,7 +928,9 @@
                 STAR III
             </div>
 
-            <h1>Our future ♡</h1>
+            <h1>
+                Our future ♡
+            </h1>
 
             <div class="linea"></div>
 
@@ -918,7 +942,9 @@
             <button
                 class="volver"
                 onclick="mostrarPantalla('universo')">
+
                 Volver a las estrellas
+
             </button>
 
         </div>
@@ -938,7 +964,9 @@
                 ×
             </button>
 
-            <h2>Para ti, mi niña ♡</h2>
+            <h2>
+                Para ti, mi niña ♡
+            </h2>
 
             <img
                 src="Moon.png"
@@ -991,7 +1019,7 @@
 
 
     <!-- =========================
-         REPRODUCTOR DE MÚSICA
+         REPRODUCTOR
     ========================= -->
 
     <div id="uvpnt2">
@@ -1028,25 +1056,33 @@
             <button
                 class="control-musica"
                 id="anterior">
+
                 ⏮
+
             </button>
 
             <button
                 class="control-musica"
                 id="playPause">
+
                 ▶
+
             </button>
 
             <button
                 class="control-musica"
                 id="siguiente">
+
                 ⏭
+
             </button>
 
             <button
                 class="control-musica"
                 id="mute">
+
                 🔊
+
             </button>
 
             <input
@@ -1066,7 +1102,7 @@
          AUDIO
     ========================= -->
 
-    <audio id="musica"></audio>
+    <audio id="musica" preload="auto"></audio>
 
 
     <script>
@@ -1077,146 +1113,48 @@
 
         function mostrarPantalla(id) {
 
-            document.querySelectorAll(".pantalla").forEach(function(pantalla) {
-                pantalla.classList.remove("activa");
-            });
+            document
+                .querySelectorAll(".pantalla")
+                .forEach(function(pantalla) {
 
-            const pantalla = document.getElementById(id);
+                    pantalla.classList.remove("activa");
+
+                });
+
+            const pantalla =
+                document.getElementById(id);
 
             if (pantalla) {
+
                 pantalla.classList.add("activa");
+
             }
+
         }
 
 
         /* =========================
-           VIDEO
+           VIDEO DE FONDO
         ========================= */
 
-        const fondoVideo = document.getElementById("fondoVideo");
+        const fondoVideo =
+            document.getElementById("fondoVideo");
 
         fondoVideo.play().catch(function() {
+
             console.log(
                 "El navegador esperará para reproducir el video."
             );
-        });
-
-
-        /* =========================
-           PREGUNTA
-        ========================= */
-
-        const botonSi = document.getElementById("si");
-        const botonNo = document.getElementById("no");
-        const respuesta = document.getElementById("respuesta");
-        const botonNext = document.getElementById("next");
-
-
-        botonNo.addEventListener("mouseover", function() {
-
-            const maxX = window.innerWidth - this.offsetWidth - 20;
-            const maxY = window.innerHeight - this.offsetHeight - 20;
-
-            const randomX = Math.random() * maxX;
-            const randomY = Math.random() * maxY;
-
-            this.style.position = "fixed";
-            this.style.left = randomX + "px";
-            this.style.top = randomY + "px";
-
-        });
-
-
-        botonSi.addEventListener("click", function() {
-
-            botonSi.style.display = "none";
-            botonNo.style.display = "none";
-
-            respuesta.style.display = "block";
-            botonNext.style.display = "block";
-
-            /* La música comienza con esta interacción */
-            cargarCancion(0, true);
-
-        });
-
-
-        botonNext.addEventListener("click", function() {
-
-            mostrarPantalla("universo");
 
         });
 
 
         /* =========================
-           LUNA
+           ELEMENTOS DE MÚSICA
         ========================= */
 
-        const luna = document.getElementById("luna");
-        const cartaLuna = document.getElementById("cartaLuna");
-        const cerrarCarta = document.getElementById("cerrarCarta");
-
-
-        luna.addEventListener("click", function() {
-
-            cartaLuna.classList.add("activa");
-
-        });
-
-
-        cerrarCarta.addEventListener("click", function() {
-
-            cartaLuna.classList.remove("activa");
-
-        });
-
-
-        cartaLuna.addEventListener("click", function(e) {
-
-            if (e.target === cartaLuna) {
-                cartaLuna.classList.remove("activa");
-            }
-
-        });
-
-
-        /* =========================
-           VISOR DE IMAGEN
-        ========================= */
-
-        const fotoCarta = document.getElementById("fotoCarta");
-        const visorImagen = document.getElementById("visorImagen");
-        const cerrarVisor = document.getElementById("cerrarVisor");
-
-
-        fotoCarta.addEventListener("click", function() {
-
-            visorImagen.classList.add("activa");
-
-        });
-
-
-        cerrarVisor.addEventListener("click", function() {
-
-            visorImagen.classList.remove("activa");
-
-        });
-
-
-        visorImagen.addEventListener("click", function(e) {
-
-            if (e.target === visorImagen) {
-                visorImagen.classList.remove("activa");
-            }
-
-        });
-
-
-        /* =========================
-           REPRODUCTOR
-        ========================= */
-
-        const musica = document.getElementById("musica");
+        const musica =
+            document.getElementById("musica");
 
         const nombreCancion =
             document.getElementById("nombreCancion");
@@ -1248,6 +1186,10 @@
         const volumen =
             document.getElementById("volumen");
 
+
+        /* =========================
+           PLAYLIST
+        ========================= */
 
         const canciones = [
 
@@ -1281,165 +1223,531 @@
         let indiceCancion = 0;
 
 
+        /* =========================
+           CARGAR CANCIÓN
+        ========================= */
+
         function cargarCancion(indice, reproducir = false) {
 
             indiceCancion = indice;
 
             if (indiceCancion < 0) {
-                indiceCancion = canciones.length - 1;
+
+                indiceCancion =
+                    canciones.length - 1;
+
             }
 
             if (indiceCancion >= canciones.length) {
+
                 indiceCancion = 0;
+
             }
 
-            const cancion = canciones[indiceCancion];
+            const cancion =
+                canciones[indiceCancion];
 
-            musica.src = cancion.archivo;
+            musica.src =
+                cancion.archivo;
 
-            nombreCancion.textContent = cancion.nombre;
+            nombreCancion.textContent =
+                cancion.nombre;
 
-            artistaCancion.textContent = cancion.artista;
+            artistaCancion.textContent =
+                cancion.artista;
 
             barraProgreso.value = 0;
 
-            tiempoActual.textContent = "0:00";
-            tiempoTotal.textContent = "0:00";
+            tiempoActual.textContent =
+                "0:00";
+
+            tiempoTotal.textContent =
+                "0:00";
+
 
             if (reproducir) {
 
                 musica.play()
                     .then(function() {
 
-                        botonPlayPause.textContent = "⏸";
+                        botonPlayPause.textContent =
+                            "⏸";
 
                     })
                     .catch(function(error) {
 
                         console.log(
-                            "No se pudo reproducir automáticamente:",
+                            "No se pudo reproducir la canción:",
                             error
                         );
+
+                        botonPlayPause.textContent =
+                            "▶";
 
                     });
 
             } else {
 
-                botonPlayPause.textContent = "▶";
+                botonPlayPause.textContent =
+                    "▶";
 
             }
 
         }
 
 
-        botonPlayPause.addEventListener("click", function() {
+        /* =========================
+           BOTÓN INICIAL ♡
+           
+           ESTE ES EL QUE INICIA
+           LA MÚSICA
+        ========================= */
 
-            if (musica.paused) {
+        const botonEntrar =
+            document.getElementById("entrar");
 
-                musica.play();
 
-                botonPlayPause.textContent = "⏸";
+        botonEntrar.addEventListener("click", function() {
 
-            } else {
+            /*
+             * Como este play() ocurre directamente
+             * después del click del usuario, el navegador
+             * permite iniciar el audio.
+             */
 
-                musica.pause();
+            cargarCancion(0, true);
 
-                botonPlayPause.textContent = "▶";
+            /*
+             * Después de iniciar la música,
+             * pasamos a la siguiente pantalla.
+             */
+
+            mostrarPantalla("pregunta");
+
+        });
+
+
+        /* =========================
+           PREGUNTA
+        ========================= */
+
+        const botonSi =
+            document.getElementById("si");
+
+        const botonNo =
+            document.getElementById("no");
+
+        const respuesta =
+            document.getElementById("respuesta");
+
+        const botonNext =
+            document.getElementById("next");
+
+
+        /* BOTÓN NO */
+
+        botonNo.addEventListener(
+            "mouseover",
+            function() {
+
+                const maxX =
+                    window.innerWidth -
+                    this.offsetWidth -
+                    20;
+
+                const maxY =
+                    window.innerHeight -
+                    this.offsetHeight -
+                    20;
+
+                const randomX =
+                    Math.random() * maxX;
+
+                const randomY =
+                    Math.random() * maxY;
+
+                this.style.position =
+                    "fixed";
+
+                this.style.left =
+                    randomX + "px";
+
+                this.style.top =
+                    randomY + "px";
 
             }
-
-        });
-
-
-        botonAnterior.addEventListener("click", function() {
-
-            cargarCancion(indiceCancion - 1, true);
-
-        });
+        );
 
 
-        botonSiguiente.addEventListener("click", function() {
+        /* BOTÓN SI */
 
-            cargarCancion(indiceCancion + 1, true);
+        botonSi.addEventListener(
+            "click",
+            function() {
 
-        });
+                botonSi.style.display =
+                    "none";
 
+                botonNo.style.display =
+                    "none";
 
-        musica.addEventListener("ended", function() {
+                respuesta.style.display =
+                    "block";
 
-            cargarCancion(indiceCancion + 1, true);
+                botonNext.style.display =
+                    "block";
 
-        });
-
-
-        musica.addEventListener("loadedmetadata", function() {
-
-            tiempoTotal.textContent =
-                formatearTiempo(musica.duration);
-
-        });
-
-
-        musica.addEventListener("timeupdate", function() {
-
-            if (!musica.duration) return;
-
-            const progreso =
-                (musica.currentTime / musica.duration) * 100;
-
-            barraProgreso.value = progreso;
-
-            tiempoActual.textContent =
-                formatearTiempo(musica.currentTime);
-
-        });
-
-
-        barraProgreso.addEventListener("input", function() {
-
-            if (!musica.duration) return;
-
-            musica.currentTime =
-                (barraProgreso.value / 100) * musica.duration;
-
-        });
-
-
-        volumen.addEventListener("input", function() {
-
-            musica.volume = volumen.value;
-
-        });
-
-
-        botonMute.addEventListener("click", function() {
-
-            musica.muted = !musica.muted;
-
-            if (musica.muted) {
-
-                botonMute.textContent = "🔇";
-
-            } else {
-
-                botonMute.textContent = "🔊";
+                /*
+                 * IMPORTANTE:
+                 * NO ponemos cargarCancion() aquí.
+                 *
+                 * La música ya comenzó con el botón ♡
+                 * y seguirá reproduciéndose.
+                 */
 
             }
+        );
 
-        });
+
+        /* NEXT */
+
+        botonNext.addEventListener(
+            "click",
+            function() {
+
+                mostrarPantalla(
+                    "universo"
+                );
+
+            }
+        );
 
 
-        function formatearTiempo(segundos) {
+        /* =========================
+           LUNA
+        ========================= */
+
+        const luna =
+            document.getElementById("luna");
+
+        const cartaLuna =
+            document.getElementById("cartaLuna");
+
+        const cerrarCarta =
+            document.getElementById("cerrarCarta");
+
+
+        luna.addEventListener(
+            "click",
+            function() {
+
+                cartaLuna.classList.add(
+                    "activa"
+                );
+
+            }
+        );
+
+
+        cerrarCarta.addEventListener(
+            "click",
+            function() {
+
+                cartaLuna.classList.remove(
+                    "activa"
+                );
+
+            }
+        );
+
+
+        cartaLuna.addEventListener(
+            "click",
+            function(e) {
+
+                if (e.target === cartaLuna) {
+
+                    cartaLuna.classList.remove(
+                        "activa"
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =========================
+           VISOR DE IMAGEN
+        ========================= */
+
+        const fotoCarta =
+            document.getElementById("fotoCarta");
+
+        const visorImagen =
+            document.getElementById("visorImagen");
+
+        const cerrarVisor =
+            document.getElementById("cerrarVisor");
+
+
+        fotoCarta.addEventListener(
+            "click",
+            function() {
+
+                visorImagen.classList.add(
+                    "activa"
+                );
+
+            }
+        );
+
+
+        cerrarVisor.addEventListener(
+            "click",
+            function() {
+
+                visorImagen.classList.remove(
+                    "activa"
+                );
+
+            }
+        );
+
+
+        visorImagen.addEventListener(
+            "click",
+            function(e) {
+
+                if (e.target === visorImagen) {
+
+                    visorImagen.classList.remove(
+                        "activa"
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =========================
+           PLAY / PAUSE
+        ========================= */
+
+        botonPlayPause.addEventListener(
+            "click",
+            function() {
+
+                if (musica.paused) {
+
+                    musica.play()
+                        .then(function() {
+
+                            botonPlayPause.textContent =
+                                "⏸";
+
+                        })
+                        .catch(function(error) {
+
+                            console.log(error);
+
+                        });
+
+                } else {
+
+                    musica.pause();
+
+                    botonPlayPause.textContent =
+                        "▶";
+
+                }
+
+            }
+        );
+
+
+        /* =========================
+           ANTERIOR
+        ========================= */
+
+        botonAnterior.addEventListener(
+            "click",
+            function() {
+
+                cargarCancion(
+                    indiceCancion - 1,
+                    true
+                );
+
+            }
+        );
+
+
+        /* =========================
+           SIGUIENTE
+        ========================= */
+
+        botonSiguiente.addEventListener(
+            "click",
+            function() {
+
+                cargarCancion(
+                    indiceCancion + 1,
+                    true
+                );
+
+            }
+        );
+
+
+        /* =========================
+           SIGUIENTE AUTOMÁTICO
+        ========================= */
+
+        musica.addEventListener(
+            "ended",
+            function() {
+
+                cargarCancion(
+                    indiceCancion + 1,
+                    true
+                );
+
+            }
+        );
+
+
+        /* =========================
+           DURACIÓN
+        ========================= */
+
+        musica.addEventListener(
+            "loadedmetadata",
+            function() {
+
+                tiempoTotal.textContent =
+                    formatearTiempo(
+                        musica.duration
+                    );
+
+            }
+        );
+
+
+        /* =========================
+           PROGRESO
+        ========================= */
+
+        musica.addEventListener(
+            "timeupdate",
+            function() {
+
+                if (!musica.duration) {
+                    return;
+                }
+
+                const progreso =
+                    (musica.currentTime /
+                    musica.duration) * 100;
+
+                barraProgreso.value =
+                    progreso;
+
+                tiempoActual.textContent =
+                    formatearTiempo(
+                        musica.currentTime
+                    );
+
+            }
+        );
+
+
+        /* =========================
+           BARRA DE PROGRESO
+        ========================= */
+
+        barraProgreso.addEventListener(
+            "input",
+            function() {
+
+                if (!musica.duration) {
+                    return;
+                }
+
+                musica.currentTime =
+                    (barraProgreso.value / 100)
+                    * musica.duration;
+
+            }
+        );
+
+
+        /* =========================
+           VOLUMEN
+        ========================= */
+
+        volumen.addEventListener(
+            "input",
+            function() {
+
+                musica.volume =
+                    volumen.value;
+
+            }
+        );
+
+
+        /* =========================
+           MUTE
+        ========================= */
+
+        botonMute.addEventListener(
+            "click",
+            function() {
+
+                musica.muted =
+                    !musica.muted;
+
+                if (musica.muted) {
+
+                    botonMute.textContent =
+                        "🔇";
+
+                } else {
+
+                    botonMute.textContent =
+                        "🔊";
+
+                }
+
+            }
+        );
+
+
+        /* =========================
+           FORMATO DE TIEMPO
+        ========================= */
+
+        function formatearTiempo(
+            segundos
+        ) {
 
             if (!isFinite(segundos)) {
+
                 return "0:00";
+
             }
 
             const minutos =
-                Math.floor(segundos / 60);
+                Math.floor(
+                    segundos / 60
+                );
 
             const segundosRestantes =
-                Math.floor(segundos % 60);
+                Math.floor(
+                    segundos % 60
+                );
 
             return minutos + ":" +
                 segundosRestantes
@@ -1448,6 +1756,10 @@
 
         }
 
+
+        /* =========================
+           VOLUMEN INICIAL
+        ========================= */
 
         musica.volume = 0.7;
 
