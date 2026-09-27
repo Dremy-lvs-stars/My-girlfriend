@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -22,6 +24,7 @@
             color: white;
         }
 
+
         /* =========================
            VIDEO DE FONDO
         ========================= */
@@ -36,6 +39,7 @@
             pointer-events: none;
         }
 
+
         /* =========================
            PANTALLAS
         ========================= */
@@ -43,164 +47,177 @@
         .pantalla {
             position: absolute;
             inset: 0;
-            width: 100%;
-            height: 100%;
             display: none;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
             text-align: center;
-            z-index: 10;
+            z-index: 1;
         }
 
         .pantalla.activa {
             display: flex;
         }
 
+
         /* =========================
            ENTRADA
         ========================= */
 
         #entrada {
-            background: rgba(2, 6, 23, 0.25);
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(49, 46, 129, 0.40),
+                    rgba(17, 24, 39, 0.20) 45%,
+                    rgba(2, 6, 23, 0.25) 100%
+                );
+            flex-direction: column;
         }
 
         #entrada h1 {
-            font-size: 38px;
-            margin-bottom: 30px;
-            text-shadow: 0 0 15px rgba(255,255,255,0.6);
+            font-size: 42px;
+            margin-bottom: 35px;
+            text-shadow: 0 0 20px #818cf8;
+            position: relative;
+            z-index: 2;
         }
 
         #entrar {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
             border: none;
-            background: #f472b6;
+            background: #ec4899;
             color: white;
-            font-size: 38px;
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            font-size: 30px;
             cursor: pointer;
-            box-shadow: 0 0 30px rgba(244,114,182,0.7);
+            box-shadow:
+                0 0 15px #ec4899,
+                0 0 35px rgba(236, 72, 153, 0.6);
             transition: 0.3s;
+            position: relative;
+            z-index: 2;
         }
 
         #entrar:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 45px rgba(244,114,182,0.9);
+            transform: scale(1.12);
         }
+
 
         /* =========================
            PREGUNTA
         ========================= */
 
         #pregunta {
-            background: rgba(2, 6, 23, 0.25);
+            flex-direction: column;
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(49, 46, 129, 0.40),
+                    rgba(17, 24, 39, 0.20) 50%,
+                    rgba(2, 6, 23, 0.25) 100%
+                );
         }
 
         #pregunta h1 {
             font-size: 42px;
-            margin-bottom: 30px;
-            text-shadow: 0 0 15px rgba(255,255,255,0.5);
+            margin-bottom: 35px;
+            text-shadow: 0 0 15px #818cf8;
         }
 
-        .corazon {
-            font-size: 65px;
-            margin-bottom: 25px;
-            animation: latido 1.2s infinite;
-        }
-
-        @keyframes latido {
-
-            0%, 100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.15);
-            }
-
-        }
-
-        .botones-pregunta {
+        .botonesPregunta {
             display: flex;
             gap: 20px;
             justify-content: center;
+            align-items: center;
         }
 
-        .boton-pregunta {
-            padding: 14px 28px;
+        .botonesPregunta button {
             border: none;
-            border-radius: 20px;
-            font-size: 18px;
+            padding: 13px 25px;
+            border-radius: 12px;
+            font-size: 16px;
             cursor: pointer;
             transition: 0.2s;
         }
 
         #si {
-            background: #f472b6;
+            background: #ec4899;
             color: white;
-        }
-
-        #no {
-            background: #334155;
-            color: white;
-            position: relative;
+            box-shadow: 0 0 15px rgba(236, 72, 153, 0.5);
         }
 
         #si:hover {
             transform: scale(1.08);
         }
 
+        #no {
+            background: #475569;
+            color: white;
+        }
+
         #respuesta {
+            margin-top: 25px;
+            font-size: 28px;
             display: none;
-            font-size: 35px;
-            margin-top: 20px;
         }
 
         #next {
             display: none;
-            margin-top: 25px;
-            padding: 12px 25px;
+            margin-top: 20px;
+            padding: 10px 22px;
             border: none;
-            border-radius: 18px;
-            background: #f472b6;
+            border-radius: 10px;
+            background: #818cf8;
             color: white;
-            font-size: 18px;
             cursor: pointer;
+            font-size: 15px;
+            box-shadow: 0 0 15px rgba(129, 140, 248, 0.5);
         }
+
 
         /* =========================
            UNIVERSO
         ========================= */
 
         #universo {
-            background: rgba(2, 6, 23, 0.1);
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(23, 37, 84, 0.18),
+                    rgba(15, 23, 42, 0.18) 45%,
+                    rgba(2, 6, 23, 0.20) 100%
+                );
+            overflow: hidden;
         }
 
         #universo h1 {
             position: absolute;
-            top: 8%;
-            font-size: 35px;
-            text-shadow: 0 0 15px rgba(255,255,255,0.7);
+            top: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 34px;
+            z-index: 10;
+            white-space: nowrap;
+            text-shadow: 0 0 15px #60a5fa;
         }
 
+
         /* =========================
-           ESTRELLAS DE FONDO
+           ESTRELLAS DEL UNIVERSO
         ========================= */
 
         .estrellaFondo {
             position: absolute;
-            width: 4px;
-            height: 4px;
+            width: 3px;
+            height: 3px;
             background: white;
             border-radius: 50%;
-            opacity: 0.7;
-            animation: brillo 2s infinite alternate;
-            z-index: 1;
+            box-shadow: 0 0 7px white;
+            animation: parpadear 2s infinite alternate;
         }
 
-        @keyframes brillo {
-
+        @keyframes parpadear {
             from {
                 opacity: 0.25;
                 transform: scale(0.7);
@@ -210,137 +227,43 @@
                 opacity: 1;
                 transform: scale(1.3);
             }
-
         }
-
-        .e1  { top: 8%;  left: 10%; }
-        .e2  { top: 17%; left: 70%; }
-        .e3  { top: 30%; left: 85%; }
-        .e4  { top: 75%; left: 10%; }
-        .e5  { top: 82%; left: 70%; }
-        .e6  { top: 60%; left: 90%; }
-        .e7  { top: 45%; left: 7%; }
-        .e8  { top: 12%; left: 40%; }
-        .e9  { top: 90%; left: 45%; }
-        .e10 { top: 25%; left: 55%; }
-        .e11 { top: 50%; left: 30%; }
-        .e12 { top: 68%; left: 55%; }
-        .e13 { top: 35%; left: 15%; }
-        .e14 { top: 88%; left: 85%; }
-        .e15 { top: 10%; left: 90%; }
-        .e16 { top: 40%; left: 75%; }
-        .e17 { top: 70%; left: 35%; }
-        .e18 { top: 55%; left: 60%; }
-        .e19 { top: 20%; left: 25%; }
-        .e20 { top: 95%; left: 15%; }
-
-        /* =========================
-           LUNA
-        ========================= */
-
-        .luna {
-            position: absolute;
-            width: 190px;
-            height: 190px;
-            border-radius: 50%;
-
-            background: radial-gradient(
-                circle at 35% 30%,
-                #f8fafc,
-                #cbd5e1 60%,
-                #94a3b8
-            );
-
-            box-shadow:
-                0 0 25px rgba(255,255,255,0.8),
-                0 0 70px rgba(255,255,255,0.35);
-
-            cursor: pointer;
-            transition: 0.3s;
-            z-index: 5;
-        }
-
-        .luna:hover {
-            transform: scale(1.08);
-
-            box-shadow:
-                0 0 35px rgba(255,255,255,0.9),
-                0 0 90px rgba(255,255,255,0.5);
-        }
-
-        .crater {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(100,116,139,0.25);
-        }
-
-        .c1 {
-            width: 35px;
-            height: 35px;
-            top: 30px;
-            left: 40px;
-        }
-
-        .c2 {
-            width: 22px;
-            height: 22px;
-            top: 90px;
-            left: 110px;
-        }
-
-        .c3 {
-            width: 28px;
-            height: 28px;
-            top: 120px;
-            left: 55px;
-        }
-
-        .c4 {
-            width: 18px;
-            height: 18px;
-            top: 50px;
-            left: 130px;
-        }
-
-        /* =========================
-           ESTRELLAS PRINCIPALES
-        ========================= */
 
         .estrella {
             position: absolute;
-            width: 28px;
-            height: 28px;
+            width: 35px;
+            height: 35px;
+            background: white;
+
+            clip-path: polygon(
+                50% 0%,
+                61% 38%,
+                100% 50%,
+                61% 62%,
+                50% 100%,
+                39% 62%,
+                0% 50%,
+                39% 38%
+            );
+
+            filter: drop-shadow(0 0 10px white);
             cursor: pointer;
-            z-index: 5;
+            animation: brilloEstrella 2s infinite alternate;
             transition: 0.3s;
         }
 
-        .estrella::before,
-        .estrella::after {
-            content: "";
-            position: absolute;
-            background: white;
-            box-shadow: 0 0 12px white;
-        }
-
-        .estrella::before {
-            width: 28px;
-            height: 6px;
-            top: 11px;
-            left: 0;
-            border-radius: 50%;
-        }
-
-        .estrella::after {
-            width: 6px;
-            height: 28px;
-            top: 0;
-            left: 11px;
-            border-radius: 50%;
-        }
-
         .estrella:hover {
-            transform: scale(1.5);
+            transform: scale(1.4);
+        }
+
+        @keyframes brilloEstrella {
+            from {
+                opacity: 0.6;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         #estrella1 {
@@ -349,89 +272,174 @@
         }
 
         #estrella2 {
-            top: 62%;
-            left: 18%;
+            top: 55%;
+            left: 68%;
         }
 
         #estrella3 {
-            top: 35%;
-            right: 20%;
+            top: 72%;
+            left: 37%;
         }
 
+
         /* =========================
-           HISTORIAS
+           LUNA
+        ========================= */
+
+        #luna {
+            position: absolute;
+            width: 125px;
+            height: 125px;
+            border-radius: 50%;
+            right: 13%;
+            top: 25%;
+            background: #f8fafc;
+
+            box-shadow:
+                0 0 20px #e2e8f0,
+                0 0 50px rgba(226, 232, 240, 0.6),
+                0 0 100px rgba(226, 232, 240, 0.25);
+
+            cursor: pointer;
+            transition: 0.4s;
+            animation: lunaFlotar 6s ease-in-out infinite;
+        }
+
+        @keyframes lunaFlotar {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
+        }
+
+        #luna:hover {
+            transform: scale(1.08);
+
+            box-shadow:
+                0 0 30px #f8fafc,
+                0 0 70px rgba(226, 232, 240, 0.7),
+                0 0 120px rgba(226, 232, 240, 0.3);
+        }
+
+
+        /* =========================
+           PÁGINAS DE HISTORIA
         ========================= */
 
         .historia {
-            background: rgba(2, 6, 23, 0.55);
-            padding: 30px;
-            overflow-y: auto;
-        }
+            flex-direction: column;
+            padding: 40px;
 
-        .historia-contenido {
-            width: min(700px, 90%);
-            max-height: 85vh;
-            overflow-y: auto;
-
-            padding: 35px;
-
-            border-radius: 25px;
-
-            background: rgba(15, 23, 42, 0.75);
-
-            backdrop-filter: blur(12px);
-
-            box-shadow:
-                0 0 40px rgba(255,255,255,0.12);
-        }
-
-        .historia-fecha {
-            color: #f9a8d4;
-            font-size: 15px;
-            letter-spacing: 4px;
-            margin-bottom: 12px;
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(23, 37, 84, 0.20),
+                    rgba(15, 23, 42, 0.20) 55%,
+                    rgba(2, 6, 23, 0.25) 100%
+                );
         }
 
         .historia h1 {
-            font-size: 34px;
-            margin: 5px 0 20px;
-        }
-
-        .linea {
-            width: 80px;
-            height: 2px;
-            background: #f472b6;
-            margin: 0 auto 25px;
-            box-shadow: 0 0 10px #f472b6;
+            font-size: 35px;
+            margin-bottom: 25px;
+            text-shadow: 0 0 15px #60a5fa;
         }
 
         .historia p {
+            max-width: 650px;
+            line-height: 1.7;
+            color: #cbd5e1;
             font-size: 17px;
-            line-height: 1.8;
-            color: #e2e8f0;
-            margin: 20px 0;
-        }
-
-        .final-historia {
-            color: #fbcfe8 !important;
-            font-size: 18px !important;
         }
 
         .volver {
-            margin-top: 20px;
-            padding: 11px 22px;
+            margin-top: 30px;
+            padding: 10px 22px;
             border: none;
-            border-radius: 18px;
-            background: #f472b6;
+            border-radius: 10px;
+            background: #334155;
             color: white;
             cursor: pointer;
-            font-size: 15px;
-            transition: 0.3s;
+            transition: 0.2s;
         }
 
         .volver:hover {
+            background: #475569;
             transform: scale(1.05);
         }
+
+
+        /* =========================
+           HISTORIA 1
+        ========================= */
+
+        .historia-contenido {
+            width: min(90%, 600px);
+            max-height: 85vh;
+            overflow-y: auto;
+
+            padding: 35px 30px;
+
+            background: rgba(15, 23, 42, 0.72);
+
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 25px;
+
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+
+            box-shadow:
+                0 0 30px rgba(255, 255, 255, 0.08);
+        }
+
+        .historia-fecha {
+            font-size: 14px;
+            letter-spacing: 5px;
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        .historia-contenido h1 {
+            margin: 5px 0 20px;
+            font-size: 32px;
+            font-weight: 400;
+
+            text-shadow:
+                0 0 15px #60a5fa;
+        }
+
+        .linea {
+            width: 70px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.5);
+            margin: 0 auto 25px;
+        }
+
+        .historia-contenido p {
+            max-width: 500px;
+            margin: 18px auto;
+
+            font-size: 16px;
+            line-height: 1.8;
+
+            color: #cbd5e1;
+        }
+
+        .historia-contenido .final-historia {
+            margin-top: 28px;
+            color: white;
+            font-size: 17px;
+        }
+
+        .historia-contenido .volver {
+            margin-top: 25px;
+        }
+
 
         /* =========================
            CARTA DE LA LUNA
@@ -441,14 +449,12 @@
             position: fixed;
             inset: 0;
 
+            background: rgba(0, 0, 0, 0.75);
+
             display: none;
 
             justify-content: center;
             align-items: center;
-
-            background: rgba(0,0,0,0.65);
-
-            backdrop-filter: blur(7px);
 
             z-index: 2000;
 
@@ -459,79 +465,85 @@
             display: flex;
         }
 
-        .carta-contenido {
+        .carta {
             position: relative;
 
-            width: min(520px, 92%);
-            max-height: 88vh;
+            width: min(700px, 90vw);
+            max-height: 85vh;
 
             overflow-y: auto;
 
+            background:
+                linear-gradient(
+                    145deg,
+                    #172554,
+                    #0f172a
+                );
+
+            border:
+                1px solid rgba(255, 255, 255, 0.15);
+
+            border-radius: 20px;
+
             padding: 35px;
 
-            border-radius: 15px;
-
-            background: linear-gradient(
-                135deg,
-                #fff7ed,
-                #fef3c7
-            );
-
-            color: #334155;
-
             box-shadow:
-                0 0 40px rgba(255,255,255,0.25),
-                0 20px 70px rgba(0,0,0,0.5);
+                0 0 30px rgba(96, 165, 250, 0.25),
+                0 20px 60px rgba(0, 0, 0, 0.5);
         }
 
-        .carta-contenido h2 {
+        .carta h1 {
             margin-top: 0;
-            color: #be185d;
+            font-size: 30px;
+            color: #f8fafc;
         }
 
-        .carta-contenido p {
-            line-height: 1.7;
+        .carta p {
+            color: #cbd5e1;
+            line-height: 1.8;
             font-size: 16px;
+            white-space: pre-line;
         }
 
-        #cerrarCarta {
-            position: absolute;
-            top: 12px;
-            right: 15px;
+        #imagenMoon {
+            width: 220px;
+            max-width: 100%;
 
-            border: none;
-            background: transparent;
+            border-radius: 12px;
 
-            font-size: 28px;
+            display: block;
 
-            color: #64748b;
+            margin: 20px auto;
 
             cursor: pointer;
 
             transition: 0.3s;
+
+            box-shadow:
+                0 0 20px rgba(255, 255, 255, 0.15);
         }
 
-        #cerrarCarta:hover {
-            transform: rotate(90deg);
-            color: #be185d;
+        #imagenMoon:hover {
+            transform: scale(1.03);
         }
 
-        .foto-carta {
-            width: 100%;
-            max-height: 300px;
+        #cerrarCarta {
+            position: absolute;
 
-            object-fit: cover;
+            top: 12px;
+            right: 16px;
 
-            border-radius: 12px;
+            border: none;
 
-            margin: 15px 0;
+            background: transparent;
+
+            color: white;
+
+            font-size: 25px;
 
             cursor: pointer;
         }
 
-        .texto-carta {
-            text-align: left;
-        }
 
         /* =========================
            VISOR DE IMAGEN
@@ -541,52 +553,57 @@
             position: fixed;
             inset: 0;
 
+            background: rgba(0, 0, 0, 0.92);
+
             display: none;
 
             justify-content: center;
             align-items: center;
 
-            background: rgba(0,0,0,0.85);
+            z-index: 4000;
 
-            z-index: 3000;
-
-            padding: 20px;
+            padding: 30px;
         }
 
         #visorImagen.activa {
             display: flex;
         }
 
-        #visorImagen img {
-            max-width: 90%;
-            max-height: 90%;
+        #imagenGrande {
+            max-width: 90vw;
+            max-height: 90vh;
 
             object-fit: contain;
 
-            border-radius: 15px;
+            border-radius: 10px;
 
             box-shadow:
-                0 0 50px rgba(255,255,255,0.25);
+                0 0 40px rgba(255, 255, 255, 0.15);
         }
 
-        #cerrarVisor {
+        #cerrarImagen {
             position: absolute;
 
             top: 20px;
-            right: 25px;
+            right: 30px;
 
-            font-size: 35px;
+            border: none;
+
+            background: transparent;
 
             color: white;
 
+            font-size: 35px;
+
             cursor: pointer;
         }
+
 
         /* =========================
            REPRODUCTOR
         ========================= */
 
-        #uvpnt2 {
+        #reproductor {
             position: fixed;
 
             left: 12px;
@@ -594,131 +611,194 @@
 
             width: 210px;
 
-            padding: 12px;
+            padding: 8px 10px;
 
-            border-radius: 15px;
+            background: rgba(2, 6, 23, 0.82);
 
-            background: rgba(15,23,42,0.78);
+            border:
+                1px solid rgba(255, 255, 255, 0.12);
 
-            backdrop-filter: blur(12px);
+            border-radius: 10px;
+
+            backdrop-filter: blur(8px);
 
             box-shadow:
-                0 5px 25px rgba(0,0,0,0.35);
+                0 4px 15px rgba(0, 0, 0, 0.35);
 
             z-index: 3000;
         }
 
-        #nombreCancion {
-            font-size: 13px;
-            font-weight: bold;
+        #infoCancion {
+            text-align: left;
+
+            margin-bottom: 4px;
+            padding-right: 22px;
 
             white-space: nowrap;
+
             overflow: hidden;
+
             text-overflow: ellipsis;
         }
 
-        #artistaCancion {
+        #nombreCancion {
+            display: inline;
+
             font-size: 11px;
+            font-weight: bold;
 
-            color: #cbd5e1;
+            color: white;
+        }
 
-            margin-top: 3px;
+        #artistaCancion {
+            display: inline;
 
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            font-size: 10px;
+
+            color: #94a3b8;
+        }
+
+        #artistaCancion::before {
+            content: " - ";
+            color: #64748b;
         }
 
         #barraProgreso {
             width: 100%;
-
-            margin-top: 9px;
+            height: 2px;
 
             cursor: pointer;
+
+            margin: 2px 0 3px;
         }
 
-        .tiempos {
+        #tiempoMusica {
             display: flex;
+
             justify-content: space-between;
 
-            font-size: 9px;
+            font-size: 8px;
 
-            color: #cbd5e1;
+            color: #64748b;
         }
 
-        .controles-musica {
+        .controlesMusica {
             display: flex;
 
             justify-content: center;
             align-items: center;
 
-            gap: 9px;
+            gap: 5px;
 
-            margin-top: 7px;
+            margin-top: 3px;
         }
 
-        .control-musica {
+        .controlMusica {
+            width: 24px;
+            height: 22px;
+
+            padding: 0;
+
             border: none;
 
             background: transparent;
 
             color: white;
 
+            font-size: 11px;
+
             cursor: pointer;
 
-            font-size: 15px;
+            transition: 0.2s;
         }
 
-        .control-musica:hover {
-            color: #f9a8d4;
+        .controlMusica:hover {
+            transform: scale(1.2);
+        }
+
+        #playPause {
+            font-size: 13px;
         }
 
         #volumen {
-            width: 55px;
+            position: absolute;
+
+            right: 7px;
+            top: 7px;
+
+            width: 18px;
+            height: 18px;
+
+            padding: 0;
+
+            border: none;
+
+            background: transparent;
+
+            color: white;
+
+            font-size: 10px;
+
+            cursor: pointer;
         }
 
+
         /* =========================
-           MÓVIL
+           RESPONSIVE
         ========================= */
 
         @media (max-width: 600px) {
 
-            #entrada h1 {
-                font-size: 28px;
-            }
-
+            #entrada h1,
             #pregunta h1 {
-                font-size: 32px;
+                font-size: 30px;
             }
 
-            .luna {
-                width: 150px;
-                height: 150px;
+            #universo h1 {
+                font-size: 25px;
+            }
+
+            #luna {
+                width: 90px;
+                height: 90px;
+                right: 10%;
+            }
+
+            .estrella {
+                width: 27px;
+                height: 27px;
+            }
+
+            #reproductor {
+                width: 190px;
+
+                left: 8px;
+                bottom: 8px;
+            }
+
+            .carta {
+                padding: 25px;
             }
 
             .historia-contenido {
-                padding: 25px 20px;
+                width: 92%;
+                padding: 28px 22px;
             }
 
-            .historia h1 {
+            .historia-contenido h1 {
                 font-size: 27px;
             }
 
-            .historia p {
+            .historia-contenido p {
                 font-size: 15px;
-                line-height: 1.7;
-            }
-
-            #uvpnt2 {
-                width: 190px;
-                left: 10px;
-                bottom: 10px;
             }
 
         }
 
     </style>
+
 </head>
+
 
 <body>
 
@@ -733,76 +813,65 @@
         muted
         loop
         playsinline
-        preload="auto">
+        preload="auto"
+    >
 
         <source
             src="Estrellas.mp4"
-            type="video/mp4">
+            type="video/mp4"
+        >
 
     </video>
 
 
     <!-- =========================
-         ENTRADA
+         AUDIO
+    ========================= -->
+
+    <audio id="musica"></audio>
+
+
+    <!-- =========================
+         PANTALLA DE ENTRADA
     ========================= -->
 
     <section
         id="entrada"
-        class="pantalla activa">
+        class="pantalla activa"
+    >
 
         <h1>
             For Kass, my love &lt;3
         </h1>
 
-        <!--
-            IMPORTANTE:
-            El onclick inicia la música
-            directamente con el clic.
-        -->
-
-        <button
-            id="entrar"
-            onclick="entrarPagina()">
-
+        <button id="entrar">
             ♡
-
         </button>
 
     </section>
 
 
     <!-- =========================
-         PREGUNTA
+         PANTALLA DE PREGUNTA
     ========================= -->
 
     <section
         id="pregunta"
-        class="pantalla">
-
-        <div class="corazon">
-            ♡
-        </div>
+        class="pantalla"
+    >
 
         <h1>
             ¿Te gusto? :3
         </h1>
 
-        <div class="botones-pregunta">
+        <div class="botonesPregunta">
 
-            <button
-                id="si"
-                class="boton-pregunta">
-
+            <button id="si">
                 Skibidi Si
-
             </button>
 
-            <button
-                id="no"
-                class="boton-pregunta">
-
+            <button id="no">
                 Nuh :(
-
             </button>
 
         </div>
@@ -824,87 +893,148 @@
 
     <section
         id="universo"
-        class="pantalla">
+        class="pantalla"
+    >
 
         <h1>
             Our Little Universe
         </h1>
 
 
-        <!-- Estrellas de fondo -->
-
-        <div class="estrellaFondo e1"></div>
-        <div class="estrellaFondo e2"></div>
-        <div class="estrellaFondo e3"></div>
-        <div class="estrellaFondo e4"></div>
-        <div class="estrellaFondo e5"></div>
-        <div class="estrellaFondo e6"></div>
-        <div class="estrellaFondo e7"></div>
-        <div class="estrellaFondo e8"></div>
-        <div class="estrellaFondo e9"></div>
-        <div class="estrellaFondo e10"></div>
-        <div class="estrellaFondo e11"></div>
-        <div class="estrellaFondo e12"></div>
-        <div class="estrellaFondo e13"></div>
-        <div class="estrellaFondo e14"></div>
-        <div class="estrellaFondo e15"></div>
-        <div class="estrellaFondo e16"></div>
-        <div class="estrellaFondo e17"></div>
-        <div class="estrellaFondo e18"></div>
-        <div class="estrellaFondo e19"></div>
-        <div class="estrellaFondo e20"></div>
-
-
-        <!-- Luna -->
+        <div
+            class="estrellaFondo"
+            style="top:8%;left:12%;"
+        ></div>
 
         <div
-            class="luna"
-            id="luna">
-
-            <div class="crater c1"></div>
-            <div class="crater c2"></div>
-            <div class="crater c3"></div>
-            <div class="crater c4"></div>
-
-        </div>
-
-
-        <!-- Estrella 1 -->
+            class="estrellaFondo"
+            style="top:15%;left:32%;"
+        ></div>
 
         <div
-            class="estrella"
+            class="estrellaFondo"
+            style="top:12%;left:72%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:20%;left:90%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:35%;left:8%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:42%;left:45%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:50%;left:82%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:65%;left:15%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:78%;left:58%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:85%;left:85%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:90%;left:30%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:70%;left:92%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:28%;left:55%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:18%;left:48%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:60%;left:52%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:38%;left:92%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:75%;left:5%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:92%;left:70%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:48%;left:25%;"
+        ></div>
+
+        <div
+            class="estrellaFondo"
+            style="top:5%;left:85%;"
+        ></div>
+
+
+        <!-- ESTRELLAS PRINCIPALES -->
+
+        <div
             id="estrella1"
-            onclick="mostrarPantalla('historia1')">
-        </div>
-
-
-        <!-- Estrella 2 -->
+            class="estrella"
+        ></div>
 
         <div
-            class="estrella"
             id="estrella2"
-            onclick="mostrarPantalla('historia2')">
-        </div>
-
-
-        <!-- Estrella 3 -->
+            class="estrella"
+        ></div>
 
         <div
-            class="estrella"
             id="estrella3"
-            onclick="mostrarPantalla('historia3')">
-        </div>
+            class="estrella"
+        ></div>
+
+
+        <!-- LUNA -->
+
+        <div id="luna"></div>
 
     </section>
 
 
     <!-- =========================
-         PRIMERA ESTRELLA
+         HISTORIA 1
     ========================= -->
 
     <section
         id="historia1"
-        class="pantalla historia">
+        class="pantalla historia"
+    >
 
         <div class="historia-contenido">
 
@@ -918,91 +1048,35 @@
 
             <div class="linea"></div>
 
-
             <p>
-                Todo comenzó hace más de un año. Nos empezamos a hablar por un
-                simple interés, por curiosidad y porque, de alguna manera,
-                las dos pensábamos que la otra era divertida e interesante.
+                Supongo que todo comenzó porque las dos nos
+                parecíamos divertidas e interesantes.
             </p>
 
-
             <p>
-                Creo que si hubiéramos tenido la oportunidad de conocernos más
-                desde ese momento, y si no hubiera existido esa persona de por
-                medio, las cosas probablemente habrían sido diferentes.
-                Siento que, después de conocernos un poco más, quizá un mes
-                después hubiéramos terminado siendo pareja.
+                Empezamos a hablar poco a poco, sin saber muy bien
+                a dónde nos llevaría todo esto.
             </p>
 
-
             <p>
-                Pero no pasó así. Y aunque en ese momento no se dio, supongo
-                que algunas cosas simplemente necesitan esperar un poco antes
-                de encontrar su momento.
+                Y siendo sinceras... las dos ya estábamos
+                medio enamoradas.
             </p>
 
-
             <p>
-                Y ese momento terminó siendo este 20 de septiembre de 2026.
+                Entre conversaciones, risas y momentos juntas,
+                ese pequeño interés terminó convirtiéndose
+                en algo mucho más bonito.
             </p>
-
-
-            <p>
-                Para ti quizá no fue algo que apareció de la nada. Era algo
-                que ya estabas pensando, algo que de alguna manera ya estabas
-                esperando. Para mí, en cambio, fue algo mucho más inesperado.
-                No pensé que terminaríamos aquí, siendo nosotras.
-            </p>
-
-
-            <p>
-                Y lo más curioso es que aprendí a amarte bastante rápido.
-                Con tu interés, con tu atención, con la forma en la que
-                empezaste a estar presente en mis días, poco a poco fui
-                sintiendo algo más por ti. Sin darme cuenta, empecé a
-                enamorarme.
-            </p>
-
-
-            <p>
-                No sé exactamente en qué momento pasó. No podría señalar una
-                conversación y decir "fue aquí". Simplemente pasó. Entre
-                hablar contigo, reírnos, conocernos y compartir pequeñas
-                cosas, empezaste a convertirte en alguien demasiado
-                importante para mí.
-            </p>
-
-
-            <p>
-                Y ahora que lo pienso, es extraño cómo algo que comenzó con
-                un simple interés terminó convirtiéndose en algo que significa
-                tanto para mí. Pasamos de ser dos personas que se parecían
-                divertidas e interesantes a ser dos personas que decidieron
-                elegirse.
-            </p>
-
-
-            <p>
-                Tal vez nuestra historia pudo haber comenzado mucho antes,
-                pero quizá necesitábamos todo ese tiempo para llegar
-                exactamente hasta donde estamos ahora.
-            </p>
-
 
             <p class="final-historia">
-                No sé cómo pasó todo, ni en qué momento dejé de simplemente
-                hablar contigo y empecé a quererte de esta manera. Solo sé
-                que pasó. Y aquí estamos, comenzando nuestra historia
-                oficialmente este 20 de septiembre de 2026. ♡
+                Y así, el 20 de septiembre de 2026,
+                dejamos de ser un "casi" y nos convertimos
+                en nosotras. ♡
             </p>
 
-
-            <button
-                class="volver"
-                onclick="mostrarPantalla('universo')">
-
+            <button class="volver">
                 Volver a las estrellas
-
             </button>
 
         </div>
@@ -1011,78 +1085,53 @@
 
 
     <!-- =========================
-         SEGUNDA ESTRELLA
+         HISTORIA 2
     ========================= -->
 
     <section
         id="historia2"
-        class="pantalla historia">
+        class="pantalla historia"
+    >
 
-        <div class="historia-contenido">
+        <h1>
+            Star II
+        </h1>
 
-            <div class="historia-fecha">
-                STAR II
-            </div>
+        <p>
+            Entre todas las estrellas que existen,
+            me alegra haber encontrado la que me hace
+            querer quedarme mirando un poquito más.
+        </p>
 
-            <h1>
-                Little things ♡
-            </h1>
-
-            <div class="linea"></div>
-
-            <p>
-                Entre todas las estrellas que existen, me alegra haber
-                encontrado la que me hace querer quedarme mirando un poquito
-                más.
-            </p>
-
-            <button
-                class="volver"
-                onclick="mostrarPantalla('universo')">
-
-                Volver a las estrellas
-
-            </button>
-
-        </div>
+        <button class="volver">
+            Volver
+        </button>
 
     </section>
 
 
     <!-- =========================
-         TERCERA ESTRELLA
+         HISTORIA 3
     ========================= -->
 
     <section
         id="historia3"
-        class="pantalla historia">
+        class="pantalla historia"
+    >
 
-        <div class="historia-contenido">
+        <h1>
+            Star III
+        </h1>
 
-            <div class="historia-fecha">
-                STAR III
-            </div>
+        <p>
+            Quizás el universo sea enorme,
+            pero algunas personas hacen que se sienta
+            un poquito más pequeño y especial.
+        </p>
 
-            <h1>
-                Our future ♡
-            </h1>
-
-            <div class="linea"></div>
-
-            <p>
-                Quizás el universo sea enorme, pero algunas personas hacen que
-                se sienta un poquito más pequeño y especial.
-            </p>
-
-            <button
-                class="volver"
-                onclick="mostrarPantalla('universo')">
-
-                Volver a las estrellas
-
-            </button>
-
-        </div>
+        <button class="volver">
+            Volver
+        </button>
 
     </section>
 
@@ -1093,44 +1142,25 @@
 
     <div id="cartaLuna">
 
-        <div class="carta-contenido">
+        <div class="carta">
 
             <button id="cerrarCarta">
                 ×
             </button>
 
-            <h2>
-                Para ti, mi niña ♡
-            </h2>
+            <h1>
+                Me ... a moon ♡
+            </h1>
 
             <img
+                id="imagenMoon"
                 src="Moon.png"
-                class="foto-carta"
-                id="fotoCarta"
-                alt="Moon">
-
-
-            <div class="texto-carta">
-
-                <p>
-                    Esta parte es para todo aquello que a veces no sé cómo
-                    decirte en persona.
-                </p>
-
-                <p>
-                    Quizás todavía me cuesta expresar muchas cosas, pero
-                    quería dejarte un pequeño pedacito de lo que siento por ti.
-                </p>
-
-                <p>
-                    Te quiero muchísimo, Kass. ♡
-                </p>
-
-            </div>
-
+                alt="Moon"
+            >
 
             <p>
-                Un poco de mi..... click en la imagen para hacerla más grande
+                Un poco de mi.....
+                click en la imagen para hacerla más grande
             </p>
 
         </div>
@@ -1142,16 +1172,17 @@
          VISOR DE IMAGEN
     ========================= -->
 
-    <div
-        id="visorImagen">
+    <div id="visorImagen">
 
-        <span id="cerrarVisor">
+        <button id="cerrarImagen">
             ×
-        </span>
+        </button>
 
         <img
+            id="imagenGrande"
             src="Moon.png"
-            alt="Moon grande">
+            alt="Moon"
+        >
 
     </div>
 
@@ -1160,14 +1191,18 @@
          REPRODUCTOR
     ========================= -->
 
-    <div id="uvpnt2">
+    <div id="reproductor">
 
-        <div id="nombreCancion">
-            Amtrak
-        </div>
+        <div id="infoCancion">
 
-        <div id="artistaCancion">
-            Los Retros
+            <span id="nombreCancion">
+                Amtrak
+            </span>
+
+            <span id="artistaCancion">
+                Los Retros
+            </span>
+
         </div>
 
 
@@ -1176,88 +1211,69 @@
             id="barraProgreso"
             min="0"
             max="100"
-            value="0">
+            value="0"
+            step="0.1"
+        >
 
 
-        <div class="tiempos">
+        <div id="tiempoMusica">
 
             <span id="tiempoActual">
                 0:00
             </span>
 
-            <span id="tiempoTotal">
+            <span id="duracion">
                 0:00
             </span>
 
         </div>
 
 
-        <div class="controles-musica">
+        <div class="controlesMusica">
 
             <button
-                class="control-musica"
-                id="anterior">
-
+                id="anterior"
+                class="controlMusica"
+                title="Anterior"
+            >
                 ⏮
-
             </button>
 
-
             <button
-                class="control-musica"
-                id="playPause">
-
+                id="playPause"
+                class="controlMusica"
+                title="Reproducir / Pausar"
+            >
                 ▶
-
             </button>
 
-
             <button
-                class="control-musica"
-                id="siguiente">
-
+                id="siguiente"
+                class="controlMusica"
+                title="Siguiente"
+            >
                 ⏭
-
             </button>
-
-
-            <button
-                class="control-musica"
-                id="mute">
-
-                🔊
-
-            </button>
-
-
-            <input
-                type="range"
-                id="volumen"
-                min="0"
-                max="1"
-                step="0.01"
-                value="0.7">
 
         </div>
+
+
+        <button
+            id="volumen"
+            title="Silenciar"
+        >
+            🔊
+        </button>
 
     </div>
 
 
-    <!-- =========================
-         AUDIO
-    ========================= -->
-
-    <audio
-        id="musica"
-        preload="auto">
-    </audio>
-
-
     <script>
 
-        /* ==================================================
-           CAMBIAR PANTALLA
-        ================================================== */
+
+        /* =========================
+           CAMBIO DE PANTALLAS
+        ========================= */
 
         function mostrarPantalla(id) {
 
@@ -1270,26 +1286,18 @@
                 });
 
 
-            const pantalla =
-                document.getElementById(id);
-
-
-            if (pantalla) {
-
-                pantalla.classList.add("activa");
-
-            }
-
+            document
+                .getElementById(id)
+                .classList.add("activa");
         }
 
 
-        /* ==================================================
-           VIDEO
-        ================================================== */
+        /* =========================
+           VIDEO DE FONDO
+        ========================= */
 
         const fondoVideo =
             document.getElementById("fondoVideo");
-
 
         fondoVideo.play().catch(function() {
 
@@ -1300,57 +1308,9 @@
         });
 
 
-        /* ==================================================
-           AUDIO
-        ================================================== */
-
-        const musica =
-            document.getElementById("musica");
-
-
-        const nombreCancion =
-            document.getElementById("nombreCancion");
-
-
-        const artistaCancion =
-            document.getElementById("artistaCancion");
-
-
-        const barraProgreso =
-            document.getElementById("barraProgreso");
-
-
-        const tiempoActual =
-            document.getElementById("tiempoActual");
-
-
-        const tiempoTotal =
-            document.getElementById("tiempoTotal");
-
-
-        const botonPlayPause =
-            document.getElementById("playPause");
-
-
-        const botonAnterior =
-            document.getElementById("anterior");
-
-
-        const botonSiguiente =
-            document.getElementById("siguiente");
-
-
-        const botonMute =
-            document.getElementById("mute");
-
-
-        const volumen =
-            document.getElementById("volumen");
-
-
-        /* ==================================================
-           CANCIONES
-        ================================================== */
+        /* =========================
+           PLAYLIST
+        ========================= */
 
         const canciones = [
 
@@ -1381,286 +1341,280 @@
         ];
 
 
-        let indiceCancion = 0;
+        let indiceActual = 0;
 
 
-        /* ==================================================
+        const musica =
+            document.getElementById("musica");
+
+        const nombreCancion =
+            document.getElementById("nombreCancion");
+
+        const artistaCancion =
+            document.getElementById("artistaCancion");
+
+        const playPause =
+            document.getElementById("playPause");
+
+        const barraProgreso =
+            document.getElementById("barraProgreso");
+
+        const tiempoActual =
+            document.getElementById("tiempoActual");
+
+        const duracion =
+            document.getElementById("duracion");
+
+        const volumen =
+            document.getElementById("volumen");
+
+
+        /* =========================
+           FORMATO DEL TIEMPO
+        ========================= */
+
+        function formatoTiempo(segundos) {
+
+            if (!isFinite(segundos)) {
+                return "0:00";
+            }
+
+            const minutos =
+                Math.floor(segundos / 60);
+
+            const segundosRestantes =
+                Math.floor(segundos % 60)
+                    .toString()
+                    .padStart(2, "0");
+
+            return minutos + ":" + segundosRestantes;
+        }
+
+
+        /* =========================
            CARGAR CANCIÓN
-        ================================================== */
+        ========================= */
 
         function cargarCancion(
             indice,
             reproducir = false
         ) {
 
-            indiceCancion = indice;
-
-
-            if (indiceCancion < 0) {
-
-                indiceCancion =
-                    canciones.length - 1;
-
-            }
-
-
-            if (indiceCancion >= canciones.length) {
-
-                indiceCancion = 0;
-
-            }
-
+            indiceActual = indice;
 
             const cancion =
-                canciones[indiceCancion];
-
+                canciones[indiceActual];
 
             musica.src =
                 cancion.archivo;
 
+            musica.load();
 
             nombreCancion.textContent =
                 cancion.nombre;
 
-
             artistaCancion.textContent =
                 cancion.artista;
 
-
             barraProgreso.value = 0;
-
 
             tiempoActual.textContent =
                 "0:00";
 
-
-            tiempoTotal.textContent =
+            duracion.textContent =
                 "0:00";
 
 
             if (reproducir) {
 
-                musica.play()
+                musica
+                    .play()
                     .then(function() {
 
-                        botonPlayPause.textContent =
-                            "⏸";
+                        playPause.textContent =
+                            "❚❚";
 
                     })
                     .catch(function(error) {
 
                         console.log(
-                            "Error al reproducir:",
+                            "No se pudo reproducir:",
                             error
                         );
 
-                        botonPlayPause.textContent =
-                            "▶";
-
                     });
 
-            }
-            else {
+            } else {
 
-                botonPlayPause.textContent =
+                playPause.textContent =
                     "▶";
-
             }
-
         }
 
 
-        /* ==================================================
-           BOTÓN INICIAL
-           
-           ESTE ES EL QUE INICIA LA MÚSICA
-        ================================================== */
+        /* =========================
+           ENTRAR
+        ========================= */
 
-        function entrarPagina() {
+        document
+            .getElementById("entrar")
+            .addEventListener(
+                "click",
+                function() {
 
-            /*
-                Cargamos Amtrak
-            */
+                    cargarCancion(0, true);
 
-            indiceCancion = 0;
+                    mostrarPantalla("pregunta");
 
-
-            const cancion =
-                canciones[0];
-
-
-            musica.src =
-                cancion.archivo;
-
-
-            nombreCancion.textContent =
-                cancion.nombre;
-
-
-            artistaCancion.textContent =
-                cancion.artista;
-
-
-            musica.volume = 0.7;
-
-
-            /*
-                El play ocurre directamente
-                como consecuencia del click.
-            */
-
-            musica.play()
-                .then(function() {
-
-                    botonPlayPause.textContent =
-                        "⏸";
-
-                })
-                .catch(function(error) {
-
-                    console.log(
-                        "No se pudo reproducir Amtrak:",
-                        error
-                    );
-
-                    botonPlayPause.textContent =
-                        "▶";
-
-                });
-
-
-            /*
-                Cambiamos de pantalla
-            */
-
-            mostrarPantalla(
-                "pregunta"
+                }
             );
 
-        }
+
+        /* =========================
+           BOTÓN SI
+        ========================= */
+
+        document
+            .getElementById("si")
+            .addEventListener(
+                "click",
+                function() {
+
+                    document
+                        .getElementById("respuesta")
+                        .style.display = "block";
+
+                    document
+                        .querySelector(".botonesPregunta")
+                        .style.display = "none";
+
+                    document
+                        .getElementById("next")
+                        .style.display = "inline-block";
+
+                }
+            );
 
 
-        /* ==================================================
-           PREGUNTA
-        ================================================== */
-
-        const botonSi =
-            document.getElementById("si");
-
+        /* =========================
+           BOTÓN NO
+        ========================= */
 
         const botonNo =
             document.getElementById("no");
-
-
-        const respuesta =
-            document.getElementById("respuesta");
-
-
-        const botonNext =
-            document.getElementById("next");
-
-
-        /* ==================================================
-           BOTÓN NO
-        ================================================== */
 
         botonNo.addEventListener(
             "mouseover",
             function() {
 
-                const maxX =
+                const ancho =
                     window.innerWidth -
-                    this.offsetWidth -
-                    20;
+                    botonNo.offsetWidth -
+                    30;
 
-
-                const maxY =
+                const alto =
                     window.innerHeight -
-                    this.offsetHeight -
-                    20;
+                    botonNo.offsetHeight -
+                    30;
 
-
-                const randomX =
-                    Math.random() * maxX;
-
-
-                const randomY =
-                    Math.random() * maxY;
-
-
-                this.style.position =
+                botonNo.style.position =
                     "fixed";
 
+                botonNo.style.left =
+                    Math.random() * ancho + "px";
 
-                this.style.left =
-                    randomX + "px";
-
-
-                this.style.top =
-                    randomY + "px";
+                botonNo.style.top =
+                    Math.random() * alto + "px";
 
             }
         );
 
 
-        /* ==================================================
-           BOTÓN SI
-        ================================================== */
-
-        botonSi.addEventListener(
-            "click",
-            function() {
-
-                botonSi.style.display =
-                    "none";
-
-
-                botonNo.style.display =
-                    "none";
-
-
-                respuesta.style.display =
-                    "block";
-
-
-                botonNext.style.display =
-                    "block";
-
-                /*
-                    NO reiniciamos la música.
-                */
-
-            }
-        );
-
-
-        /* ==================================================
+        /* =========================
            NEXT
-        ================================================== */
+        ========================= */
 
-        botonNext.addEventListener(
-            "click",
-            function() {
+        document
+            .getElementById("next")
+            .addEventListener(
+                "click",
+                function() {
 
-                mostrarPantalla(
-                    "universo"
+                    mostrarPantalla("universo");
+
+                }
+            );
+
+
+        /* =========================
+           ESTRELLAS
+        ========================= */
+
+        document
+            .getElementById("estrella1")
+            .addEventListener(
+                "click",
+                function() {
+
+                    mostrarPantalla("historia1");
+
+                }
+            );
+
+
+        document
+            .getElementById("estrella2")
+            .addEventListener(
+                "click",
+                function() {
+
+                    mostrarPantalla("historia2");
+
+                }
+            );
+
+
+        document
+            .getElementById("estrella3")
+            .addEventListener(
+                "click",
+                function() {
+
+                    mostrarPantalla("historia3");
+
+                }
+            );
+
+
+        /* =========================
+           BOTONES VOLVER
+        ========================= */
+
+        document
+            .querySelectorAll(".volver")
+            .forEach(function(boton) {
+
+                boton.addEventListener(
+                    "click",
+                    function() {
+
+                        mostrarPantalla("universo");
+
+                    }
                 );
 
-            }
-        );
+            });
 
 
-        /* ==================================================
+        /* =========================
            LUNA
-        ================================================== */
+        ========================= */
 
         const luna =
             document.getElementById("luna");
 
-
         const cartaLuna =
             document.getElementById("cartaLuna");
-
 
         const cerrarCarta =
             document.getElementById("cerrarCarta");
@@ -1670,9 +1624,7 @@
             "click",
             function() {
 
-                cartaLuna.classList.add(
-                    "activa"
-                );
+                cartaLuna.classList.add("activa");
 
             }
         );
@@ -1682,9 +1634,7 @@
             "click",
             function() {
 
-                cartaLuna.classList.remove(
-                    "activa"
-                );
+                cartaLuna.classList.remove("activa");
 
             }
         );
@@ -1692,13 +1642,11 @@
 
         cartaLuna.addEventListener(
             "click",
-            function(e) {
+            function(evento) {
 
-                if (e.target === cartaLuna) {
+                if (evento.target === cartaLuna) {
 
-                    cartaLuna.classList.remove(
-                        "activa"
-                    );
+                    cartaLuna.classList.remove("activa");
 
                 }
 
@@ -1706,41 +1654,35 @@
         );
 
 
-        /* ==================================================
-           VISOR DE IMAGEN
-        ================================================== */
+        /* =========================
+           VISOR DE MOON.PNG
+        ========================= */
 
-        const fotoCarta =
-            document.getElementById("fotoCarta");
-
+        const imagenMoon =
+            document.getElementById("imagenMoon");
 
         const visorImagen =
             document.getElementById("visorImagen");
 
+        const cerrarImagen =
+            document.getElementById("cerrarImagen");
 
-        const cerrarVisor =
-            document.getElementById("cerrarVisor");
 
-
-        fotoCarta.addEventListener(
+        imagenMoon.addEventListener(
             "click",
             function() {
 
-                visorImagen.classList.add(
-                    "activa"
-                );
+                visorImagen.classList.add("activa");
 
             }
         );
 
 
-        cerrarVisor.addEventListener(
+        cerrarImagen.addEventListener(
             "click",
             function() {
 
-                visorImagen.classList.remove(
-                    "activa"
-                );
+                visorImagen.classList.remove("activa");
 
             }
         );
@@ -1748,13 +1690,11 @@
 
         visorImagen.addEventListener(
             "click",
-            function(e) {
+            function(evento) {
 
-                if (e.target === visorImagen) {
+                if (evento.target === visorImagen) {
 
-                    visorImagen.classList.remove(
-                        "activa"
-                    );
+                    visorImagen.classList.remove("activa");
 
                 }
 
@@ -1762,87 +1702,116 @@
         );
 
 
-        /* ==================================================
+        /* =========================
            PLAY / PAUSE
-        ================================================== */
+        ========================= */
 
-        botonPlayPause.addEventListener(
+        playPause.addEventListener(
             "click",
             function() {
 
                 if (musica.paused) {
 
-                    musica.play()
+                    musica
+                        .play()
                         .then(function() {
 
-                            botonPlayPause.textContent =
-                                "⏸";
-
-                        })
-                        .catch(function(error) {
-
-                            console.log(error);
+                            playPause.textContent =
+                                "❚❚";
 
                         });
 
-                }
-                else {
+                } else {
 
                     musica.pause();
 
-                    botonPlayPause.textContent =
+                    playPause.textContent =
                         "▶";
-
                 }
 
             }
         );
 
 
-        /* ==================================================
-           ANTERIOR
-        ================================================== */
-
-        botonAnterior.addEventListener(
-            "click",
-            function() {
-
-                cargarCancion(
-                    indiceCancion - 1,
-                    true
-                );
-
-            }
-        );
-
-
-        /* ==================================================
+        /* =========================
            SIGUIENTE
-        ================================================== */
+        ========================= */
 
-        botonSiguiente.addEventListener(
-            "click",
-            function() {
+        document
+            .getElementById("siguiente")
+            .addEventListener(
+                "click",
+                function() {
 
-                cargarCancion(
-                    indiceCancion + 1,
-                    true
-                );
+                    indiceActual++;
 
-            }
-        );
+                    if (
+                        indiceActual >=
+                        canciones.length
+                    ) {
+
+                        indiceActual = 0;
+
+                    }
+
+                    cargarCancion(
+                        indiceActual,
+                        true
+                    );
+
+                }
+            );
 
 
-        /* ==================================================
+        /* =========================
+           ANTERIOR
+        ========================= */
+
+        document
+            .getElementById("anterior")
+            .addEventListener(
+                "click",
+                function() {
+
+                    indiceActual--;
+
+                    if (indiceActual < 0) {
+
+                        indiceActual =
+                            canciones.length - 1;
+
+                    }
+
+                    cargarCancion(
+                        indiceActual,
+                        true
+                    );
+
+                }
+            );
+
+
+        /* =========================
            SIGUIENTE AUTOMÁTICO
-        ================================================== */
+        ========================= */
 
         musica.addEventListener(
             "ended",
             function() {
 
+                indiceActual++;
+
+                if (
+                    indiceActual >=
+                    canciones.length
+                ) {
+
+                    indiceActual = 0;
+
+                }
+
                 cargarCancion(
-                    indiceCancion + 1,
+                    indiceActual,
                     true
                 );
 
@@ -1850,16 +1819,16 @@
         );
 
 
-        /* ==================================================
-           METADATA
-        ================================================== */
+        /* =========================
+           DURACIÓN
+        ========================= */
 
         musica.addEventListener(
             "loadedmetadata",
             function() {
 
-                tiempoTotal.textContent =
-                    formatearTiempo(
+                duracion.textContent =
+                    formatoTiempo(
                         musica.duration
                     );
 
@@ -1867,32 +1836,26 @@
         );
 
 
-        /* ==================================================
+        /* =========================
            PROGRESO
-        ================================================== */
+        ========================= */
 
         musica.addEventListener(
             "timeupdate",
             function() {
 
-                if (!musica.duration) {
-                    return;
+                if (musica.duration) {
+
+                    barraProgreso.value =
+                        (
+                            musica.currentTime /
+                            musica.duration
+                        ) * 100;
+
                 }
 
-
-                const progreso =
-                    (
-                        musica.currentTime /
-                        musica.duration
-                    ) * 100;
-
-
-                barraProgreso.value =
-                    progreso;
-
-
                 tiempoActual.textContent =
-                    formatearTiempo(
+                    formatoTiempo(
                         musica.currentTime
                     );
 
@@ -1900,117 +1863,49 @@
         );
 
 
-        /* ==================================================
-           BARRA DE PROGRESO
-        ================================================== */
+        /* =========================
+           CAMBIAR POSICIÓN
+        ========================= */
 
         barraProgreso.addEventListener(
             "input",
             function() {
 
-                if (!musica.duration) {
-                    return;
+                if (musica.duration) {
+
+                    musica.currentTime =
+                        (
+                            barraProgreso.value /
+                            100
+                        ) * musica.duration;
+
                 }
 
-
-                musica.currentTime =
-                    (
-                        barraProgreso.value / 100
-                    ) * musica.duration;
-
             }
         );
 
 
-        /* ==================================================
+        /* =========================
            VOLUMEN
-        ================================================== */
+        ========================= */
 
         volumen.addEventListener(
-            "input",
-            function() {
-
-                musica.volume =
-                    volumen.value;
-
-            }
-        );
-
-
-        /* ==================================================
-           MUTE
-        ================================================== */
-
-        botonMute.addEventListener(
             "click",
             function() {
 
                 musica.muted =
                     !musica.muted;
 
-
-                if (musica.muted) {
-
-                    botonMute.textContent =
-                        "🔇";
-
-                }
-                else {
-
-                    botonMute.textContent =
-                        "🔊";
-
-                }
+                volumen.textContent =
+                    musica.muted
+                        ? "🔇"
+                        : "🔊";
 
             }
         );
 
-
-        /* ==================================================
-           FORMATEAR TIEMPO
-        ================================================== */
-
-        function formatearTiempo(
-            segundos
-        ) {
-
-            if (!isFinite(segundos)) {
-
-                return "0:00";
-
-            }
-
-
-            const minutos =
-                Math.floor(
-                    segundos / 60
-                );
-
-
-            const segundosRestantes =
-                Math.floor(
-                    segundos % 60
-                );
-
-
-            return (
-                minutos +
-                ":" +
-                segundosRestantes
-                    .toString()
-                    .padStart(2, "0")
-            );
-
-        }
-
-
-        /* ==================================================
-           VOLUMEN INICIAL
-        ================================================== */
-
-        musica.volume = 0.7;
-
     </script>
 
 </body>
+
 </html>
