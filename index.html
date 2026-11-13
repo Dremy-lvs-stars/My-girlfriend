@@ -1,1457 +1,222 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>For Kass, my love <3</title>
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Kass, my love &lt;3</title>
     <style>
-
-        * {
-            box-sizing: border-box;
+        * { box-sizing: border-box; }
+        html, body {
+            margin: 0; width: 100%; height: 100%; overflow: hidden;
+            font-family: Arial, sans-serif; background: #020617; color: white;
         }
-
-
-        html,
-        body {
-
-            margin: 0;
-
-            width: 100%;
-            height: 100%;
-
-            overflow: hidden;
-
-            font-family: Arial, sans-serif;
-
-            background: #020617;
-
-            color: white;
-        }
-
-
-        /* =========================
-            VIDEO DE FONDO
-        ========================= */
-
         #fondoVideo {
-
-            position: fixed;
-
-            inset: 0;
-
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-
-            z-index: 0;
-
-            pointer-events: none;
+            position: fixed; inset: 0; width: 100%; height: 100%;
+            object-fit: cover; z-index: 0; pointer-events: none;
         }
-
-
-        /* =========================
-            PANTALLAS
-        ========================= */
-
         .pantalla {
-
-            position: absolute;
-
-            inset: 0;
-
-            display: none;
-
-            justify-content: center;
-
-            align-items: center;
-
-            text-align: center;
-
-            z-index: 1;
+            position: absolute; inset: 0; display: none; justify-content: center;
+            align-items: center; text-align: center; z-index: 1;
         }
+        .pantalla.activa { display: flex; }
 
-
-        .pantalla.activa {
-
-            display: flex;
-        }
-
-
-        /* =========================
-            ENTRADA
-        ========================= */
-
+        /* ENTRADA */
         #entrada {
-
-            background:
-                radial-gradient(
-                    circle at center,
-                    rgba(49, 46, 129, 0.40),
-                    rgba(17, 24, 39, 0.20) 45%,
-                    rgba(2, 6, 23, 0.25) 100%
-                );
-
+            background: radial-gradient(circle at center, rgba(49, 46, 129, 0.40), rgba(17, 24, 39, 0.20) 45%, rgba(2, 6, 23, 0.25) 100%);
             flex-direction: column;
         }
-
-
-        #entrada h1 {
-
-            font-size: 42px;
-
-            margin-bottom: 35px;
-
-            text-shadow:
-                0 0 20px #818cf8;
-
-            position: relative;
-
-            z-index: 2;
-        }
-
-
+        #entrada h1 { font-size: 42px; margin-bottom: 35px; text-shadow: 0 0 20px #818cf8; position: relative; z-index: 2; }
         #entrar {
-
-            border: none;
-
-            background: #ec4899;
-
-            color: white;
-
-            width: 75px;
-            height: 75px;
-
-            border-radius: 50%;
-
-            font-size: 30px;
-
-            cursor: pointer;
-
-            box-shadow:
-                0 0 15px #ec4899,
-                0 0 35px rgba(236, 72, 153, 0.6);
-
-            transition: 0.3s;
-
-            position: relative;
-
-            z-index: 2;
+            border: none; background: #ec4899; color: white; width: 75px; height: 75px;
+            border-radius: 50%; font-size: 30px; cursor: pointer;
+            box-shadow: 0 0 15px #ec4899, 0 0 35px rgba(236, 72, 153, 0.6);
+            transition: 0.3s; position: relative; z-index: 2;
         }
+        #entrar:hover { transform: scale(1.12); }
 
-
-        #entrar:hover {
-
-            transform: scale(1.12);
-        }
-
-
-        /* =========================
-            PREGUNTA
-        ========================= */
-
+        /* PREGUNTA */
         #pregunta {
-
             flex-direction: column;
-
-            background:
-                radial-gradient(
-                    circle at center,
-                    rgba(49, 46, 129, 0.40),
-                    rgba(17, 24, 39, 0.20) 50%,
-                    rgba(2, 6, 23, 0.25) 100%
-                );
+            background: radial-gradient(circle at center, rgba(49, 46, 129, 0.40), rgba(17, 24, 39, 0.20) 50%, rgba(2, 6, 23, 0.25) 100%);
         }
-
-
-        #pregunta h1 {
-
-            font-size: 42px;
-
-            margin-bottom: 35px;
-
-            text-shadow:
-                0 0 15px #818cf8;
-        }
-
-
-        .botonesPregunta {
-
-            display: flex;
-
-            gap: 20px;
-
-            justify-content: center;
-
-            align-items: center;
-        }
-
-
-        .botonesPregunta button {
-
-            border: none;
-
-            padding: 13px 25px;
-
-            border-radius: 12px;
-
-            font-size: 16px;
-
-            cursor: pointer;
-
-            transition: 0.2s;
-        }
-
-
-        #si {
-
-            background: #ec4899;
-
-            color: white;
-
-            box-shadow:
-                0 0 15px rgba(236, 72, 153, 0.5);
-        }
-
-
-        #si:hover {
-
-            transform: scale(1.08);
-        }
-
-
-        #no {
-
-            background: #475569;
-
-            color: white;
-        }
-
-
-        #respuesta {
-
-            margin-top: 25px;
-
-            font-size: 28px;
-
-            display: none;
-        }
-
-
+        #pregunta h1 { font-size: 42px; margin-bottom: 35px; text-shadow: 0 0 15px #818cf8; }
+        .botonesPregunta { display: flex; gap: 20px; justify-content: center; align-items: center; }
+        .botonesPregunta button { border: none; padding: 13px 25px; border-radius: 12px; font-size: 16px; cursor: pointer; transition: 0.2s; }
+        #si { background: #ec4899; color: white; box-shadow: 0 0 15px rgba(236, 72, 153, 0.5); }
+        #si:hover { transform: scale(1.08); }
+        #no { background: #475569; color: white; }
+        #respuesta { margin-top: 25px; font-size: 28px; display: none; }
         #next {
-
-            display: none;
-
-            margin-top: 20px;
-
-            padding: 10px 22px;
-
-            border: none;
-
-            border-radius: 10px;
-
-            background: #818cf8;
-
-            color: white;
-
-            cursor: pointer;
-
-            font-size: 15px;
-
-            box-shadow:
-                0 0 15px rgba(129, 140, 248, 0.5);
+            display: none; margin-top: 20px; padding: 10px 22px; border: none; border-radius: 10px;
+            background: #818cf8; color: white; cursor: pointer; font-size: 15px;
+            box-shadow: 0 0 15px rgba(129, 140, 248, 0.5);
         }
 
-
-        /* =========================
-            UNIVERSO
-        ========================= */
-
+        /* UNIVERSO */
         #universo {
-
-            background:
-                radial-gradient(
-                    circle at center,
-                    rgba(23, 37, 84, 0.18),
-                    rgba(15, 23, 42, 0.18) 45%,
-                    rgba(2, 6, 23, 0.20) 100%
-                );
-
+            background: radial-gradient(circle at center, rgba(23, 37, 84, 0.18), rgba(15, 23, 42, 0.18) 45%, rgba(2, 6, 23, 0.20) 100%);
             overflow: hidden;
         }
-
-
         #universo h1 {
-
-            position: absolute;
-
-            top: 35px;
-
-            left: 50%;
-
-            transform: translateX(-50%);
-
-            font-size: 34px;
-
-            z-index: 10;
-
-            white-space: nowrap;
-
-            text-shadow:
-                0 0 15px #60a5fa;
+            position: absolute; top: 35px; left: 50%; transform: translateX(-50%);
+            font-size: 34px; z-index: 10; white-space: nowrap; text-shadow: 0 0 15px #60a5fa;
         }
-
-
-        /* =========================
-            ESTRELLAS DE FONDO
-        ========================= */
-
         .estrellaFondo {
-
-            position: absolute;
-
-            width: 3px;
-            height: 3px;
-
-            background: white;
-
-            border-radius: 50%;
-
-            box-shadow:
-                0 0 7px white;
-
-            animation:
-                parpadear 2s infinite alternate;
+            position: absolute; width: 3px; height: 3px; background: white; border-radius: 50%;
+            box-shadow: 0 0 7px white; animation: parpadear 2s infinite alternate;
         }
-
-
         @keyframes parpadear {
-
-            from {
-
-                opacity: 0.25;
-
-                transform: scale(0.7);
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform: scale(1.3);
-            }
+            from { opacity: 0.25; transform: scale(0.7); }
+            to { opacity: 1; transform: scale(1.3); }
         }
-
-
-        /* =========================
-            ESTRELLAS CLICKEABLES
-        ========================= */
-
         .estrella {
-
-            position: absolute;
-
-            width: 35px;
-            height: 35px;
-
-            background: white;
-
-            clip-path: polygon(
-                50% 0%,
-                61% 38%,
-                100% 50%,
-                61% 62%,
-                50% 100%,
-                39% 62%,
-                0% 50%,
-                39% 38%
-            );
-
-            filter:
-                drop-shadow(0 0 10px white);
-
-            cursor: pointer;
-
-            animation:
-                brilloEstrella 2s infinite alternate;
-
-            transition: 0.3s;
-
-            z-index: 20;
+            position: absolute; width: 35px; height: 35px; background: white;
+            clip-path: polygon(50% 0%, 61% 38%, 100% 50%, 61% 62%, 50% 100%, 39% 62%, 0% 50%, 39% 38%);
+            filter: drop-shadow(0 0 10px white); cursor: pointer;
+            animation: brilloEstrella 2s infinite alternate; transition: 0.3s; z-index: 20;
         }
+        .estrella:hover { transform: scale(1.4); }
+        @keyframes brilloEstrella { from { opacity: 0.6; } to { opacity: 1; } }
+        #estrella1 { top: 28%; left: 25%; }
+        #estrella2 { top: 55%; left: 68%; }
+        #estrella3 { top: 72%; left: 37%; }
 
-
-        .estrella:hover {
-
-            transform: scale(1.4);
-        }
-
-
-        @keyframes brilloEstrella {
-
-            from {
-
-                opacity: 0.6;
-            }
-
-            to {
-
-                opacity: 1;
-            }
-        }
-
-
-        #estrella1 {
-
-            top: 28%;
-
-            left: 25%;
-        }
-
-
-        #estrella2 {
-
-            top: 55%;
-
-            left: 68%;
-        }
-
-
-        #estrella3 {
-
-            top: 72%;
-
-            left: 37%;
-        }
-
-
-        /* =========================
-            LUNA
-        ========================= */
-
+        /* LUNA */
         #luna {
-
-            position: absolute;
-
-            width: 125px;
-            height: 125px;
-
-            border-radius: 50%;
-
-            right: 13%;
-
-            top: 25%;
-
-            background: #f8fafc;
-
-            box-shadow:
-                0 0 20px #e2e8f0,
-                0 0 50px rgba(226, 232, 240, 0.6),
-                0 0 100px rgba(226, 232, 240, 0.25);
-
-            cursor: pointer;
-
-            transition: 0.4s;
-
-            animation:
-                lunaFlotar 6s ease-in-out infinite;
-
-            z-index: 20;
+            position: absolute; width: 125px; height: 125px; border-radius: 50%; right: 13%; top: 25%;
+            background: #f8fafc; box-shadow: 0 0 20px #e2e8f0, 0 0 50px rgba(226, 232, 240, 0.6), 0 0 100px rgba(226, 232, 240, 0.25);
+            cursor: pointer; transition: 0.4s; animation: lunaFlotar 6s ease-in-out infinite; z-index: 20;
         }
+        @keyframes lunaFlotar { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        #luna:hover { transform: scale(1.08); box-shadow: 0 0 30px #f8fafc, 0 0 70px rgba(226, 232, 240, 0.7), 0 0 120px rgba(226, 232, 240, 0.3); }
 
-
-        @keyframes lunaFlotar {
-
-            0%,
-            100% {
-
-                transform: translateY(0);
-            }
-
-            50% {
-
-                transform: translateY(-8px);
-            }
+        /* VENTANAS MODALES */
+        #ventanaEstrella1, .ventanaMantenimiento {
+            position: fixed; inset: 0; display: none; justify-content: center; align-items: center;
+            padding: 20px; background: rgba(2, 6, 23, 0.55); backdrop-filter: blur(6px); z-index: 3500;
         }
-
-
-        #luna:hover {
-
-            transform: scale(1.08);
-
-            box-shadow:
-                0 0 30px #f8fafc,
-                0 0 70px rgba(226, 232, 240, 0.7),
-                0 0 120px rgba(226, 232, 240, 0.3);
-        }
-
-
-        /* =========================
-            VENTANA ESTRELLA 1
-        ========================= */
-
-        #ventanaEstrella1 {
-
-            position: fixed;
-
-            inset: 0;
-
-            display: none;
-
-            justify-content: center;
-
-            align-items: center;
-
-            padding: 20px;
-
-            background:
-                rgba(2, 6, 23, 0.55);
-
-            backdrop-filter:
-                blur(6px);
-
-            z-index: 3500;
-        }
-
-
-        #ventanaEstrella1.activa {
-
-            display: flex;
-        }
-
-
+        #ventanaEstrella1.activa, .ventanaMantenimiento.activa { display: flex; }
         .contenidoEstrella1 {
-
-            position: relative;
-
-            width: min(500px, 88vw);
-
-            max-height: 75vh;
-
-            overflow-y: auto;
-
-            padding: 32px 30px 28px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(23, 37, 84, 0.98),
-                    rgba(15, 23, 42, 0.98)
-                );
-
-            border:
-                1px solid rgba(255, 255, 255, 0.16);
-
-            border-radius: 18px;
-
-            box-shadow:
-                0 0 25px rgba(96, 165, 250, 0.18),
-                0 20px 50px rgba(0, 0, 0, 0.6);
-
-            animation:
-                aparecerEstrella 0.35s ease;
+            position: relative; width: min(500px, 88vw); max-height: 75vh; overflow-y: auto;
+            padding: 32px 30px 28px; background: linear-gradient(145deg, rgba(23, 37, 84, 0.98), rgba(15, 23, 42, 0.98));
+            border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 18px;
+            box-shadow: 0 0 25px rgba(96, 165, 250, 0.18), 0 20px 50px rgba(0, 0, 0, 0.6);
+            animation: aparecerModal 0.35s ease;
         }
-
-
-        @keyframes aparecerEstrella {
-
-            from {
-
-                opacity: 0;
-
-                transform:
-                    scale(0.92)
-                    translateY(10px);
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform:
-                    scale(1)
-                    translateY(0);
-            }
-        }
-
-
-        .contenidoEstrella1 h1 {
-
-            margin:
-                0 0 22px;
-
-            text-align: center;
-
-            font-size: 25px;
-
-            color: #f8fafc;
-
-            text-shadow:
-                0 0 12px rgba(96, 165, 250, 0.7);
-        }
-
-
-        .contenidoEstrella1 p {
-
-            margin: 0;
-
-            color: #cbd5e1;
-
-            font-size: 15px;
-
-            line-height: 1.75;
-
-            text-align: left;
-
-            white-space: pre-line;
-        }
-
-
-        #cerrarEstrella1 {
-
-            position: absolute;
-
-            top: 10px;
-
-            right: 12px;
-
-            width: 30px;
-
-            height: 30px;
-
-            border: none;
-
-            border-radius: 50%;
-
-            background:
-                rgba(255, 255, 255, 0.06);
-
-            color: #e2e8f0;
-
-            font-size: 20px;
-
-            cursor: pointer;
-
-            transition: 0.25s;
-        }
-
-
-        #cerrarEstrella1:hover {
-
-            background:
-                rgba(236, 72, 153, 0.25);
-
-            transform:
-                rotate(90deg);
-        }
-
-
-        /* =========================
-            VENTANAS DE MANTENIMIENTO
-        ========================= */
-
-        .ventanaMantenimiento {
-
-            position: fixed;
-
-            inset: 0;
-
-            display: none;
-
-            justify-content: center;
-
-            align-items: center;
-
-            padding: 20px;
-
-            background:
-                rgba(2, 6, 23, 0.55);
-
-            backdrop-filter:
-                blur(6px);
-
-            z-index: 3500;
-        }
-
-
-        .ventanaMantenimiento.activa {
-
-            display: flex;
-        }
-
-
         .contenidoMantenimiento {
-
-            position: relative;
-
-            width: min(400px, 88vw);
-
-            padding: 35px 30px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(23, 37, 84, 0.98),
-                    rgba(15, 23, 42, 0.98)
-                );
-
-            border:
-                1px solid rgba(255, 255, 255, 0.16);
-
-            border-radius: 18px;
-
-            box-shadow:
-                0 0 25px rgba(96, 165, 250, 0.18),
-                0 20px 50px rgba(0, 0, 0, 0.6);
-
-            text-align: center;
-
-            animation:
-                aparecerMantenimiento 0.35s ease;
+            position: relative; width: min(400px, 88vw); padding: 35px 30px;
+            background: linear-gradient(145deg, rgba(23, 37, 84, 0.98), rgba(15, 23, 42, 0.98));
+            border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 18px;
+            box-shadow: 0 0 25px rgba(96, 165, 250, 0.18), 0 20px 50px rgba(0, 0, 0, 0.6);
+            text-align: center; animation: aparecerModal 0.35s ease;
         }
-
-
-        @keyframes aparecerMantenimiento {
-
-            from {
-
-                opacity: 0;
-
-                transform:
-                    scale(0.92)
-                    translateY(10px);
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform:
-                    scale(1)
-                    translateY(0);
-            }
+        @keyframes aparecerModal {
+            from { opacity: 0; transform: scale(0.92) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
         }
-
-
-        .contenidoMantenimiento h1 {
-
-            margin:
-                0 0 15px;
-
-            font-size: 24px;
-
-            color: #f8fafc;
-
-            text-shadow:
-                0 0 12px rgba(96, 165, 250, 0.7);
+        .contenidoEstrella1 h1, .contenidoMantenimiento h1 {
+            margin: 0 0 20px; text-align: center; font-size: 25px; color: #f8fafc;
+            text-shadow: 0 0 12px rgba(96, 165, 250, 0.7);
         }
-
-
-        .contenidoMantenimiento p {
-
-            margin: 0;
-
-            color: #cbd5e1;
-
-            font-size: 15px;
-
-            line-height: 1.6;
+        .contenidoEstrella1 p { margin: 0; color: #cbd5e1; font-size: 15px; line-height: 1.75; text-align: left; white-space: pre-line; }
+        .contenidoMantenimiento p { margin: 0; color: #cbd5e1; font-size: 15px; line-height: 1.6; }
+        #cerrarEstrella1, .cerrarMantenimiento {
+            position: absolute; top: 10px; right: 12px; width: 30px; height: 30px; border: none;
+            border-radius: 50%; background: rgba(255, 255, 255, 0.06); color: #e2e8f0;
+            font-size: 20px; cursor: pointer; transition: 0.25s;
         }
+        #cerrarEstrella1:hover, .cerrarMantenimiento:hover { background: rgba(236, 72, 153, 0.25); transform: rotate(90deg); }
 
-
-        .cerrarMantenimiento {
-
-            position: absolute;
-
-            top: 10px;
-
-            right: 12px;
-
-            width: 30px;
-
-            height: 30px;
-
-            border: none;
-
-            border-radius: 50%;
-
-            background:
-                rgba(255, 255, 255, 0.06);
-
-            color: #e2e8f0;
-
-            font-size: 20px;
-
-            cursor: pointer;
-
-            transition: 0.25s;
-        }
-
-
-        .cerrarMantenimiento:hover {
-
-            background:
-                rgba(236, 72, 153, 0.25);
-
-            transform:
-                rotate(90deg);
-        }
-
-
-        /* =========================
-            CARTA DE LA LUNA
-        ========================= */
-
+        /* CARTA LUNA */
         #cartaLuna {
-
-            position: fixed;
-
-            inset: 0;
-
-            background:
-                rgba(0, 0, 0, 0.75);
-
-            display: none;
-
-            justify-content: center;
-
-            align-items: center;
-
-            z-index: 2000;
-
-            padding: 20px;
+            position: fixed; inset: 0; background: rgba(0, 0, 0, 0.75); display: none;
+            justify-content: center; align-items: center; z-index: 2000; padding: 20px;
         }
-
-
-        #cartaLuna.activa {
-
-            display: flex;
-        }
-
-
+        #cartaLuna.activa { display: flex; }
         .carta {
-
-            position: relative;
-
-            width: min(700px, 90vw);
-
-            max-height: 85vh;
-
-            overflow-y: auto;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    #172554,
-                    #0f172a
-                );
-
-            border:
-                1px solid rgba(255, 255, 255, 0.15);
-
-            border-radius: 20px;
-
-            padding: 35px;
-
-            box-shadow:
-                0 0 30px rgba(96, 165, 250, 0.25),
-                0 20px 60px rgba(0, 0, 0, 0.5);
-
-            animation:
-                aparecerCarta 0.4s ease;
+            position: relative; width: min(700px, 90vw); max-height: 85vh; overflow-y: auto;
+            background: linear-gradient(145deg, #172554, #0f172a); border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px; padding: 35px; box-shadow: 0 0 30px rgba(96, 165, 250, 0.25), 0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: aparecerModal 0.4s ease;
         }
-
-
-        @keyframes aparecerCarta {
-
-            from {
-
-                opacity: 0;
-
-                transform:
-                    scale(0.94);
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform:
-                    scale(1);
-            }
-        }
-
-
-        .carta h1 {
-
-            margin-top: 0;
-
-            font-size: 30px;
-
-            text-align: center;
-
-            color: #f8fafc;
-
-            text-shadow:
-                0 0 15px rgba(226, 232, 240, 0.5);
-        }
-
-
-        .carta p {
-
-            color: #cbd5e1;
-
-            line-height: 1.8;
-
-            font-size: 16px;
-
-            white-space: pre-line;
-        }
-
-
+        .carta h1 { margin-top: 0; font-size: 30px; text-align: center; color: #f8fafc; text-shadow: 0 0 15px rgba(226, 232, 240, 0.5); }
+        .carta p { color: #cbd5e1; line-height: 1.8; font-size: 16px; white-space: pre-line; }
         #imagenMoon {
-
-            width: 260px;
-
-            max-width: 100%;
-
-            border-radius: 15px;
-
-            display: block;
-
-            margin: 20px auto;
-
-            cursor: pointer;
-
-            transition: 0.3s;
-
-            box-shadow:
-                0 0 20px rgba(255, 255, 255, 0.15);
+            width: 260px; max-width: 100%; border-radius: 15px; display: block;
+            margin: 20px auto; cursor: pointer; transition: 0.3s; box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
         }
-
-
-        #imagenMoon:hover {
-
-            transform: scale(1.03);
-        }
-
-
+        #imagenMoon:hover { transform: scale(1.03); }
         #cerrarCarta {
-
-            position: absolute;
-
-            top: 12px;
-
-            right: 16px;
-
-            width: 34px;
-
-            height: 34px;
-
-            border: none;
-
-            border-radius: 50%;
-
-            background:
-                rgba(255, 255, 255, 0.06);
-
-            color: white;
-
-            font-size: 25px;
-
-            cursor: pointer;
-
-            transition: 0.25s;
+            position: absolute; top: 12px; right: 16px; width: 34px; height: 34px; border: none;
+            border-radius: 50%; background: rgba(255, 255, 255, 0.06); color: white; font-size: 25px; cursor: pointer; transition: 0.25s;
         }
+        #cerrarCarta:hover { background: rgba(236, 72, 153, 0.25); transform: rotate(90deg); }
 
-
-        #cerrarCarta:hover {
-
-            background:
-                rgba(236, 72, 153, 0.25);
-
-            transform:
-                rotate(90deg);
-        }
-
-
-        /* =========================
-            VISOR DE IMAGEN
-        ========================= */
-
+        /* VISOR DE IMAGEN */
         #visorImagen {
-
-            position: fixed;
-
-            inset: 0;
-
-            background:
-                rgba(0, 0, 0, 0.92);
-
-            display: none;
-
-            justify-content: center;
-
-            align-items: center;
-
-            z-index: 4000;
-
-            padding: 30px;
+            position: fixed; inset: 0; background: rgba(0, 0, 0, 0.92); display: none;
+            justify-content: center; align-items: center; z-index: 4000; padding: 30px;
         }
+        #visorImagen.activa { display: flex; }
+        #imagenGrande { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 10px; box-shadow: 0 0 40px rgba(255, 255, 255, 0.15); }
+        #cerrarImagen { position: absolute; top: 20px; right: 30px; border: none; background: transparent; color: white; font-size: 35px; cursor: pointer; }
 
-
-        #visorImagen.activa {
-
-            display: flex;
-        }
-
-
-        #imagenGrande {
-
-            max-width: 90vw;
-
-            max-height: 90vh;
-
-            object-fit: contain;
-
-            border-radius: 10px;
-
-            box-shadow:
-                0 0 40px rgba(255, 255, 255, 0.15);
-        }
-
-
-        #cerrarImagen {
-
-            position: absolute;
-
-            top: 20px;
-
-            right: 30px;
-
-            border: none;
-
-            background: transparent;
-
-            color: white;
-
-            font-size: 35px;
-
-            cursor: pointer;
-        }
-
-
-        /* =========================
-            REPRODUCTOR
-        ========================= */
-
+        /* REPRODUCTOR */
         #reproductor {
-
-            position: fixed;
-
-            left: 12px;
-
-            bottom: 12px;
-
-            width: 210px;
-
-            padding: 8px 10px;
-
-            background:
-                rgba(2, 6, 23, 0.82);
-
-            border:
-                1px solid rgba(255, 255, 255, 0.12);
-
-            border-radius: 10px;
-
-            backdrop-filter:
-                blur(8px);
-
-            box-shadow:
-                0 4px 15px rgba(0, 0, 0, 0.35);
-
-            z-index: 5000;
+            position: fixed; left: 12px; bottom: 12px; width: 210px; padding: 8px 10px;
+            background: rgba(2, 6, 23, 0.82); border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 10px; backdrop-filter: blur(8px); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35); z-index: 5000;
         }
-
-
-        #infoCancion {
-
-            text-align: left;
-
-            margin-bottom: 4px;
-
-            padding-right: 22px;
-
-            white-space: nowrap;
-
-            overflow: hidden;
-
-            text-overflow: ellipsis;
-        }
-
-
-        #nombreCancion {
-
-            display: inline;
-
-            font-size: 11px;
-
-            font-weight: bold;
-
-            color: white;
-        }
-
-
-        #artistaCancion {
-
-            display: inline;
-
-            font-size: 10px;
-
-            color: #94a3b8;
-        }
-
-
-        #artistaCancion::before {
-
-            content: " - ";
-
-            color: #64748b;
-        }
-
-
-        #barraProgreso {
-
-            width: 100%;
-
-            height: 2px;
-
-            cursor: pointer;
-
-            margin:
-                2px 0 3px;
-        }
-
-
-        #tiempoMusica {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            font-size: 8px;
-
-            color: #64748b;
-        }
-
-
-        .controlesMusica {
-
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
-
-            gap: 5px;
-
-            margin-top: 3px;
-        }
-
-
-        .controlMusica {
-
-            width: 24px;
-
-            height: 22px;
-
-            padding: 0;
-
-            border: none;
-
-            background: transparent;
-
-            color: white;
-
-            font-size: 11px;
-
-            cursor: pointer;
-
-            transition: 0.2s;
-        }
-
-
-        .controlMusica:hover {
-
-            transform:
-                scale(1.2);
-        }
-
-
-        #playPause {
-
-            font-size: 13px;
-        }
-
-
-        #volumen {
-
-            position: absolute;
-
-            right: 7px;
-
-            top: 7px;
-
-            width: 18px;
-
-            height: 18px;
-
-            padding: 0;
-
-            border: none;
-
-            background: transparent;
-
-            color: white;
-
-            font-size: 10px;
-
-            cursor: pointer;
-        }
-
-
-        /* =========================
-            RESPONSIVE
-        ========================= */
+        #infoCancion { text-align: left; margin-bottom: 4px; padding-right: 22px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        #nombreCancion { display: inline; font-size: 11px; font-weight: bold; color: white; }
+        #artistaCancion { display: inline; font-size: 10px; color: #94a3b8; }
+        #artistaCancion::before { content: " - "; color: #64748b; }
+        #barraProgreso { width: 100%; height: 2px; cursor: pointer; margin: 2px 0 3px; }
+        #tiempoMusica { display: flex; justify-content: space-between; font-size: 8px; color: #64748b; }
+        .controlesMusica { display: flex; justify-content: center; align-items: center; gap: 5px; margin-top: 3px; }
+        .controlMusica { width: 24px; height: 22px; padding: 0; border: none; background: transparent; color: white; font-size: 11px; cursor: pointer; transition: 0.2s; }
+        .controlMusica:hover { transform: scale(1.2); }
+        #playPause { font-size: 13px; }
+        #volumen { position: absolute; right: 7px; top: 7px; width: 18px; height: 18px; padding: 0; border: none; background: transparent; color: white; font-size: 10px; cursor: pointer; }
 
         @media (max-width: 600px) {
-
-            #entrada h1,
-            #pregunta h1 {
-
-                font-size: 30px;
-            }
-
-
-            #universo h1 {
-
-                font-size: 25px;
-            }
-
-
-            #luna {
-
-                width: 90px;
-
-                height: 90px;
-
-                right: 10%;
-            }
-
-
-            .estrella {
-
-                width: 27px;
-
-                height: 27px;
-            }
-
-
-            #reproductor {
-
-                width: 190px;
-
-                left: 8px;
-
-                bottom: 8px;
-            }
-
-
-            .carta {
-
-                padding: 25px;
-            }
-
-
-            .contenidoEstrella1 {
-
-                width: 92vw;
-
-                padding:
-                    30px 22px 25px;
-            }
-
-
-            .contenidoEstrella1 h1 {
-
-                font-size: 22px;
-            }
-
-
-            .contenidoEstrella1 p {
-
-                font-size: 14px;
-
-                line-height: 1.7;
-            }
-
-
-            .contenidoMantenimiento {
-
-                width: 92vw;
-
-                padding:
-                    30px 22px;
-            }
-
-
-            .contenidoMantenimiento h1 {
-
-                font-size: 21px;
-            }
-
-
-            .contenidoMantenimiento p {
-
-                font-size: 14px;
-            }
-
+            #entrada h1, #pregunta h1 { font-size: 30px; }
+            #universo h1 { font-size: 25px; }
+            #luna { width: 90px; height: 90px; right: 10%; }
+            .estrella { width: 27px; height: 27px; }
+            #reproductor { width: 190px; left: 8px; bottom: 8px; }
+            .carta { padding: 25px; }
+            .contenidoEstrella1, .contenidoMantenimiento { width: 92vw; padding: 30px 22px 25px; }
+            .contenidoEstrella1 h1, .contenidoMantenimiento h1 { font-size: 22px; }
+            .contenidoEstrella1 p, .contenidoMantenimiento p { font-size: 14px; }
         }
-
     </style>
-
 </head>
-
-
 <body>
 
-
-    <!-- =========================
-         VIDEO DE FONDO
-    ========================= -->
-
-    <video
-        id="fondoVideo"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="auto"
-    >
-
-        <source
-            src="Estrellas.mp4"
-            type="video/mp4"
-        >
-
+    <video id="fondoVideo" autoplay muted loop playsinline preload="auto">
+        <source src="Estrellas.mp4" type="video/mp4">
     </video>
-
-
-    <!-- =========================
-         AUDIO
-    ========================= -->
 
     <audio id="musica"></audio>
 
-
-    <!-- =========================
-         PANTALLA DE ENTRADA
-    ========================= -->
-
-    <section
-        id="entrada"
-        class="pantalla activa"
-    >
-
-        <h1>
-            For Kass, my love &lt;3
-        </h1>
-
-        <button
-            id="entrar"
-            type="button"
-        >
-            ♡
-        </button>
-
+    <section id="entrada" class="pantalla activa">
+        <h1>For Kass, my love &lt;3</h1>
+        <button id="entrar" type="button">♡</button>
     </section>
 
-
-    <!-- =========================
-         PANTALLA DE PREGUNTA
-    ========================= -->
-
-    <section
-        id="pregunta"
-        class="pantalla"
-    >
-
-        <h1>
-            ¿Te gusto? :3
-        </h1>
-
-
+    <section id="pregunta" class="pantalla">
+        <h1>¿Te gusto? :3</h1>
         <div class="botonesPregunta">
-
-            <button
-                id="si"
-                type="button"
-            >
-                Skibidi Si
-            </button>
-
-
-            <button
-                id="no"
-                type="button"
-            >
-                Nuh :(
-            </button>
-
+            <button id="si" type="button">Skibidi Si</button>
+            <button id="no" type="button">Nuh :(</button>
         </div>
-
-
-        <div id="respuesta">
-            :33
-        </div>
-
-
-        <button
-            id="next"
-            type="button"
-        >
-            Next !!
-        </button>
-
+        <div id="respuesta">:33</div>
+        <button id="next" type="button">Next !!</button>
     </section>
 
-
-    <!-- =========================
-         UNIVERSO
-    ========================= -->
-
-    <section
-        id="universo"
-        class="pantalla"
-    >
-
-        <h1>
-            Our Little Universe
-        </h1>
-
-
-        <!-- Estrellas pequeñas de fondo -->
-
+    <section id="universo" class="pantalla">
+        <h1>Our Little Universe</h1>
         <div class="estrellaFondo" style="top:8%;left:12%;"></div>
         <div class="estrellaFondo" style="top:15%;left:32%;"></div>
         <div class="estrellaFondo" style="top:12%;left:72%;"></div>
@@ -1473,61 +238,17 @@
         <div class="estrellaFondo" style="top:48%;left:25%;"></div>
         <div class="estrellaFondo" style="top:5%;left:85%;"></div>
 
-
-        <!-- Estrella 1 -->
-
-        <div
-            id="estrella1"
-            class="estrella"
-        ></div>
-
-
-        <!-- Estrella 2 -->
-
-        <div
-            id="estrella2"
-            class="estrella"
-        ></div>
-
-
-        <!-- Estrella 3 -->
-
-        <div
-            id="estrella3"
-            class="estrella"
-        ></div>
-
-
-        <!-- Luna -->
-
+        <div id="estrella1" class="estrella"></div>
+        <div id="estrella2" class="estrella"></div>
+        <div id="estrella3" class="estrella"></div>
         <div id="luna"></div>
-
     </section>
 
-
-    <!-- ==================================================
-         VENTANA DE ESTRELLA 1 (Tú = masculino / Ella = femenino)
-    ================================================== -->
-
     <div id="ventanaEstrella1">
-
         <div class="contenidoEstrella1">
-
-            <button
-                id="cerrarEstrella1"
-                type="button"
-            >
-                ×
-            </button>
-
-
-            <h1>
-                the beginning.....
-            </h1>
-
-
-            <p>
-Todo comenzó hace más de un año. Nos comenzamos a hablar por un simple interés y por nuestro humor casual, sin pensar realmente en todo lo que iba a terminar pasando después. Sé que si nos hubiéramos conocido más y no hubiera habido esa persona de por medio, probablemente un mes después hubiéramos acabado siendo pareja. Pero no se dio en ese momento, y aunque en ese entonces no lo entendía, supongo que las cosas tenían que pasar a su propio tiempo.
+            <button id="cerrarEstrella1" type="button">×</button>
+            <h1>the beginning.....</h1>
+            <p>Todo comenzó hace más de un año. Nos comenzamos a hablar por un simple interés y por nuestro humor casual, sin pensar realmente en todo lo que iba a terminar pasando después. Sé que si nos hubiéramos conocido más y no hubiera habido esa persona de por medio, probablemente un mes después hubiéramos acabado siendo pareja. Pero no se dio en ese momento, y aunque en ese entonces no lo entendía, supongo que las cosas tenían que pasar a su propio tiempo.
 
 Y aunque nuestra historia no comenzó oficialmente ahí, sí lo hizo este 20/09. No fue un comienzo rápido, y de tu parte fue algo que ya estabas pensando y que, de alguna manera, ya habías imaginado. Para mí, en cambio, fue algo mucho más inesperado. No pensé que ese día terminaríamos dando ese paso y que todo lo que había estado pasando entre nosotros terminaría convirtiéndose en algo real.
 
@@ -1539,262 +260,77 @@ A veces pienso en cómo todo pudo haber sido diferente si las cosas hubieran pas
 
 No sé cómo pasó todo. No sé en qué momento nos convertimos en esto ni cómo alguien que comenzó siendo un simple interés terminó siendo una persona tan importante para mí. Solo sé que pasó, que me enamoré de ti más rápido de lo que esperaba y que ahora, cuando miro todo lo que nos llevó hasta este momento, me alegra muchísimo que haya terminado siendo contigo.
 
-Y aquí estamos, empezando oficialmente nuestra historia este 20/09. Quizá no fue el comienzo que alguna vez imaginamos, pero es nuestro comienzo. Y eso, para mí, lo hace especial. ♡
-            </p>
-
+Y aquí estamos, empezando oficialmente nuestra historia este 20/09. Quizá no fue el comienzo que alguna vez imaginamos, pero es nuestro comienzo. Y eso, para mí, lo hace especial. ♡</p>
         </div>
-
     </div>
 
-
-    <!-- ==================================================
-         VENTANA DE ESTRELLA 2
-    ================================================== -->
-
-    <div
-        id="ventanaEstrella2"
-        class="ventanaMantenimiento"
-    >
-
+    <div id="ventanaEstrella2" class="ventanaMantenimiento">
         <div class="contenidoMantenimiento">
-
-            <button
-                id="cerrarEstrella2"
-                class="cerrarMantenimiento"
-                type="button"
-            >
-                ×
-            </button>
-
-
-            <h1>
-                En mantenimiento...
-            </h1>
-
-
-            <p>
-Esta parte de nuestro universo todavía está siendo preparada ♡
-            </p>
-
+            <button id="cerrarEstrella2" class="cerrarMantenimiento" type="button">×</button>
+            <h1>En mantenimiento...</h1>
+            <p>Esta parte de nuestro universo todavía está siendo preparada ♡</p>
         </div>
-
     </div>
 
-
-    <!-- ==================================================
-         VENTANA DE ESTRELLA 3
-    ================================================== -->
-
-    <div
-        id="ventanaEstrella3"
-        class="ventanaMantenimiento"
-    >
-
+    <div id="ventanaEstrella3" class="ventanaMantenimiento">
         <div class="contenidoMantenimiento">
-
-            <button
-                id="cerrarEstrella3"
-                class="cerrarMantenimiento"
-                type="button"
-            >
-                ×
-            </button>
-
-
-            <h1>
-                En mantenimiento...
-            </h1>
-
-
-            <p>
-Esta parte de nuestro universo todavía está siendo preparada ♡
-            </p>
-
+            <button id="cerrarEstrella3" class="cerrarMantenimiento" type="button">×</button>
+            <h1>En mantenimiento...</h1>
+            <p>Esta parte de nuestro universo todavía está siendo preparada ♡</p>
         </div>
-
     </div>
-
-
-    <!-- ==================================================
-         CARTA DE LA LUNA
-    ================================================== -->
 
     <div id="cartaLuna">
-
         <div class="carta">
+            <button id="cerrarCarta" type="button">×</button>
+            <h1>Me ... a moon ♡</h1>
+            <img id="imagenMoon" src="Moon.png" alt="Moon">
+            <p>Un poco de mi.....
 
-            <button
-                id="cerrarCarta"
-                type="button"
-            >
-                ×
-            </button>
-
-
-            <h1>
-                Me ... a moon ♡
-            </h1>
-
-
-            <img
-                id="imagenMoon"
-                src="Moon.png"
-                alt="Moon"
-            >
-
-
-            <p>
-Un poco de mi.....
-
-Click en la imagen para hacerla más grande.
-            </p>
-
+Click en la imagen para hacerla más grande.</p>
         </div>
-
     </div>
-
-
-    <!-- =========================
-         VISOR DE IMAGEN
-    ========================= -->
 
     <div id="visorImagen">
-
-        <button
-            id="cerrarImagen"
-            type="button"
-        >
-            ×
-        </button>
-
-
-        <img
-            id="imagenGrande"
-            src="Moon.png"
-            alt="Moon"
-        >
-
+        <button id="cerrarImagen" type="button">×</button>
+        <img id="imagenGrande" src="Moon.png" alt="Moon">
     </div>
-
-
-    <!-- =========================
-         REPRODUCTOR
-    ========================= -->
 
     <div id="reproductor">
-
         <div id="infoCancion">
-
-            <span id="nombreCancion">
-                Amtrak
-            </span>
-
-            <span id="artistaCancion">
-                Los Retros
-            </span>
-
+            <span id="nombreCancion">Amtrak</span>
+            <span id="artistaCancion">Los Retros</span>
         </div>
-
-
-        <input
-            type="range"
-            id="barraProgreso"
-            min="0"
-            max="100"
-            value="0"
-            step="0.1"
-        >
-
-
+        <input type="range" id="barraProgreso" min="0" max="100" value="0" step="0.1">
         <div id="tiempoMusica">
-
-            <span id="tiempoActual">
-                0:00
-            </span>
-
-            <span id="duracion">
-                0:00
-            </span>
-
+            <span id="tiempoActual">0:00</span>
+            <span id="duracion">0:00</span>
         </div>
-
-
         <div class="controlesMusica">
-
-            <button
-                id="anterior"
-                class="controlMusica"
-                type="button"
-                title="Anterior"
-            >
-                ⏮
-            </button>
-
-
-            <button
-                id="playPause"
-                class="controlMusica"
-                type="button"
-                title="Reproducir / Pausar"
-            >
-                ▶
-            </button>
-
-
-            <button
-                id="siguiente"
-                class="controlMusica"
-                type="button"
-                title="Siguiente"
-            >
-                ⏭
-            </button>
-
+            <button id="anterior" class="controlMusica" type="button" title="Anterior">⏮</button>
+            <button id="playPause" class="controlMusica" type="button" title="Reproducir / Pausar">▶</button>
+            <button id="siguiente" class="controlMusica" type="button" title="Siguiente">⏭</button>
         </div>
-
-
-        <button
-            id="volumen"
-            type="button"
-            title="Silenciar"
-        >
-            🔊
-        </button>
-
+        <button id="volumen" type="button" title="Silenciar">🔊</button>
     </div>
 
-
     <script>
-        /* =========================
-           CAMBIO DE PANTALLAS
-        ========================= */
         function mostrarPantalla(id) {
-            document.querySelectorAll(".pantalla").forEach(function(pantalla) {
-                pantalla.classList.remove("activa");
+            document.querySelectorAll(".pantalla").forEach(function(p) {
+                p.classList.remove("activa");
             });
-
             const pantalla = document.getElementById(id);
-            if (pantalla) {
-                pantalla.classList.add("activa");
-            }
+            if (pantalla) pantalla.classList.add("activa");
         }
 
-        /* =========================
-           BOTÓN ENTRAR (CORAZÓN)
-        ========================= */
         const btnEntrar = document.getElementById("entrar");
         const musica = document.getElementById("musica");
 
         btnEntrar.addEventListener("click", function() {
             mostrarPantalla("pregunta");
-            if (musica.src) {
-                musica.play().catch(function(e) { console.log(e); });
-            }
+            if (musica.src) musica.play().catch(function(e) { console.log(e); });
         });
 
-        /* =========================
-           PANTALLA DE PREGUNTA
-        ========================= */
         const btnSi = document.getElementById("si");
         const btnNo = document.getElementById("no");
         const respuesta = document.getElementById("respuesta");
@@ -1820,77 +356,46 @@ Click en la imagen para hacerla más grande.
             mostrarPantalla("universo");
         });
 
-        /* =========================
-           ESTRELLAS Y LUNA
-        ========================= */
-        const estrella1 = document.getElementById("estrella1");
-        const ventanaEstrella1 = document.getElementById("ventanaEstrella1");
-        const cerrarEstrella1 = document.getElementById("cerrarEstrella1");
+        document.getElementById("estrella1").addEventListener("click", () => document.getElementById("ventanaEstrella1").classList.add("activa"));
+        document.getElementById("cerrarEstrella1").addEventListener("click", () => document.getElementById("ventanaEstrella1").classList.remove("activa"));
 
-        estrella1.addEventListener("click", () => ventanaEstrella1.classList.add("activa"));
-        cerrarEstrella1.addEventListener("click", () => ventanaEstrella1.classList.remove("activa"));
+        document.getElementById("estrella2").addEventListener("click", () => document.getElementById("ventanaEstrella2").classList.add("activa"));
+        document.getElementById("cerrarEstrella2").addEventListener("click", () => document.getElementById("ventanaEstrella2").classList.remove("activa"));
 
-        const estrella2 = document.getElementById("estrella2");
-        const ventanaEstrella2 = document.getElementById("ventanaEstrella2");
-        const cerrarEstrella2 = document.getElementById("cerrarEstrella2");
+        document.getElementById("estrella3").addEventListener("click", () => document.getElementById("ventanaEstrella3").classList.add("activa"));
+        document.getElementById("cerrarEstrella3").addEventListener("click", () => document.getElementById("ventanaEstrella3").classList.remove("activa"));
 
-        estrella2.addEventListener("click", () => ventanaEstrella2.classList.add("activa"));
-        cerrarEstrella2.addEventListener("click", () => ventanaEstrella2.classList.remove("activa"));
+        document.getElementById("luna").addEventListener("click", () => document.getElementById("cartaLuna").classList.add("activa"));
+        document.getElementById("cerrarCarta").addEventListener("click", () => document.getElementById("cartaLuna").classList.remove("activa"));
 
-        const estrella3 = document.getElementById("estrella3");
-        const ventanaEstrella3 = document.getElementById("ventanaEstrella3");
-        const cerrarEstrella3 = document.getElementById("cerrarEstrella3");
+        document.getElementById("imagenMoon").addEventListener("click", () => document.getElementById("visorImagen").classList.add("activa"));
+        document.getElementById("cerrarImagen").addEventListener("click", () => document.getElementById("visorImagen").classList.remove("activa"));
 
-        estrella3.addEventListener("click", () => ventanaEstrella3.classList.add("activa"));
-        cerrarEstrella3.addEventListener("click", () => ventanaEstrella3.classList.remove("activa"));
-
-        const luna = document.getElementById("luna");
-        const cartaLuna = document.getElementById("cartaLuna");
-        const cerrarCarta = document.getElementById("cerrarCarta");
-
-        luna.addEventListener("click", () => cartaLuna.classList.add("activa"));
-        cerrarCarta.addEventListener("click", () => cartaLuna.classList.remove("activa"));
-
-        /* =========================
-           VISOR DE IMAGEN (MOON)
-        ========================= */
-        const imagenMoon = document.getElementById("imagenMoon");
-        const visorImagen = document.getElementById("visorImagen");
-        const cerrarImagen = document.getElementById("cerrarImagen");
-
-        imagenMoon.addEventListener("click", () => visorImagen.classList.add("activa"));
-        cerrarImagen.addEventListener("click", () => visorImagen.classList.remove("activa"));
-
-        /* =========================
-           REPRODUCTOR DE MÚSICA
-        ========================= */
+        /* LISTA DE CANCIONES - Cambia los nombres y archivos por los tuyos */
         const canciones = [
-            { nombre: "Amtrak", artista: "Los Retros", archivo: "Amtrak.mp3" }
+            { nombre: "Amtrak", artista: "Los Retros", archivo: "Amtrak.mp3" },
+            { nombre: "Canción 2", artista: "Artista 2", archivo: "cancion2.mp3" },
+            { nombre: "Canción 3", artista: "Artista 3", archivo: "cancion3.mp3" }
         ];
 
         let indiceCancion = 0;
         const playPauseBtn = document.getElementById("playPause");
-        const anteriorBtn = document.getElementById("anterior");
-        const siguienteBtn = document.getElementById("siguiente");
-        const volumenBtn = document.getElementById("volumen");
         const barraProgreso = document.getElementById("barraProgreso");
         const tiempoActualEl = document.getElementById("tiempoActual");
         const duracionEl = document.getElementById("duracion");
-        const nombreCancionEl = document.getElementById("nombreCancion");
-        const artistaCancionEl = document.getElementById("artistaCancion");
 
         function cargarCancion(indice) {
-            const cancion = canciones[indice];
-            nombreCancionEl.textContent = cancion.nombre;
-            artistaCancionEl.textContent = cancion.artista;
-            musica.src = cancion.archivo;
+            const c = canciones[indice];
+            document.getElementById("nombreCancion").textContent = c.nombre;
+            document.getElementById("artistaCancion").textContent = c.artista;
+            musica.src = c.archivo;
         }
 
-        function formatearTiempo(segundos) {
-            if (isNaN(segundos)) return "0:00";
-            const min = Math.floor(segundos / 60);
-            const seg = Math.floor(segundos % 60);
-            return min + ":" + (seg < 10 ? "0" + seg : seg);
+        function formatearTiempo(seg) {
+            if (isNaN(seg)) return "0:00";
+            const m = Math.floor(seg / 60);
+            const s = Math.floor(seg % 60);
+            return m + ":" + (s < 10 ? "0" + s : s);
         }
 
         cargarCancion(indiceCancion);
@@ -1898,10 +403,8 @@ Click en la imagen para hacerla más grande.
         playPauseBtn.addEventListener("click", function() {
             if (musica.paused) {
                 musica.play();
-                playPauseBtn.textContent = "⏸";
             } else {
                 musica.pause();
-                playPauseBtn.textContent = "▶";
             }
         });
 
@@ -1922,24 +425,28 @@ Click en la imagen para hacerla más grande.
             }
         });
 
-        volumenBtn.addEventListener("click", function() {
+        document.getElementById("volumen").addEventListener("click", function() {
             musica.muted = !musica.muted;
-            volumenBtn.textContent = musica.muted ? "🔇" : "🔊";
+            this.textContent = musica.muted ? "🔇" : "🔊";
         });
 
-        anteriorBtn.addEventListener("click", function() {
+        document.getElementById("anterior").addEventListener("click", function() {
             indiceCancion = (indiceCancion - 1 + canciones.length) % canciones.length;
             cargarCancion(indiceCancion);
             musica.play();
         });
 
-        siguienteBtn.addEventListener("click", function() {
+        document.getElementById("siguiente").addEventListener("click", function() {
+            indiceCancion = (indiceCancion + 1) % canciones.length;
+            cargarCancion(indiceCancion);
+            musica.play();
+        });
+
+        musica.addEventListener("ended", function() {
             indiceCancion = (indiceCancion + 1) % canciones.length;
             cargarCancion(indiceCancion);
             musica.play();
         });
     </script>
-
 </body>
-
 </html>
