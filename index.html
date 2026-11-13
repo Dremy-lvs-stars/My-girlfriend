@@ -39,7 +39,7 @@
 
 
         /* =========================
-           VIDEO DE FONDO
+            VIDEO DE FONDO
         ========================= */
 
         #fondoVideo {
@@ -60,7 +60,7 @@
 
 
         /* =========================
-           PANTALLAS
+            PANTALLAS
         ========================= */
 
         .pantalla {
@@ -88,7 +88,7 @@
 
 
         /* =========================
-           ENTRADA
+            ENTRADA
         ========================= */
 
         #entrada {
@@ -156,7 +156,7 @@
 
 
         /* =========================
-           PREGUNTA
+            PREGUNTA
         ========================= */
 
         #pregunta {
@@ -273,7 +273,7 @@
 
 
         /* =========================
-           UNIVERSO
+            UNIVERSO
         ========================= */
 
         #universo {
@@ -312,7 +312,7 @@
 
 
         /* =========================
-           ESTRELLAS DE FONDO
+            ESTRELLAS DE FONDO
         ========================= */
 
         .estrellaFondo {
@@ -353,7 +353,7 @@
 
 
         /* =========================
-           ESTRELLAS CLICKEABLES
+            ESTRELLAS CLICKEABLES
         ========================= */
 
         .estrella {
@@ -435,7 +435,7 @@
 
 
         /* =========================
-           LUNA
+            LUNA
         ========================= */
 
         #luna {
@@ -496,7 +496,7 @@
 
 
         /* =========================
-           VENTANA ESTRELLA 1
+            VENTANA ESTRELLA 1
         ========================= */
 
         #ventanaEstrella1 {
@@ -656,7 +656,7 @@
 
 
         /* =========================
-           VENTANAS DE MANTENIMIENTO
+            VENTANAS DE MANTENIMIENTO
         ========================= */
 
         .ventanaMantenimiento {
@@ -808,7 +808,7 @@
 
 
         /* =========================
-           CARTA DE LA LUNA
+            CARTA DE LA LUNA
         ========================= */
 
         #cartaLuna {
@@ -985,7 +985,7 @@
 
 
         /* =========================
-           VISOR DE IMAGEN
+            VISOR DE IMAGEN
         ========================= */
 
         #visorImagen {
@@ -1051,7 +1051,7 @@
 
 
         /* =========================
-           REPRODUCTOR
+            REPRODUCTOR
         ========================= */
 
         #reproductor {
@@ -1231,7 +1231,7 @@
 
 
         /* =========================
-           RESPONSIVE
+            RESPONSIVE
         ========================= */
 
         @media (max-width: 600px) {
@@ -1506,7 +1506,7 @@
 
 
     <!-- ==================================================
-         VENTANA DE ESTRELLA 1
+         VENTANA DE ESTRELLA 1 (Tú = masculino / Ella = femenino)
     ================================================== -->
 
     <div id="ventanaEstrella1">
@@ -1529,7 +1529,7 @@
             <p>
 Todo comenzó hace más de un año. Nos comenzamos a hablar por un simple interés y por nuestro humor casual, sin pensar realmente en todo lo que iba a terminar pasando después. Sé que si nos hubiéramos conocido más y no hubiera habido esa persona de por medio, probablemente un mes después hubiéramos acabado siendo pareja. Pero no se dio en ese momento, y aunque en ese entonces no lo entendía, supongo que las cosas tenían que pasar a su propio tiempo.
 
-Y aunque nuestra historia no comenzó oficialmente ahí, sí lo hizo este 20/09. No fue un comienzo rápido, y de tu parte fue algo que ya estabas pensando y que, de alguna manera, ya habías imaginado. Para mí, en cambio, fue algo mucho más inesperado. No pensé que ese día terminaríamos dando ese paso y que todo lo que había estado pasando entre nosotras terminaría convirtiéndose en algo real.
+Y aunque nuestra historia no comenzó oficialmente ahí, sí lo hizo este 20/09. No fue un comienzo rápido, y de tu parte fue algo que ya estabas pensando y que, de alguna manera, ya habías imaginado. Para mí, en cambio, fue algo mucho más inesperado. No pensé que ese día terminaríamos dando ese paso y que todo lo que había estado pasando entre nosotros terminaría convirtiéndose en algo real.
 
 Lo más curioso es que aprendí a amarte rápido. Con tu interés, con tu atención, con la forma en la que poco a poco comenzaste a formar parte de mis días, me fui enamorando más de ti sin darme cuenta. No sé exactamente en qué momento pasó ni cuándo dejaste de ser simplemente alguien con quien me gustaba hablar para convertirte en alguien que realmente quería tener conmigo.
 
@@ -1793,856 +1793,6 @@ Click en la imagen para hacerla más grande.
             }
 
         }
-
-
-        /* =========================
-           VIDEO
-        ========================= */
-
-        const fondoVideo =
-            document.getElementById("fondoVideo");
-
-
-        fondoVideo
-            .play()
-            .catch(function() {
-
-                console.log(
-                    "El navegador esperará para reproducir el video."
-                );
-
-            });
-
-
-        /* =========================
-           PLAYLIST
-        ========================= */
-
-        const canciones = [
-
-            {
-                archivo: "Amtrak.mp3",
-                nombre: "Amtrak",
-                artista: "Los Retros"
-            },
-
-            {
-                archivo: "Valentine.mp3",
-                nombre: "Valentine",
-                artista: "Laufey"
-            },
-
-            {
-                archivo: "Harvey.mp3",
-                nombre: "Harvey",
-                artista: "Hers"
-            },
-
-            {
-                archivo: "Meandmyhusband.mp3",
-                nombre: "Me and My Husband",
-                artista: "Mitski"
-            }
-
-        ];
-
-
-        let indiceActual = 0;
-
-
-        const musica =
-            document.getElementById("musica");
-
-
-        const nombreCancion =
-            document.getElementById("nombreCancion");
-
-
-        const artistaCancion =
-            document.getElementById("artistaCancion");
-
-
-        const playPause =
-            document.getElementById("playPause");
-
-
-        const barraProgreso =
-            document.getElementById("barraProgreso");
-
-
-        const tiempoActual =
-            document.getElementById("tiempoActual");
-
-
-        const duracion =
-            document.getElementById("duracion");
-
-
-        const volumen =
-            document.getElementById("volumen");
-
-
-        /* =========================
-           FORMATO DEL TIEMPO
-        ========================= */
-
-        function formatoTiempo(segundos) {
-
-            if (!isFinite(segundos)) {
-
-                return "0:00";
-            }
-
-
-            const minutos =
-                Math.floor(segundos / 60);
-
-
-            const segundosRestantes =
-                Math.floor(segundos % 60)
-                    .toString()
-                    .padStart(2, "0");
-
-
-            return
-                minutos +
-                ":" +
-                segundosRestantes;
-        }
-
-
-        /* =========================
-           CARGAR CANCIÓN
-        ========================= */
-
-        function cargarCancion(
-            indice,
-            reproducir = false
-        ) {
-
-            indiceActual = indice;
-
-
-            const cancion =
-                canciones[indiceActual];
-
-
-            musica.src =
-                cancion.archivo;
-
-
-            musica.volume = 0.7;
-
-
-            nombreCancion.textContent =
-                cancion.nombre;
-
-
-            artistaCancion.textContent =
-                cancion.artista;
-
-
-            barraProgreso.value = 0;
-
-
-            tiempoActual.textContent =
-                "0:00";
-
-
-            duracion.textContent =
-                "0:00";
-
-
-            if (reproducir) {
-
-                musica
-                    .play()
-                    .then(function() {
-
-                        playPause.textContent =
-                            "❚❚";
-
-                    })
-                    .catch(function(error) {
-
-                        console.log(
-                            "No se pudo reproducir:",
-                            error
-                        );
-
-                    });
-
-            } else {
-
-                playPause.textContent =
-                    "▶";
-            }
-
-        }
-
-
-        /* =========================
-           ENTRAR
-        ========================= */
-
-        document
-            .getElementById("entrar")
-            .addEventListener(
-                "click",
-                function() {
-
-                    mostrarPantalla(
-                        "pregunta"
-                    );
-
-
-                    cargarCancion(
-                        0,
-                        true
-                    );
-
-                }
-            );
-
-
-        /* =========================
-           BOTÓN SI
-        ========================= */
-
-        document
-            .getElementById("si")
-            .addEventListener(
-                "click",
-                function() {
-
-                    document
-                        .getElementById("respuesta")
-                        .style.display =
-                        "block";
-
-
-                    document
-                        .querySelector(".botonesPregunta")
-                        .style.display =
-                        "none";
-
-
-                    document
-                        .getElementById("next")
-                        .style.display =
-                        "inline-block";
-
-                }
-            );
-
-
-        /* =========================
-           BOTÓN NO
-        ========================= */
-
-        const botonNo =
-            document.getElementById("no");
-
-
-        botonNo.addEventListener(
-            "mouseover",
-            function() {
-
-                const ancho =
-                    window.innerWidth -
-                    botonNo.offsetWidth -
-                    30;
-
-
-                const alto =
-                    window.innerHeight -
-                    botonNo.offsetHeight -
-                    30;
-
-
-                botonNo.style.position =
-                    "fixed";
-
-
-                botonNo.style.left =
-                    Math.random() *
-                    ancho +
-                    "px";
-
-
-                botonNo.style.top =
-                    Math.random() *
-                    alto +
-                    "px";
-
-            }
-        );
-
-
-        /* =========================
-           NEXT
-        ========================= */
-
-        document
-            .getElementById("next")
-            .addEventListener(
-                "click",
-                function() {
-
-                    mostrarPantalla(
-                        "universo"
-                    );
-
-                }
-            );
-
-
-        /* ==================================================
-           ESTRELLA 1
-           ABRE SU VENTANA
-        ================================================== */
-
-        const estrella1 =
-            document.getElementById("estrella1");
-
-
-        const ventanaEstrella1 =
-            document.getElementById(
-                "ventanaEstrella1"
-            );
-
-
-        const cerrarEstrella1 =
-            document.getElementById(
-                "cerrarEstrella1"
-            );
-
-
-        estrella1.addEventListener(
-            "click",
-            function() {
-
-                ventanaEstrella1
-                    .classList
-                    .add("activa");
-
-            }
-        );
-
-
-        cerrarEstrella1.addEventListener(
-            "click",
-            function() {
-
-                ventanaEstrella1
-                    .classList
-                    .remove("activa");
-
-            }
-        );
-
-
-        ventanaEstrella1.addEventListener(
-            "click",
-            function(evento) {
-
-                if (
-                    evento.target ===
-                    ventanaEstrella1
-                ) {
-
-                    ventanaEstrella1
-                        .classList
-                        .remove("activa");
-
-                }
-
-            }
-        );
-
-
-        /* ==================================================
-           ESTRELLA 2
-           VENTANA DE MANTENIMIENTO
-        ================================================== */
-
-        const estrella2 =
-            document.getElementById(
-                "estrella2"
-            );
-
-
-        const ventanaEstrella2 =
-            document.getElementById(
-                "ventanaEstrella2"
-            );
-
-
-        const cerrarEstrella2 =
-            document.getElementById(
-                "cerrarEstrella2"
-            );
-
-
-        estrella2.addEventListener(
-            "click",
-            function() {
-
-                ventanaEstrella2
-                    .classList
-                    .add("activa");
-
-            }
-        );
-
-
-        cerrarEstrella2.addEventListener(
-            "click",
-            function() {
-
-                ventanaEstrella2
-                    .classList
-                    .remove("activa");
-
-            }
-        );
-
-
-        ventanaEstrella2.addEventListener(
-            "click",
-            function(evento) {
-
-                if (
-                    evento.target ===
-                    ventanaEstrella2
-                ) {
-
-                    ventanaEstrella2
-                        .classList
-                        .remove("activa");
-
-                }
-
-            }
-        );
-
-
-        /* ==================================================
-           ESTRELLA 3
-           VENTANA DE MANTENIMIENTO
-        ================================================== */
-
-        const estrella3 =
-            document.getElementById(
-                "estrella3"
-            );
-
-
-        const ventanaEstrella3 =
-            document.getElementById(
-                "ventanaEstrella3"
-            );
-
-
-        const cerrarEstrella3 =
-            document.getElementById(
-                "cerrarEstrella3"
-            );
-
-
-        estrella3.addEventListener(
-            "click",
-            function() {
-
-                ventanaEstrella3
-                    .classList
-                    .add("activa");
-
-            }
-        );
-
-
-        cerrarEstrella3.addEventListener(
-            "click",
-            function() {
-
-                ventanaEstrella3
-                    .classList
-                    .remove("activa");
-
-            }
-        );
-
-
-        ventanaEstrella3.addEventListener(
-            "click",
-            function(evento) {
-
-                if (
-                    evento.target ===
-                    ventanaEstrella3
-                ) {
-
-                    ventanaEstrella3
-                        .classList
-                        .remove("activa");
-
-                }
-
-            }
-        );
-
-
-        /* =========================
-           LUNA
-        ========================= */
-
-        const luna =
-            document.getElementById("luna");
-
-
-        const cartaLuna =
-            document.getElementById(
-                "cartaLuna"
-            );
-
-
-        const cerrarCarta =
-            document.getElementById(
-                "cerrarCarta"
-            );
-
-
-        luna.addEventListener(
-            "click",
-            function() {
-
-                cartaLuna
-                    .classList
-                    .add("activa");
-
-            }
-        );
-
-
-        cerrarCarta.addEventListener(
-            "click",
-            function() {
-
-                cartaLuna
-                    .classList
-                    .remove("activa");
-
-            }
-        );
-
-
-        cartaLuna.addEventListener(
-            "click",
-            function(evento) {
-
-                if (
-                    evento.target ===
-                    cartaLuna
-                ) {
-
-                    cartaLuna
-                        .classList
-                        .remove("activa");
-
-                }
-
-            }
-        );
-
-
-        /* =========================
-           VISOR DE MOON.PNG
-        ========================= */
-
-        const imagenMoon =
-            document.getElementById(
-                "imagenMoon"
-            );
-
-
-        const visorImagen =
-            document.getElementById(
-                "visorImagen"
-            );
-
-
-        const cerrarImagen =
-            document.getElementById(
-                "cerrarImagen"
-            );
-
-
-        imagenMoon.addEventListener(
-            "click",
-            function() {
-
-                visorImagen
-                    .classList
-                    .add("activa");
-
-            }
-        );
-
-
-        cerrarImagen.addEventListener(
-            "click",
-            function() {
-
-                visorImagen
-                    .classList
-                    .remove("activa");
-
-            }
-        );
-
-
-        visorImagen.addEventListener(
-            "click",
-            function(evento) {
-
-                if (
-                    evento.target ===
-                    visorImagen
-                ) {
-
-                    visorImagen
-                        .classList
-                        .remove("activa");
-
-                }
-
-            }
-        );
-
-
-        /* =========================
-           PLAY / PAUSE
-        ========================= */
-
-        playPause.addEventListener(
-            "click",
-            function() {
-
-                if (musica.paused) {
-
-                    musica
-                        .play()
-                        .then(function() {
-
-                            playPause.textContent =
-                                "❚❚";
-
-                        })
-                        .catch(function(error) {
-
-                            console.log(
-                                "No se pudo reproducir:",
-                                error
-                            );
-
-                        });
-
-                } else {
-
-                    musica.pause();
-
-                    playPause.textContent =
-                        "▶";
-
-                }
-
-            }
-        );
-
-
-        /* =========================
-           SIGUIENTE
-        ========================= */
-
-        document
-            .getElementById("siguiente")
-            .addEventListener(
-                "click",
-                function() {
-
-                    indiceActual++;
-
-
-                    if (
-                        indiceActual >=
-                        canciones.length
-                    ) {
-
-                        indiceActual = 0;
-
-                    }
-
-
-                    cargarCancion(
-                        indiceActual,
-                        true
-                    );
-
-                }
-            );
-
-
-        /* =========================
-           ANTERIOR
-        ========================= */
-
-        document
-            .getElementById("anterior")
-            .addEventListener(
-                "click",
-                function() {
-
-                    indiceActual--;
-
-
-                    if (
-                        indiceActual < 0
-                    ) {
-
-                        indiceActual =
-                            canciones.length - 1;
-
-                    }
-
-
-                    cargarCancion(
-                        indiceActual,
-                        true
-                    );
-
-                }
-            );
-
-
-        /* =========================
-           SIGUIENTE AUTOMÁTICO
-        ========================= */
-
-        musica.addEventListener(
-            "ended",
-            function() {
-
-                indiceActual++;
-
-
-                if (
-                    indiceActual >=
-                    canciones.length
-                ) {
-
-                    indiceActual = 0;
-
-                }
-
-
-                cargarCancion(
-                    indiceActual,
-                    true
-                );
-
-            }
-        );
-
-
-        /* =========================
-           DURACIÓN
-        ========================= */
-
-        musica.addEventListener(
-            "loadedmetadata",
-            function() {
-
-                duracion.textContent =
-                    formatoTiempo(
-                        musica.duration
-                    );
-
-            }
-        );
-
-
-        /* =========================
-           PROGRESO
-        ========================= */
-
-        musica.addEventListener(
-            "timeupdate",
-            function() {
-
-                if (musica.duration) {
-
-                    barraProgreso.value =
-                        (
-                            musica.currentTime /
-                            musica.duration
-                        ) * 100;
-
-                }
-
-
-                tiempoActual.textContent =
-                    formatoTiempo(
-                        musica.currentTime
-                    );
-
-            }
-        );
-
-
-        /* =========================
-           CAMBIAR POSICIÓN
-        ========================= */
-
-        barraProgreso.addEventListener(
-            "input",
-            function() {
-
-                if (musica.duration) {
-
-                    musica.currentTime =
-                        (
-                            barraProgreso.value /
-                            100
-                        ) *
-                        musica.duration;
-
-                }
-
-            }
-        );
-
-
-        /* =========================
-           VOLUMEN
-        ========================= */
-
-        volumen.addEventListener(
-            "click",
-            function() {
-
-                musica.muted =
-                    !musica.muted;
-
-
-                volumen.textContent =
-                    musica.muted
-                        ? "🔇"
-                        : "🔊";
-
-            }
-        );
-
 
     </script>
 
