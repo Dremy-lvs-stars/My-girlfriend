@@ -1765,35 +1765,179 @@ Click en la imagen para hacerla más grande.
 
 
     <script>
-
-
         /* =========================
            CAMBIO DE PANTALLAS
         ========================= */
-
         function mostrarPantalla(id) {
+            document.querySelectorAll(".pantalla").forEach(function(pantalla) {
+                pantalla.classList.remove("activa");
+            });
 
-            document
-                .querySelectorAll(".pantalla")
-                .forEach(function(pantalla) {
-
-                    pantalla.classList.remove("activa");
-
-                });
-
-
-            const pantalla =
-                document.getElementById(id);
-
-
+            const pantalla = document.getElementById(id);
             if (pantalla) {
-
                 pantalla.classList.add("activa");
-
             }
-
         }
 
+        /* =========================
+           BOTÓN ENTRAR (CORAZÓN)
+        ========================= */
+        const btnEntrar = document.getElementById("entrar");
+        const musica = document.getElementById("musica");
+
+        btnEntrar.addEventListener("click", function() {
+            mostrarPantalla("pregunta");
+            if (musica.src) {
+                musica.play().catch(function(e) { console.log(e); });
+            }
+        });
+
+        /* =========================
+           PANTALLA DE PREGUNTA
+        ========================= */
+        const btnSi = document.getElementById("si");
+        const btnNo = document.getElementById("no");
+        const respuesta = document.getElementById("respuesta");
+        const btnNext = document.getElementById("next");
+
+        btnSi.addEventListener("click", function() {
+            respuesta.style.display = "block";
+            btnNext.style.display = "inline-block";
+        });
+
+        function moverBotonNo() {
+            const x = Math.random() * (window.innerWidth - btnNo.offsetWidth - 40);
+            const y = Math.random() * (window.innerHeight - btnNo.offsetHeight - 40);
+            btnNo.style.position = "fixed";
+            btnNo.style.left = Math.max(20, x) + "px";
+            btnNo.style.top = Math.max(20, y) + "px";
+        }
+
+        btnNo.addEventListener("mouseover", moverBotonNo);
+        btnNo.addEventListener("click", moverBotonNo);
+
+        btnNext.addEventListener("click", function() {
+            mostrarPantalla("universo");
+        });
+
+        /* =========================
+           ESTRELLAS Y LUNA
+        ========================= */
+        const estrella1 = document.getElementById("estrella1");
+        const ventanaEstrella1 = document.getElementById("ventanaEstrella1");
+        const cerrarEstrella1 = document.getElementById("cerrarEstrella1");
+
+        estrella1.addEventListener("click", () => ventanaEstrella1.classList.add("activa"));
+        cerrarEstrella1.addEventListener("click", () => ventanaEstrella1.classList.remove("activa"));
+
+        const estrella2 = document.getElementById("estrella2");
+        const ventanaEstrella2 = document.getElementById("ventanaEstrella2");
+        const cerrarEstrella2 = document.getElementById("cerrarEstrella2");
+
+        estrella2.addEventListener("click", () => ventanaEstrella2.classList.add("activa"));
+        cerrarEstrella2.addEventListener("click", () => ventanaEstrella2.classList.remove("activa"));
+
+        const estrella3 = document.getElementById("estrella3");
+        const ventanaEstrella3 = document.getElementById("ventanaEstrella3");
+        const cerrarEstrella3 = document.getElementById("cerrarEstrella3");
+
+        estrella3.addEventListener("click", () => ventanaEstrella3.classList.add("activa"));
+        cerrarEstrella3.addEventListener("click", () => ventanaEstrella3.classList.remove("activa"));
+
+        const luna = document.getElementById("luna");
+        const cartaLuna = document.getElementById("cartaLuna");
+        const cerrarCarta = document.getElementById("cerrarCarta");
+
+        luna.addEventListener("click", () => cartaLuna.classList.add("activa"));
+        cerrarCarta.addEventListener("click", () => cartaLuna.classList.remove("activa"));
+
+        /* =========================
+           VISOR DE IMAGEN (MOON)
+        ========================= */
+        const imagenMoon = document.getElementById("imagenMoon");
+        const visorImagen = document.getElementById("visorImagen");
+        const cerrarImagen = document.getElementById("cerrarImagen");
+
+        imagenMoon.addEventListener("click", () => visorImagen.classList.add("activa"));
+        cerrarImagen.addEventListener("click", () => visorImagen.classList.remove("activa"));
+
+        /* =========================
+           REPRODUCTOR DE MÚSICA
+        ========================= */
+        const canciones = [
+            { nombre: "Amtrak", artista: "Los Retros", archivo: "Amtrak.mp3" }
+        ];
+
+        let indiceCancion = 0;
+        const playPauseBtn = document.getElementById("playPause");
+        const anteriorBtn = document.getElementById("anterior");
+        const siguienteBtn = document.getElementById("siguiente");
+        const volumenBtn = document.getElementById("volumen");
+        const barraProgreso = document.getElementById("barraProgreso");
+        const tiempoActualEl = document.getElementById("tiempoActual");
+        const duracionEl = document.getElementById("duracion");
+        const nombreCancionEl = document.getElementById("nombreCancion");
+        const artistaCancionEl = document.getElementById("artistaCancion");
+
+        function cargarCancion(indice) {
+            const cancion = canciones[indice];
+            nombreCancionEl.textContent = cancion.nombre;
+            artistaCancionEl.textContent = cancion.artista;
+            musica.src = cancion.archivo;
+        }
+
+        function formatearTiempo(segundos) {
+            if (isNaN(segundos)) return "0:00";
+            const min = Math.floor(segundos / 60);
+            const seg = Math.floor(segundos % 60);
+            return min + ":" + (seg < 10 ? "0" + seg : seg);
+        }
+
+        cargarCancion(indiceCancion);
+
+        playPauseBtn.addEventListener("click", function() {
+            if (musica.paused) {
+                musica.play();
+                playPauseBtn.textContent = "⏸";
+            } else {
+                musica.pause();
+                playPauseBtn.textContent = "▶";
+            }
+        });
+
+        musica.addEventListener("play", () => playPauseBtn.textContent = "⏸");
+        musica.addEventListener("pause", () => playPauseBtn.textContent = "▶");
+
+        musica.addEventListener("timeupdate", function() {
+            if (musica.duration) {
+                barraProgreso.value = (musica.currentTime / musica.duration) * 100;
+                tiempoActualEl.textContent = formatearTiempo(musica.currentTime);
+                duracionEl.textContent = formatearTiempo(musica.duration);
+            }
+        });
+
+        barraProgreso.addEventListener("input", function() {
+            if (musica.duration) {
+                musica.currentTime = (barraProgreso.value / 100) * musica.duration;
+            }
+        });
+
+        volumenBtn.addEventListener("click", function() {
+            musica.muted = !musica.muted;
+            volumenBtn.textContent = musica.muted ? "🔇" : "🔊";
+        });
+
+        anteriorBtn.addEventListener("click", function() {
+            indiceCancion = (indiceCancion - 1 + canciones.length) % canciones.length;
+            cargarCancion(indiceCancion);
+            musica.play();
+        });
+
+        siguienteBtn.addEventListener("click", function() {
+            indiceCancion = (indiceCancion + 1) % canciones.length;
+            cargarCancion(indiceCancion);
+            musica.play();
+        });
     </script>
 
 </body>
